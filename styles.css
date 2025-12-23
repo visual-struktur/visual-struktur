@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Graphit / Anthrazit (чуть светлее) */
+    --bg: #0e1622;
+    --bg2: #101b2c;
+
+    /* Panels / Glass */
+    --panel: rgba(255, 255, 255, 0.075);
+    --panel-strong: rgba(255, 255, 255, 0.105);
+    --line: rgba(255, 255, 255, 0.12);
+    --line2: rgba(255, 255, 255, 0.075);
+
+    /* Text */
+    --text: #f9fafb;
+    --muted: rgba(249, 250, 251, 0.78);
+    --muted2: rgba(249, 250, 251, 0.66);
+
+    /* Accent (Ice-Blue) */
+    --accent: #60a5fa;
+    --accent-strong: #3b82f6;
+
+    /* Shadows */
+    --shadow: 0 14px 44px rgba(0, 0, 0, 0.45);
+    --shadow2: 0 10px 26px rgba(0, 0, 0, 0.32);
+
+    /* Matte graphite for header/footer */
+    --matte-header: #131a24;
+    --matte-footer: #0f1620;
+}
+
+* {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Subtiles Premium-Grid */
+.bg-grid {
+    background-image:
+        radial-gradient(circle at 20% 10%, rgba(96, 165, 250, 0.18), transparent 42%),
+        radial-gradient(circle at 82% 28%, rgba(20, 184, 166, 0.12), transparent 48%),
+        radial-gradient(circle at 55% 92%, rgba(165, 180, 252, 0.11), transparent 48%),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: auto, auto, auto, 44px 44px, 44px 44px;
+    background-position: center, center, center, top left, top left;
+}
+
+/* =========================
+   Matte Header (NO glass)
+   ========================= */
+.glass-header {
+    background: var(--matte-header);
+    /* matte graphite */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    backdrop-filter: none;
+    /* убрать стекло */
+    box-shadow: none;
+    transition: padding 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+
+/* Header sizing (normal vs shrink) */
+.nav-wrap {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    transition: padding 220ms ease;
+}
+
+.nav-shrink .nav-wrap {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.brand-title {
+    transition: font-size 220ms ease, letter-spacing 220ms ease;
+}
+
+.nav-shrink .brand-title {
+    font-size: 1.35rem;
+    /* ~text-xl */
+}
+
+/* Shadow when scrolling */
+.nav-shadow {
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.30);
+}
+
+/* Panels (оставляем glass для карточек — это красиво и премиально) */
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--line2);
+    backdrop-filter: blur(14px);
+    box-shadow: var(--shadow2);
+}
+
+.panel-strong {
+    background: var(--panel-strong);
+    border: 1px solid var(--line);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow);
+}
+
+/* Brand gradient */
+.brand-gradient {
+    background: linear-gradient(135deg, var(--accent) 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.85s ease-out both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hover-lift {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 52px rgba(0, 0, 0, 0.40);
+    /* чуть мягче */
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Focus */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid rgba(96, 165, 250, 0.78);
+    outline-offset: 3px;
+    border-radius: 12px;
+}
+
+/* Hero background */
+.hero-bg {
+    background:
+        radial-gradient(1200px 640px at 15% 20%, rgba(59, 130, 246, 0.24), transparent 56%),
+        radial-gradient(900px 520px at 85% 18%, rgba(165, 180, 252, 0.18), transparent 56%),
+        radial-gradient(900px 620px at 70% 86%, rgba(20, 184, 166, 0.14), transparent 60%),
+        linear-gradient(180deg, rgba(16, 27, 44, 0.72), rgba(14, 22, 34, 1));
+}
+
+/* Premium light divider between sections */
+.section-sep {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(96, 165, 250, 0.55) 18%,
+            rgba(255, 255, 255, 0.12) 50%,
+            rgba(96, 165, 250, 0.40) 82%,
+            transparent 100%);
+    opacity: 0.95;
+}
+
+.sep-wrap {
+    max-width: 80rem;
+    /* ~max-w-7xl */
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    /* px-6 */
+}
+
+/* =========================
+   Matte Footer class
+   ========================= */
+.matte-footer {
+    background: var(--matte-footer);
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* Optional: View Transitions */
+@view-transition {
+    navigation: auto;
+}
