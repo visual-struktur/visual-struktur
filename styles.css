@@ -1,32 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-    /* Graphit / Anthrazit (чуть светлее) */
-    --bg: #0e1622;
-    --bg2: #101b2c;
+    /* Light premium base */
+    --bg: #f6f8fc;
+    --bg2: #ffffff;
 
-    /* Panels / Glass */
-    --panel: rgba(255, 255, 255, 0.075);
-    --panel-strong: rgba(255, 255, 255, 0.105);
-    --line: rgba(255, 255, 255, 0.12);
-    --line2: rgba(255, 255, 255, 0.075);
+    /* Panels */
+    --panel: rgba(255, 255, 255, 0.92);
+    --panel-strong: rgba(255, 255, 255, 0.96);
+    --line: rgba(15, 23, 42, 0.10);
+    --line2: rgba(15, 23, 42, 0.07);
 
     /* Text */
-    --text: #f9fafb;
-    --muted: rgba(249, 250, 251, 0.78);
-    --muted2: rgba(249, 250, 251, 0.66);
+    --text: #0f172a;
+    /* slate-900 */
+    --muted: rgba(15, 23, 42, 0.72);
+    --muted2: rgba(15, 23, 42, 0.62);
 
-    /* Accent (Ice-Blue) */
-    --accent: #60a5fa;
-    --accent-strong: #3b82f6;
+    /* Accent */
+    --accent: #2563eb;
+    /* blue-600 */
+    --accent-strong: #1d4ed8;
+    /* blue-700 */
 
-    /* Shadows */
-    --shadow: 0 14px 44px rgba(0, 0, 0, 0.45);
-    --shadow2: 0 10px 26px rgba(0, 0, 0, 0.32);
+    /* Shadows (lighter) */
+    --shadow: 0 16px 44px rgba(15, 23, 42, 0.10);
+    --shadow2: 0 10px 26px rgba(15, 23, 42, 0.08);
 
-    /* Matte graphite for header/footer */
-    --matte-header: #131a24;
-    --matte-footer: #0f1620;
+    /* Matte (header/footer) */
+    --matte-header: #ffffff;
+    --matte-footer: #0f172a;
+    /* footer dark for contrast */
 }
 
 * {
@@ -45,29 +49,24 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Subtiles Premium-Grid */
+/* Light premium background texture */
 .bg-grid {
-    background-image:
-        radial-gradient(circle at 20% 10%, rgba(96, 165, 250, 0.18), transparent 42%),
-        radial-gradient(circle at 82% 28%, rgba(20, 184, 166, 0.12), transparent 48%),
-        radial-gradient(circle at 55% 92%, rgba(165, 180, 252, 0.11), transparent 48%),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-    background-size: auto, auto, auto, 44px 44px, 44px 44px;
-    background-position: center, center, center, top left, top left;
+    background:
+        radial-gradient(900px 520px at 18% 12%, rgba(37, 99, 235, 0.10), transparent 55%),
+        radial-gradient(900px 540px at 86% 22%, rgba(14, 165, 233, 0.10), transparent 55%),
+        radial-gradient(900px 620px at 60% 92%, rgba(99, 102, 241, 0.08), transparent 58%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(246, 248, 252, 1));
 }
 
 /* =========================
-   Matte Header (NO glass)
+   Matte Header (Light)
    ========================= */
 .glass-header {
     background: var(--matte-header);
-    /* matte graphite */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    border-bottom: 1px solid var(--line);
     backdrop-filter: none;
-    /* убрать стекло */
     box-shadow: none;
-    transition: padding 220ms ease, background 220ms ease, box-shadow 220ms ease;
+    transition: padding 220ms ease, box-shadow 220ms ease, background 220ms ease;
 }
 
 /* Header sizing (normal vs shrink) */
@@ -88,32 +87,28 @@ body {
 
 .nav-shrink .brand-title {
     font-size: 1.35rem;
-    /* ~text-xl */
 }
 
-/* Shadow when scrolling */
 .nav-shadow {
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.30);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.10);
 }
 
-/* Panels (оставляем glass для карточек — это красиво и премиально) */
+/* Panels */
 .panel {
     background: var(--panel);
     border: 1px solid var(--line2);
-    backdrop-filter: blur(14px);
     box-shadow: var(--shadow2);
 }
 
 .panel-strong {
     background: var(--panel-strong);
     border: 1px solid var(--line);
-    backdrop-filter: blur(16px);
     box-shadow: var(--shadow);
 }
 
-/* Brand gradient */
+/* Brand gradient (text) */
 .brand-gradient {
-    background: linear-gradient(135deg, var(--accent) 0%, #a5b4fc 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, #6366f1 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -142,58 +137,54 @@ body {
 
 .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 18px 52px rgba(0, 0, 0, 0.40);
-    /* чуть мягче */
-    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 18px 52px rgba(15, 23, 42, 0.12);
+    border-color: rgba(15, 23, 42, 0.14);
 }
 
 /* Focus */
 a:focus-visible,
 button:focus-visible {
-    outline: 2px solid rgba(96, 165, 250, 0.78);
+    outline: 2px solid rgba(37, 99, 235, 0.45);
     outline-offset: 3px;
     border-radius: 12px;
 }
 
-/* Hero background */
+/* Hero background (LIGHT) */
 .hero-bg {
     background:
-        radial-gradient(1200px 640px at 15% 20%, rgba(59, 130, 246, 0.24), transparent 56%),
-        radial-gradient(900px 520px at 85% 18%, rgba(165, 180, 252, 0.18), transparent 56%),
-        radial-gradient(900px 620px at 70% 86%, rgba(20, 184, 166, 0.14), transparent 60%),
-        linear-gradient(180deg, rgba(16, 27, 44, 0.72), rgba(14, 22, 34, 1));
+        radial-gradient(1000px 520px at 20% 20%, rgba(37, 99, 235, 0.16), transparent 55%),
+        radial-gradient(900px 520px at 80% 15%, rgba(99, 102, 241, 0.12), transparent 58%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(246, 248, 252, 1));
 }
 
-/* Premium light divider between sections */
+/* Premium divider */
 .section-sep {
     height: 1px;
     width: 100%;
     background: linear-gradient(90deg,
             transparent 0%,
-            rgba(96, 165, 250, 0.55) 18%,
-            rgba(255, 255, 255, 0.12) 50%,
-            rgba(96, 165, 250, 0.40) 82%,
+            rgba(37, 99, 235, 0.22) 18%,
+            rgba(15, 23, 42, 0.12) 50%,
+            rgba(99, 102, 241, 0.18) 82%,
             transparent 100%);
-    opacity: 0.95;
+    opacity: 1;
 }
 
 .sep-wrap {
     max-width: 80rem;
-    /* ~max-w-7xl */
     margin: 0 auto;
     padding: 0 1.5rem;
-    /* px-6 */
 }
 
 /* =========================
-   Matte Footer class
+   Matte Footer (Dark for contrast)
    ========================= */
 .matte-footer {
     background: var(--matte-footer);
     border-top: 1px solid rgba(255, 255, 255, 0.10);
 }
 
-/* Optional: View Transitions */
+/* Optional */
 @view-transition {
     navigation: auto;
 }
