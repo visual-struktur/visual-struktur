@@ -12,16 +12,13 @@
     --line2: rgba(15, 23, 42, 0.07);
 
     /* Text */
-    --text: #0f172a;
-    /* slate-900 */
+    --text: #0f172a; /* slate-900 */
     --muted: rgba(15, 23, 42, 0.72);
     --muted2: rgba(15, 23, 42, 0.62);
 
     /* Accent */
-    --accent: #2563eb;
-    /* blue-600 */
-    --accent-strong: #1d4ed8;
-    /* blue-700 */
+    --accent: #2563eb; /* blue-600 */
+    --accent-strong: #1d4ed8; /* blue-700 */
 
     /* Shadows (lighter) */
     --shadow: 0 16px 44px rgba(15, 23, 42, 0.10);
@@ -29,8 +26,7 @@
 
     /* Matte (header/footer) */
     --matte-header: #ffffff;
-    --matte-footer: #0f172a;
-    /* footer dark for contrast */
+    --matte-footer: #0f172a; /* footer dark for contrast */
 }
 
 * {
@@ -124,7 +120,6 @@ body {
         opacity: 0;
         transform: translateY(18px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -149,12 +144,75 @@ button:focus-visible {
     border-radius: 12px;
 }
 
-/* Hero background (LIGHT) */
-.hero-bg {
+/* =========================
+   HERO (DARK image + premium overlay)
+   ========================= */
+
+/* ВАЖНО: hero меняет переменные только внутри себя.
+   Весь сайт остаётся светлым, но в hero текст/мьютед — белые. */
+.hero-bg{
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+
+    background-image: url("images/hero.webp"); /* твой hero */
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+
+    /* переключаем цвета ТОЛЬКО внутри hero */
+    --text: #f9fafb;
+    --muted: rgba(249, 250, 251, 0.78);
+    --muted2: rgba(249, 250, 251, 0.66);
+}
+
+/* Тёмный overlay: слева читаемость, справа видно картинку */
+.hero-bg::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+
     background:
-        radial-gradient(1000px 520px at 20% 20%, rgba(37, 99, 235, 0.16), transparent 55%),
-        radial-gradient(900px 520px at 80% 15%, rgba(99, 102, 241, 0.12), transparent 58%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(246, 248, 252, 1));
+        /* аккуратный glow справа */
+        radial-gradient(900px 520px at 78% 45%,
+            rgba(37, 99, 235, 0.20),
+            rgba(37, 99, 235, 0.00) 62%),
+
+        /* мягкая виньетка */
+        radial-gradient(1200px 900px at 40% 30%,
+            rgba(0,0,0,0.10),
+            rgba(0,0,0,0.58) 72%),
+
+        /* основной градиент (без белой вуали) */
+        linear-gradient(90deg,
+            rgba(0,0,0,0.74) 0%,
+            rgba(0,0,0,0.58) 38%,
+            rgba(0,0,0,0.34) 68%,
+            rgba(0,0,0,0.20) 100%);
+}
+
+/* Мобилка: чуть сдвигаем композицию */
+@media (max-width: 640px){
+    .hero-bg{
+        background-position: 72% center;
+        min-height: 92vh;
+    }
+
+    .hero-bg::before{
+        background:
+            radial-gradient(700px 420px at 70% 35%,
+                rgba(37, 99, 235, 0.16),
+                rgba(37, 99, 235, 0.00) 65%),
+            radial-gradient(900px 800px at 50% 25%,
+                rgba(0,0,0,0.10),
+                rgba(0,0,0,0.64) 74%),
+            linear-gradient(90deg,
+                rgba(0,0,0,0.78) 0%,
+                rgba(0,0,0,0.62) 48%,
+                rgba(0,0,0,0.36) 78%,
+                rgba(0,0,0,0.24) 100%);
+    }
 }
 
 /* Premium divider */

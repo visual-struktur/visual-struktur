@@ -105,14 +105,17 @@
     </nav>
 
     <!-- =========================
-       Hero (hell)
-       ========================= -->
+        Hero (DARK + text left)
+    ========================= -->
     <header id="top" class="w-full hero-bg">
         <div class="max-w-7xl mx-auto px-6 py-20 md:py-28 fade-in">
-            <div class="max-w-4xl mx-auto text-center">
 
+            <!-- Контент чуть левее (но не в край) -->
+            <div class="max-w-xl lg:max-w-2xl lg:ml-8 xl:ml-12 text-left">
+
+                <!-- Badge (glass, подходит для dark hero) -->
                 <p
-                    class="inline-flex items-center gap-2 text-xs md:text-sm font-semibold tracking-wide mb-5 px-4 py-2 rounded-full bg-white/70 border border-black/10 text-[color:var(--muted)]">
+                    class="inline-flex items-center gap-2 text-xs md:text-sm font-semibold tracking-wide mb-5 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-[color:var(--muted)]">
                     <span class="w-2 h-2 rounded-full bg-[color:var(--accent)]"></span>
                     Klar. Modern. Wartbar.
                 </p>
@@ -126,14 +129,16 @@
                     langfristig nutzbar.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <!-- CTA: слева -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-start items-start">
                     <a href="#kontakt"
                         class="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base md:text-lg font-semibold hover-lift bg-[color:var(--accent-strong)] text-white">
                         Projekt anfragen
                     </a>
 
+                    <!-- Secondary на dark: glass -->
                     <a href="#leistungen"
-                        class="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base md:text-lg font-semibold hover-lift bg-white/80 text-[color:var(--text)] border border-black/10">
+                        class="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base md:text-lg font-semibold hover-lift bg-white/10 text-white border border-white/15">
                         Leistungen ansehen
                     </a>
                 </div>
@@ -145,6 +150,7 @@
             </div>
         </div>
     </header>
+
 
     <div class="sep-wrap">
         <div class="section-sep"></div>
