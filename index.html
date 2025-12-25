@@ -150,45 +150,51 @@
         <div class="section-sep"></div>
     </div>
 
-    <!-- =========================
-        LEISTUNGEN (Cards + Bild)
-    ========================= -->
+<!-- =========================
+    LEISTUNGEN (Cards + Bild)
+========================= -->
     <section id="leistungen" class="py-16 sm:py-20">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl">
-                <h2 class="h-display text-3xl sm:text-4xl font-semibold text-[color:var(--text)]">
-                    Leistungen
-                </h2>
-                <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
-                    Klar definiert, sauber umgesetzt. Ohne Overengineering – aber mit Substanz.
-                </p>
-            </div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+            <h2 class="h-display text-3xl sm:text-4xl font-semibold text-[color:var(--text)]">
+                Leistungen
+            </h2>
+            <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
+                Klar definiert, sauber umgesetzt. Ohne Overengineering – aber mit Substanz.
+            </p>
+        </div>
 
-            <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-                <!-- Card 1 -->
-                <article class="panel rounded-3xl p-5 hover-lift">
-                    <!-- Bildplatz -->
-                    <div class="card-media rounded-2xl overflow-hidden mb-4">
-                        <img src="images/web-new.webp" alt="Website-Layout auf Laptop-Mockup" loading="lazy"
-                            decoding="async" />
-                    </div>
+        <div class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Card 1 -->
+            <article class="panel rounded-3xl overflow-hidden hover-lift flex flex-col">
+                <!-- Bild: full width -->
+                <div class="card-media">
+                    <img src="images/web-new.webp" alt="Website-Layout auf Laptop-Mockup"
+                        class="block w-full h-52 object-cover" loading="lazy" decoding="async" />
+                </div>
+
+                <!-- Content padding -->
+                <div class="p-6">
                     <h3 class="text-base font-semibold text-[color:var(--text)]">Webdesign & Website</h3>
                     <p class="mt-2 text-sm leading-relaxed text-[color:var(--muted)]">
                         Struktur, Nutzerführung, Performance – modern und wartbar.
                     </p>
                     <ul class="mt-3 text-sm text-[color:var(--muted)] list-disc pl-5">
                         <li>Mobile-first</li>
-                        <li>Schnell & sauber</li>
+                        <li>Schnell &amp; sauber</li>
                         <li>Klare Inhalte</li>
                     </ul>
-                </article>
+                </div>
+            </article>
 
-                <!-- Card 2 -->
-                <article class="panel rounded-3xl p-5 hover-lift">
-                    <div class="card-media rounded-2xl overflow-hidden mb-4">
-                        <img src="images/digital-new.webp" alt="Prozess-Flow mit Automations-Knoten"
-                            loading="lazy" decoding="async" />
-                    </div>
+            <!-- Card 2 -->
+            <article class="panel rounded-3xl overflow-hidden hover-lift flex flex-col">
+                <div class="card-media">
+                    <img src="images/digital-new.webp" alt="Prozess-Flow mit Automations-Knoten"
+                        class="block w-full h-52 object-cover" loading="lazy" decoding="async" />
+                </div>
+
+                <div class="p-6">
                     <h3 class="text-base font-semibold text-[color:var(--text)]">Digitalisierung</h3>
                     <p class="mt-2 text-sm leading-relaxed text-[color:var(--muted)]">
                         Formulare, Prozesse, Automationen – weniger Handarbeit im Alltag.
@@ -198,15 +204,18 @@
                         <li>CRM-Anbindung</li>
                         <li>Automationen</li>
                     </ul>
-                </article>
+                </div>
+            </article>
 
-                <!-- Card 3 -->
-                <article class="panel rounded-3xl p-5 hover-lift">
-                    <div class="card-media rounded-2xl overflow-hidden mb-4">
-                        <img src="images/seo-new.webp" alt="Lokale Suche mit Karten-Pin" loading="lazy"
-                            decoding="async" />
-                    </div>
-                    <h3 class="text-base font-semibold text-[color:var(--text)]">SEO & Lokal</h3>
+            <!-- Card 3 -->
+            <article class="panel rounded-3xl overflow-hidden hover-lift flex flex-col">
+                <div class="card-media">
+                    <img src="images/seo-new.webp" alt="Lokale Suche mit Karten-Pin"
+                        class="block w-full h-52 object-cover" loading="lazy" decoding="async" />
+                </div>
+
+                <div class="p-6">
+                    <h3 class="text-base font-semibold text-[color:var(--text)]">SEO &amp; Lokal</h3>
                     <p class="mt-2 text-sm leading-relaxed text-[color:var(--muted)]">
                         Technik + Inhalte, damit man Sie in Ihrer Region findet.
                     </p>
@@ -215,15 +224,18 @@
                         <li>Struktur</li>
                         <li>Inhalte</li>
                     </ul>
-                </article>
+                </div>
+            </article>
 
-                <!-- Card 4 -->
-                <article class="panel rounded-3xl p-5 hover-lift">
-                    <div class="card-media rounded-2xl overflow-hidden mb-4">
-                        <img src="images/visiten-new.webp" alt="Corporate-Design-Set mit Visitenkarte" loading="lazy"
-                            decoding="async" />
-                    </div>
-                    <h3 class="text-base font-semibold text-[color:var(--text)]">Branding & Print</h3>
+            <!-- Card 4 -->
+            <article class="panel rounded-3xl overflow-hidden hover-lift flex flex-col">
+                <div class="card-media">
+                    <img src="images/visiten-new.webp" alt="Corporate-Design-Set mit Visitenkarte"
+                        class="block w-full h-52 object-cover" loading="lazy" decoding="async" />
+                </div>
+
+                <div class="p-6">
+                    <h3 class="text-base font-semibold text-[color:var(--text)]">Branding &amp; Print</h3>
                     <p class="mt-2 text-sm leading-relaxed text-[color:var(--muted)]">
                         Logo, Vorlagen, Karten, Banner – konsistent und seriös.
                     </p>
@@ -232,10 +244,12 @@
                         <li>Assets</li>
                         <li>Druckdaten</li>
                     </ul>
-                </article>
-            </div>
+                </div>
+            </article>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Divider -->
     <div class="sep-wrap">
@@ -346,75 +360,100 @@
         BRANCHEN (Für wen wir bauen) + Bild
     ========================= -->
     <section id="branchen" class="py-16 sm:py-20">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl">
-                <h2 class="h-display text-3xl sm:text-4xl font-semibold text-[color:var(--text)]">
-                    Für wen wir bauen
-                </h2>
-                <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
-                    Ideal für lokale Unternehmen, die professionell auftreten und Prozesse vereinfachen wollen.
-                </p>
-            </div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+            <h2 class="h-display text-3xl sm:text-4xl font-semibold text-[color:var(--text)]">
+                Für wen wir bauen
+            </h2>
+            <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
+                Ideal für lokale Unternehmen, die professionell auftreten und Prozesse vereinfachen wollen.
+            </p>
+        </div>
 
-            <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                <article class="panel rounded-3xl p-5 hover-lift">
-                    <div class="card-media rounded-2xl overflow-hidden mb-4">
-                        <img class="img-zoomout" src="images/praxis-new.webp" alt="Praxis-Website Fokus Vertrauen" loading="lazy"
-                            decoding="async" />
-                    </div>
-                    <h3 class="text-base font-semibold text-[color:var(--text)]">Praxis & Gesundheit</h3>
+        <div class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Card 1 -->
+            <article class="panel rounded-3xl overflow-hidden hover-lift flex flex-col">
+                <div class="card-media">
+                    <img class="img-zoomout block w-full h-52 object-cover" src="images/praxis-new.webp"
+                        alt="Praxis-Website Fokus Vertrauen" loading="lazy" decoding="async" />
+                </div>
+
+                <div class="p-6">
+                    <h3 class="text-base font-semibold text-[color:var(--text)]">Praxis &amp; Gesundheit</h3>
                     <p class="mt-2 text-sm text-[color:var(--muted)]">Vertrauen, klare Infos, schnelle Kontaktwege.</p>
-                </article>
+                </div>
+            </article>
 
-                <article class="panel rounded-3xl p-5 hover-lift">
-                    <div class="card-media rounded-2xl overflow-hidden mb-4">
-                        <img src="images/bau-new.webp" alt="Handwerksbetrieb Website mit Projektgalerie"
-                            loading="lazy" decoding="async" />
-                    </div>
-                    <h3 class="text-base font-semibold text-[color:var(--text)]">Handwerk & Bau</h3>
+            <!-- Card 2 -->
+            <article class="panel rounded-3xl overflow-hidden hover-lift flex flex-col">
+                <div class="card-media">
+                    <img class="block w-full h-52 object-cover" src="images/bau-new.webp"
+                        alt="Handwerksbetrieb Website mit Projektgalerie" loading="lazy" decoding="async" />
+                </div>
+
+                <div class="p-6">
+                    <h3 class="text-base font-semibold text-[color:var(--text)]">Handwerk &amp; Bau</h3>
                     <p class="mt-2 text-sm text-[color:var(--muted)]">Leistungen, Projekte, Anfragen ohne Reibung.</p>
-                </article>
+                </div>
+            </article>
 
-                <article class="panel rounded-3xl p-5 hover-lift">
-                    <div class="card-media rounded-2xl overflow-hidden mb-4">
-                        <img src="images/gastro-new.webp" alt="Event-Anfrage und Kalender-UI" loading="lazy"
-                            decoding="async" />
-                    </div>
-                    <h3 class="text-base font-semibold text-[color:var(--text)]">Gastro & Events</h3>
+            <!-- Card 3 -->
+            <article class="panel rounded-3xl overflow-hidden hover-lift flex flex-col">
+                <div class="card-media">
+                    <img class="block w-full h-52 object-cover" src="images/gastro-new.webp"
+                        alt="Event-Anfrage und Kalender-UI" loading="lazy" decoding="async" />
+                </div>
+
+                <div class="p-6">
+                    <h3 class="text-base font-semibold text-[color:var(--text)]">Gastro &amp; Events</h3>
                     <p class="mt-2 text-sm text-[color:var(--muted)]">Buchungen, Anfragen, Sichtbarkeit – auf den Punkt.
                     </p>
-                </article>
+                </div>
+            </article>
 
-                <article class="panel rounded-3xl p-5 hover-lift">
-                    <div class="card-media rounded-2xl overflow-hidden mb-4">
-                        <img src="images/kanzelar-new.webp" alt="Beratungs-Website mit Anfrageformular"
-                            loading="lazy" decoding="async" />
-                    </div>
-                    <h3 class="text-base font-semibold text-[color:var(--text)]">Kanzlei & Beratung</h3>
+            <!-- Card 4 -->
+            <article class="panel rounded-3xl overflow-hidden hover-lift flex flex-col">
+                <div class="card-media">
+                    <img class="block w-full h-52 object-cover" src="images/kanzelar-new.webp"
+                        alt="Beratungs-Website mit Anfrageformular" loading="lazy" decoding="async" />
+                </div>
+
+                <div class="p-6">
+                    <h3 class="text-base font-semibold text-[color:var(--text)]">Kanzlei &amp; Beratung</h3>
                     <p class="mt-2 text-sm text-[color:var(--muted)]">Seriosität, Struktur, klare Erstberatung-CTA.</p>
-                </article>
+                </div>
+            </article>
 
-                <article class="panel rounded-3xl p-5 hover-lift">
-                    <div class="card-media rounded-2xl overflow-hidden mb-4">
-                        <img src="images/beauty-new.webp" alt="Termin-UI für Servicebetrieb" loading="lazy"
-                            decoding="async" />
-                    </div>
-                    <h3 class="text-base font-semibold text-[color:var(--text)]">Beauty & Services</h3>
+            <!-- Card 5 -->
+            <article class="panel rounded-3xl overflow-hidden hover-lift flex flex-col">
+                <div class="card-media">
+                    <img class="block w-full h-52 object-cover" src="images/beauty-new.webp"
+                        alt="Termin-UI für Servicebetrieb" loading="lazy" decoding="async" />
+                </div>
+
+                <div class="p-6">
+                    <h3 class="text-base font-semibold text-[color:var(--text)]">Beauty &amp; Services</h3>
                     <p class="mt-2 text-sm text-[color:var(--muted)]">Termin-Logik, Angebote, Vertrauen durch Design.
                     </p>
-                </article>
+                </div>
+            </article>
 
-                <article class="panel rounded-3xl p-5 hover-lift">
-                    <div class="card-media rounded-2xl overflow-hidden mb-4">
-                        <img src="images/lokal-new.webp" alt="Lokale Sichtbarkeit und Website-Karte" loading="lazy"
-                            decoding="async" />
-                    </div>
+            <!-- Card 6 -->
+            <article class="panel rounded-3xl overflow-hidden hover-lift flex flex-col">
+                <div class="card-media">
+                    <img class="block w-full h-52 object-cover" src="images/lokal-new.webp"
+                        alt="Lokale Sichtbarkeit und Website-Karte" loading="lazy" decoding="async" />
+                </div>
+
+                <div class="p-6">
                     <h3 class="text-base font-semibold text-[color:var(--text)]">Lokale Unternehmen</h3>
                     <p class="mt-2 text-sm text-[color:var(--muted)]">Schnell online, professionell, ausbaufähig.</p>
-                </article>
-            </div>
+                </div>
+            </article>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Divider -->
     <div class="sep-wrap">
