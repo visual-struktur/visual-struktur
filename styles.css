@@ -429,3 +429,89 @@ button:focus-visible {
 @view-transition {
     navigation: auto;
 }
+
+/* =========================================================
+   Leistungen: Premium media (image overlay + divider)
+   ========================================================= */
+
+/* Обёртка для картинки */
+.media-premium {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Мягкая “премиум” подсветка + виньетка */
+.media-premium::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    /* Сверху лёгкий свет, снизу чуть темнее + едва заметный блю-глоу */
+    background:
+        radial-gradient(700px 380px at 30% 20%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 55%),
+        radial-gradient(900px 520px at 80% 30%, rgba(37, 99, 235, 0.14), rgba(37, 99, 235, 0) 60%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.00) 0%, rgba(15, 23, 42, 0.12) 70%, rgba(15, 23, 42, 0.18) 100%);
+}
+
+/* Тонкая линия-разделитель под картинкой (как в продуктовых лендингах) */
+.media-sep {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* Чуть приятнее, если картинка темная/контрастная */
+.media-premium img {
+    transform: scale(1.01);
+    transition: transform 260ms ease;
+}
+
+.media-premium:hover img {
+    transform: scale(1.04);
+}
+/* =========================================================
+   Leistungen: Premium media (image overlay + divider)
+   ========================================================= */
+
+.media-premium {
+    position: relative;
+    overflow: hidden;
+}
+
+.media-premium::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(700px 380px at 30% 20%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 55%),
+        radial-gradient(900px 520px at 80% 30%, rgba(37, 99, 235, 0.14), rgba(37, 99, 235, 0) 60%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.00) 0%, rgba(15, 23, 42, 0.12) 70%, rgba(15, 23, 42, 0.18) 100%);
+}
+
+.media-sep {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.media-premium img {
+    transform: scale(1.01);
+    transition: transform 260ms ease;
+}
+
+.media-premium:hover img {
+    transform: scale(1.04);
+}
+
+/* Внутренняя тонкая рамка на карточке (очень “премиум”) */
+.panel.premium-card {
+    position: relative;
+}
+
+.panel.premium-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+    opacity: 0.55;
+}

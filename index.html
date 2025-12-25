@@ -19,77 +19,74 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./styles.css">
 
-
-
-    <!-- Deine CSS -->
-    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body id="top" class="smooth-scroll bg-grid">
+<!-- =========================
+    NAV (Matte + Shrink)
+========================= -->
+<nav id="siteNav" class="w-full sticky top-0 z-50 glass-header">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 nav-wrap">
+        <div class="flex items-center justify-between gap-6">
 
-    <!-- =========================
-        NAV (Matte + Shrink)
-    ========================= -->
-    <nav id="siteNav" class="w-full sticky top-0 z-50 glass-header">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 nav-wrap">
-            <div class="flex items-center justify-between gap-6">
-
-                <!-- Brand -->
-                <a href="#top" class="flex items-center gap-3" aria-label="Startseite">
-                    <!-- Optional: Logo -->
-                    <!-- <img src="images/logo.svg" alt="Visual Struktur Logo" class="h-9 w-9" width="36" height="36" /> -->
-
-                    <div class="leading-tight">
-                        <div class="brand-title text-[1.25rem] md:text-2xl font-semibold text-[color:var(--text)]">
-                            <span class="brand-gradient">Visual</span> Struktur
-                        </div>
-                        <div class="text-xs md:text-sm text-[color:var(--muted2)]">
-                            Webdesign · Digitalisierung · SEO
-                        </div>
+            <!-- Brand -->
+            <a href="#top" class="flex items-center gap-3" aria-label="Startseite">
+                <div class="leading-tight">
+                    <div class="brand-title text-[1.25rem] md:text-2xl font-semibold text-[color:var(--text)]">
+                        <span class="brand-gradient">Visual</span> Struktur
                     </div>
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-7 text-sm font-medium text-[color:var(--muted)]">
-                    <a class="hover:opacity-90" href="#leistungen">Leistungen</a>
-                    <a class="hover:opacity-90" href="#vertrauen">Vertrauen</a>
-                    <a class="hover:opacity-90" href="#ablauf">Ablauf</a>
-                    <a class="hover:opacity-90" href="#branchen">Branchen</a>
-                    <a class="hover:opacity-90" href="#kontakt">Kontakt</a>
+                    <div class="text-xs md:text-sm text-[color:var(--muted2)]">
+                        Webdesign · Digitalisierung · SEO
+                    </div>
                 </div>
+            </a>
 
-                <!-- Desktop CTA -->
-                <div class="hidden md:flex">
-                    <a href="#kontakt" class="rounded-2xl px-4 py-2.5 text-sm font-semibold text-white hover:opacity-95"
-                        style="background: linear-gradient(135deg, var(--accent), #6366f1); box-shadow: var(--shadow2);">
-                        Projekt anfragen
-                    </a>
-                </div>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-7 text-sm font-medium text-[color:var(--muted)]">
+                <!-- ВАЖНО: ведем на отдельную страницу -->
+                <a class="hover:opacity-90" href="./leistungen.html">Leistungen</a>
 
-                <!-- Mobile Button -->
-                <button id="menuBtn" class="md:hidden rounded-xl px-3 py-2 text-sm font-semibold panel hover-lift"
-                    aria-expanded="false" aria-controls="mobileMenu">
-                    Menü
-                </button>
+                <a class="hover:opacity-90" href="#vertrauen">Vertrauen</a>
+                <a class="hover:opacity-90" href="#ablauf">Ablauf</a>
+                <a class="hover:opacity-90" href="#branchen">Branchen</a>
+                <a class="hover:opacity-90" href="#kontakt">Kontakt</a>
             </div>
 
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="md:hidden hidden mt-3 panel rounded-2xl p-4">
-                <div class="flex flex-col gap-3 text-sm font-medium text-[color:var(--muted)]">
-                    <a class="hover:opacity-90" href="#leistungen">Leistungen</a>
-                    <a class="hover:opacity-90" href="#vertrauen">Vertrauen</a>
-                    <a class="hover:opacity-90" href="#ablauf">Ablauf</a>
-                    <a class="hover:opacity-90" href="#branchen">Branchen</a>
-                    <a class="hover:opacity-90" href="#kontakt">Kontakt</a>
+            <!-- Desktop CTA -->
+            <div class="hidden md:flex">
+                <a href="#kontakt" class="rounded-2xl px-4 py-2.5 text-sm font-semibold text-white hover:opacity-95"
+                    style="background: linear-gradient(135deg, var(--accent), #6366f1); box-shadow: var(--shadow2);">
+                    Projekt anfragen
+                </a>
+            </div>
 
-                    <a href="#kontakt" class="mt-2 rounded-2xl px-4 py-2.5 text-sm font-semibold text-white"
-                        style="background: linear-gradient(135deg, var(--accent), #6366f1);">
-                        Projekt anfragen
-                    </a>
-                </div>
+            <!-- Mobile Button -->
+            <button id="menuBtn" class="md:hidden rounded-xl px-3 py-2 text-sm font-semibold panel hover-lift"
+                aria-expanded="false" aria-controls="mobileMenu">
+                Menü
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden mt-3 panel rounded-2xl p-4">
+            <div class="flex flex-col gap-3 text-sm font-medium text-[color:var(--muted)]">
+                <!-- ВАЖНО: ведем на отдельную страницу -->
+                <a class="hover:opacity-90" href="./leistungen.html">Leistungen</a>
+
+                <a class="hover:opacity-90" href="#vertrauen">Vertrauen</a>
+                <a class="hover:opacity-90" href="#ablauf">Ablauf</a>
+                <a class="hover:opacity-90" href="#branchen">Branchen</a>
+                <a class="hover:opacity-90" href="#kontakt">Kontakt</a>
+
+                <a href="#kontakt" class="mt-2 rounded-2xl px-4 py-2.5 text-sm font-semibold text-white"
+                    style="background: linear-gradient(135deg, var(--accent), #6366f1);">
+                    Projekt anfragen
+                </a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <!-- =========================
             HERO (DARK IMAGE) — Premium DE (A: Space Grotesk + Inter)

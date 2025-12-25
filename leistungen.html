@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="de" class="h-full">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Leistungen — Visual Struktur | Webdesign, Digitalisierung & SEO</title>
+    <meta name="description"
+        content="Leistungen von Visual Struktur: Premium Webdesign, Digitalisierung (Formulare/CRM/Automationen), SEO & lokale Sichtbarkeit sowie Branding & Print — klar strukturiert, modern umgesetzt." />
+
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Deine CSS-Datei -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="smooth-scroll bg-grid text-[color:var(--text)]">
+
+    <!-- =========================
+            NAV
+        ========================= -->
+    <nav id="siteNav" class="w-full sticky top-0 z-50 glass-header">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 nav-wrap">
+            <div class="flex items-center justify-between gap-6">
+
+                <!-- Brand -->
+                <a href="./index.html#top" class="flex items-center gap-3" aria-label="Zur Startseite">
+                    <div class="leading-tight">
+                        <div class="brand-title text-[1.25rem] md:text-2xl font-semibold text-[color:var(--text)]">
+                            <span class="brand-gradient">Visual</span> Struktur
+                        </div>
+                        <div class="text-xs md:text-sm text-[color:var(--muted2)]">
+                            Webdesign · Digitalisierung · SEO
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-7 text-sm font-medium text-[color:var(--muted)]">
+                    <!-- Мы уже на Leistungen -->
+                    <a class="hover:opacity-90 text-[color:var(--text)]" href="./leistungen.html">Leistungen</a>
+
+                    <a class="hover:opacity-90" href="./index.html#vertrauen">Vertrauen</a>
+                    <a class="hover:opacity-90" href="./index.html#ablauf">Ablauf</a>
+                    <a class="hover:opacity-90" href="./index.html#branchen">Branchen</a>
+                    <a class="hover:opacity-90" href="./index.html#kontakt">Kontakt</a>
+                </div>
+
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex">
+                    <a href="./index.html#kontakt"
+                        class="rounded-2xl px-4 py-2.5 text-sm font-semibold text-white hover:opacity-95"
+                        style="background: linear-gradient(135deg, var(--accent), #6366f1); box-shadow: var(--shadow2);">
+                        Projekt anfragen
+                    </a>
+                </div>
+
+                <!-- Mobile Button -->
+                <button id="menuBtn" class="md:hidden rounded-xl px-3 py-2 text-sm font-semibold panel hover-lift"
+                    aria-expanded="false" aria-controls="mobileMenu">
+                    Menü
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden mt-3 panel rounded-2xl p-4">
+                <div class="flex flex-col gap-3 text-sm font-medium text-[color:var(--muted)]">
+                    <a class="hover:opacity-90 text-[color:var(--text)]" href="./leistungen.html">Leistungen</a>
+
+                    <a class="hover:opacity-90" href="./index.html#vertrauen">Vertrauen</a>
+                    <a class="hover:opacity-90" href="./index.html#ablauf">Ablauf</a>
+                    <a class="hover:opacity-90" href="./index.html#branchen">Branchen</a>
+                    <a class="hover:opacity-90" href="./index.html#kontakt">Kontakt</a>
+
+                    <a href="./index.html#kontakt" class="mt-2 rounded-2xl px-4 py-2.5 text-sm font-semibold text-white"
+                        style="background: linear-gradient(135deg, var(--accent), #6366f1);">
+                        Projekt anfragen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- =========================
+        HERO (BENTO УБРАНО)
+    ========================= -->
+    <header class="pt-12 sm:pt-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+            <div class="grid gap-10 lg:grid-cols-12 items-start">
+                <!-- Left (now full width) -->
+                <div class="lg:col-span-12">
+                    <div class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs panel">
+                        <span class="opacity-80">Visual Struktur</span>
+                        <span class="opacity-40">•</span>
+                        <span class="text-[color:var(--muted)]">Leistungen</span>
+                    </div>
+
+                    <h1 class="h-display mt-5 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight">
+                        Leistungen, die verkaufen —
+                        <br class="hidden sm:block" />
+                        und technisch sauber bleiben.
+                    </h1>
+
+                    <p class="mt-4 text-[15px] sm:text-base text-[color:var(--muted)] leading-relaxed max-w-3xl">
+                        Premium Webdesign, Digitalisierung und lokale Sichtbarkeit. Klar strukturiert, ohne
+                        Overengineering —
+                        aber mit Substanz.
+                    </p>
+
+                    <div class="mt-7 flex flex-col sm:flex-row gap-3">
+                        <a href="./index.html#kontakt" class="btn-primary inline-flex items-center justify-center">
+                            Projekt anfragen
+                        </a>
+                        <a href="#pakete"
+                            class="panel inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-medium hover-lift">
+                            Pakete & Einstieg
+                        </a>
+                        <a href="./index.html#top"
+                            class="panel inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-medium hover-lift">
+                            Zur Startseite
+                        </a>
+                    </div>
+
+                    <div class="mt-6 flex flex-wrap gap-3 text-xs text-[color:var(--muted)]">
+                        <span class="panel rounded-full px-3 py-1">Antwort in 24–48 Std.</span>
+                        <span class="panel rounded-full px-3 py-1">DSGVO-Basis</span>
+                        <span class="panel rounded-full px-3 py-1">Wartbar & erweiterbar</span>
+                    </div>
+
+                    <!-- Mini-proof (чтобы было premium, но без “кучи карточек”) -->
+                    <div class="mt-8 panel rounded-3xl p-5 max-w-3xl">
+                        <div class="text-sm font-semibold">Kurz & klar</div>
+                        <p class="mt-2 text-sm text-[color:var(--muted)] leading-relaxed">
+                            Premium Look + saubere Technik. Fokus auf Struktur, Conversion und lokale Sichtbarkeit —
+                            ohne Overengineering.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick jump -->
+            <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                <a href="#webdesign" class="panel rounded-3xl p-5 hover-lift">
+                    <div class="text-sm font-semibold">Webdesign</div>
+                    <div class="mt-1 text-sm text-[color:var(--muted)]">Struktur, Content, Build</div>
+                </a>
+                <a href="#digitalisierung" class="panel rounded-3xl p-5 hover-lift">
+                    <div class="text-sm font-semibold">Digitalisierung</div>
+                    <div class="mt-1 text-sm text-[color:var(--muted)]">Formulare, CRM, Automationen</div>
+                </a>
+                <a href="#seo" class="panel rounded-3xl p-5 hover-lift">
+                    <div class="text-sm font-semibold">SEO & Lokal</div>
+                    <div class="mt-1 text-sm text-[color:var(--muted)]">Sichtbarkeit in der Region</div>
+                </a>
+                <a href="#branding" class="panel rounded-3xl p-5 hover-lift">
+                    <div class="text-sm font-semibold">Branding & Print</div>
+                    <div class="mt-1 text-sm text-[color:var(--muted)]">Look, Vorlagen, Assets</div>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Divider -->
+    <div class="sep-wrap mt-14">
+        <div class="section-sep"></div>
+    </div>
+
+    <!-- =========================
+       SECTION: WEBDESIGN
+  ========================= -->
+    <section id="webdesign" class="scroll-mt-28 py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-10 lg:grid-cols-12 items-start">
+
+                <!-- LEFT: Text + CTA + FAQ -->
+                <div class="lg:col-span-5">
+                    <h2 class="h-display text-3xl sm:text-4xl font-semibold">Webdesign & Website</h2>
+
+                    <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
+                        Premium-Website, die Vertrauen aufbaut, klar führt und technisch sauber läuft.
+                        Für lokale Unternehmen, Praxen, Kanzleien, Gastronomie und Dienstleister.
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap gap-3 text-xs text-[color:var(--muted)]">
+                        <span class="panel rounded-full px-3 py-1">Mobile-first</span>
+                        <span class="panel rounded-full px-3 py-1">Schnell & wartbar</span>
+                        <span class="panel rounded-full px-3 py-1">Klare Inhalte</span>
+                    </div>
+
+                    <div class="mt-7">
+                        <a href="./index.html#kontakt" class="btn-primary inline-flex items-center justify-center">
+                            Website anfragen
+                        </a>
+                    </div>
+
+                    <div class="mt-10">
+                        <div class="text-sm font-semibold">Webdesign FAQ</div>
+                        <div class="mt-4 grid gap-4">
+                            <details class="panel rounded-3xl p-6">
+                                <summary class="cursor-pointer text-sm font-semibold">Inhalte & Seitenstruktur</summary>
+                                <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                    Wir definieren klare Seitenlogik (Start, Leistungen, Über uns, Kontakt) und
+                                    schreiben Inhalte so,
+                                    dass Besucher schnell verstehen: <span class="font-medium">Was Sie anbieten, für
+                                        wen, warum Sie.</span>
+                                </div>
+                            </details>
+
+                            <details class="panel rounded-3xl p-6">
+                                <summary class="cursor-pointer text-sm font-semibold">Technik & Qualität</summary>
+                                <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                    Saubere Struktur, schnelle Ladezeiten, SEO-Grundlagen, saubere Formulare,
+                                    DSGVO-Basis (je nach Setup).
+                                </div>
+                            </details>
+
+                            <details class="panel rounded-3xl p-6">
+                                <summary class="cursor-pointer text-sm font-semibold">Zeitrahmen</summary>
+                                <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                    Meist 10–20 Tage — abhängig von Umfang, Content-Verfügbarkeit und Feedback-Zyklen.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Card (image top + text below) -->
+                <div class="lg:col-span-7">
+                    <article class="panel premium-card rounded-3xl overflow-hidden">
+                        <div class="media-premium media-sep">
+                            <img src="images/web-new.webp" alt="Website-Layout auf Laptop-Mockup"
+                                class="block w-full h-64 sm:h-80 lg:h-96 object-cover" loading="lazy"
+                                decoding="async" />
+                        </div>
+
+                        <div class="p-7">
+                            <div class="grid gap-8 lg:grid-cols-2">
+                                <div>
+                                    <div class="text-sm font-semibold">Was Sie bekommen</div>
+                                    <ul class="mt-3 space-y-2 text-sm text-[color:var(--muted)]">
+                                        <li>• Struktur + Wireframe + Content-Plan</li>
+                                        <li>• Design-System (Farben, Typo, Komponenten)</li>
+                                        <li>• Sauberer Build (Performance, SEO-Basis)</li>
+                                        <li>• Kontaktwege, CTA, Tracking (optional)</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <div class="text-sm font-semibold">Ideal für</div>
+                                    <p class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                        Unternehmen, die nicht “irgendeine” Website wollen — sondern einen klaren,
+                                        seriösen Auftritt, der Anfragen generiert.
+                                    </p>
+
+                                    <div class="mt-6 panel rounded-2xl p-4 text-sm text-[color:var(--muted)]">
+                                        <span class="font-medium text-[color:var(--text)]">Optional:</span>
+                                        Landingpages, Mehrsprachigkeit, Tracking-Setup, Wartung.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="sep-wrap">
+        <div class="section-sep"></div>
+    </div>
+
+    <!-- =========================
+       SECTION: DIGITALISIERUNG
+  ========================= -->
+    <section id="digitalisierung" class="scroll-mt-28 py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-10 lg:grid-cols-12 items-start">
+
+                <!-- LEFT -->
+                <div class="lg:col-span-5">
+                    <h2 class="h-display text-3xl sm:text-4xl font-semibold">Digitalisierung</h2>
+
+                    <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
+                        Formulare, Anfragen und Prozesse so bauen, dass weniger Handarbeit anfällt —
+                        und nichts “verloren geht”.
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap gap-3 text-xs text-[color:var(--muted)]">
+                        <span class="panel rounded-full px-3 py-1">Formulare</span>
+                        <span class="panel rounded-full px-3 py-1">CRM-Anbindung</span>
+                        <span class="panel rounded-full px-3 py-1">Automationen</span>
+                    </div>
+
+                    <div class="mt-7">
+                        <a href="./index.html#kontakt" class="btn-primary inline-flex items-center justify-center">
+                            Prozesse optimieren
+                        </a>
+                    </div>
+
+                    <div class="mt-10">
+                        <div class="text-sm font-semibold">Digitalisierung FAQ</div>
+                        <div class="mt-4 grid gap-4">
+                            <details class="panel rounded-3xl p-6">
+                                <summary class="cursor-pointer text-sm font-semibold">Welche Tools?</summary>
+                                <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                    Je nach Setup: Google Workspace, Make/Zapier, CRM-Systeme, Newsletter,
+                                    Kalender-Tools.
+                                    Wir wählen pragmatisch — passend zu Budget und Team.
+                                </div>
+                            </details>
+
+                            <details class="panel rounded-3xl p-6">
+                                <summary class="cursor-pointer text-sm font-semibold">Datenschutz & DSGVO</summary>
+                                <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                    Einwilligungen, Pflichtangaben und Datenfluss werden sauber umgesetzt.
+                                    Rechtstexte kommen von Ihnen oder Ihrem Anbieter.
+                                </div>
+                            </details>
+
+                            <details class="panel rounded-3xl p-6">
+                                <summary class="cursor-pointer text-sm font-semibold">Was bringt es im Alltag?</summary>
+                                <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                    Weniger Rückfragen, klarere Daten, schnelleres Team-Handling —
+                                    und ein professioneller Ablauf nach außen.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="lg:col-span-7">
+                    <article class="panel premium-card rounded-3xl overflow-hidden">
+                        <div class="media-premium media-sep">
+                            <img src="images/digital-new.webp" alt="Prozess-Flow mit Automations-Knoten"
+                                class="block w-full h-64 sm:h-80 lg:h-96 object-cover" loading="lazy"
+                                decoding="async" />
+                        </div>
+
+                        <div class="p-7">
+                            <div class="grid gap-8 lg:grid-cols-2">
+                                <div>
+                                    <div class="text-sm font-semibold">Typische Use-Cases</div>
+                                    <ul class="mt-3 space-y-2 text-sm text-[color:var(--muted)]">
+                                        <li>• Anfrageformulare → automatische E-Mails</li>
+                                        <li>• Leads → CRM (HubSpot, Pipedrive, etc.)</li>
+                                        <li>• Termin / Briefing / Upload-Felder</li>
+                                        <li>• Status-Updates & interne Benachrichtigungen</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <div class="text-sm font-semibold">Ergebnis</div>
+                                    <p class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                        Weniger Handarbeit, bessere Datenqualität, schnellere Bearbeitung —
+                                        und ein klarer Prozess, den Kunden verstehen.
+                                    </p>
+
+                                    <div class="mt-6 panel rounded-2xl p-4 text-sm text-[color:var(--muted)]">
+                                        <span class="font-medium text-[color:var(--text)]">Optional:</span>
+                                        CRM-Pipelines, automatische Follow-ups, E-Mail-Templates, Reporting.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="sep-wrap">
+        <div class="section-sep"></div>
+    </div>
+
+    <!-- =========================
+       SECTION: SEO
+  ========================= -->
+    <section id="seo" class="scroll-mt-28 py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-10 lg:grid-cols-12 items-start">
+
+                <!-- LEFT -->
+                <div class="lg:col-span-5">
+                    <h2 class="h-display text-3xl sm:text-4xl font-semibold">SEO &amp; Lokal</h2>
+
+                    <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
+                        Technische Basis + Inhalte + lokale Signale. Damit man Sie in Ihrer Region findet —
+                        und nicht die Konkurrenz.
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap gap-3 text-xs text-[color:var(--muted)]">
+                        <span class="panel rounded-full px-3 py-1">Google Business</span>
+                        <span class="panel rounded-full px-3 py-1">Struktur & Schema</span>
+                        <span class="panel rounded-full px-3 py-1">Content & Seiten</span>
+                    </div>
+
+                    <div class="mt-7">
+                        <a href="./index.html#kontakt" class="btn-primary inline-flex items-center justify-center">
+                            Sichtbarkeit verbessern
+                        </a>
+                    </div>
+
+                    <div class="mt-10">
+                        <div class="text-sm font-semibold">SEO FAQ</div>
+                        <div class="mt-4 grid gap-4">
+                            <details class="panel rounded-3xl p-6">
+                                <summary class="cursor-pointer text-sm font-semibold">Wie schnell sieht man Ergebnisse?
+                                </summary>
+                                <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                    Lokal oft in Wochen sichtbar (wenn Basis stimmt). Stabiler Effekt meist in 2–4
+                                    Monaten —
+                                    abhängig von Wettbewerb, Content und Aktivität.
+                                </div>
+                            </details>
+
+                            <details class="panel rounded-3xl p-6">
+                                <summary class="cursor-pointer text-sm font-semibold">Was bringt am meisten?</summary>
+                                <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                    Gute Seitenstruktur, klare Leistungen-Seiten, Google Business, Bewertungen,
+                                    saubere Inhalte + interne Verlinkung.
+                                </div>
+                            </details>
+
+                            <details class="panel rounded-3xl p-6">
+                                <summary class="cursor-pointer text-sm font-semibold">Muss ich laufend Content machen?
+                                </summary>
+                                <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                    Für Top-Positionen: ja. Aber wir starten mit einem Setup, das auch ohne Dauer-Blog
+                                    solide funktioniert
+                                    (Leistungsseiten, lokale Signale, Struktur, Basics).
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="lg:col-span-7">
+                    <article class="panel premium-card rounded-3xl overflow-hidden">
+                        <div class="media-premium media-sep">
+                            <img src="images/seo-new.webp" alt="Lokale Suche mit Karten-Pin"
+                                class="block w-full h-64 sm:h-80 lg:h-96 object-cover" loading="lazy"
+                                decoding="async" />
+                        </div>
+
+                        <div class="p-7">
+                            <div class="grid gap-8 lg:grid-cols-2">
+                                <div>
+                                    <div class="text-sm font-semibold">Was wir tun</div>
+                                    <ul class="mt-3 space-y-2 text-sm text-[color:var(--muted)]">
+                                        <li>• Keyword- & Seitenstruktur (lokaler Intent)</li>
+                                        <li>• Onpage: Titles, Descriptions, Headings</li>
+                                        <li>• Local SEO: Google Business, NAP, Bewertungen</li>
+                                        <li>• Schema.org (LocalBusiness/Service)</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <div class="text-sm font-semibold">Wichtig</div>
+                                    <p class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                        SEO ist kein “Zauber” — sondern saubere Struktur + kontinuierliche Signale.
+                                        Wir starten mit einem Setup, das wirklich trägt.
+                                    </p>
+
+                                    <div class="mt-6 panel rounded-2xl p-4 text-sm text-[color:var(--muted)]">
+                                        <span class="font-medium text-[color:var(--text)]">Optional:</span>
+                                        Inhalte/Blog, lokale Landingpages, Review-Strategie, Monitoring.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="sep-wrap">
+        <div class="section-sep"></div>
+    </div>
+
+    <!-- =========================
+       SECTION: BRANDING
+  ========================= -->
+    <section id="branding" class="scroll-mt-28 py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-10 lg:grid-cols-12 items-start">
+
+                <!-- LEFT -->
+                <div class="lg:col-span-5">
+                    <h2 class="h-display text-3xl sm:text-4xl font-semibold">Branding &amp; Print</h2>
+
+                    <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
+                        Seriöser Look, konsistente Assets, klare Vorlagen. Damit alles zusammenpasst —
+                        Website, Socials, Visitenkarten, Angebote.
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap gap-3 text-xs text-[color:var(--muted)]">
+                        <span class="panel rounded-full px-3 py-1">Corporate Look</span>
+                        <span class="panel rounded-full px-3 py-1">Vorlagen</span>
+                        <span class="panel rounded-full px-3 py-1">Druckdaten</span>
+                    </div>
+
+                    <div class="mt-7">
+                        <a href="./index.html#kontakt" class="btn-primary inline-flex items-center justify-center">
+                            Branding anfragen
+                        </a>
+                    </div>
+
+                    <div class="mt-10">
+                        <div class="text-sm font-semibold">Branding FAQ</div>
+                        <div class="mt-4 grid gap-4">
+                            <details class="panel rounded-3xl p-6">
+                                <summary class="cursor-pointer text-sm font-semibold">Welche Dateien bekomme ich?
+                                </summary>
+                                <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                    Je nach Paket: Print-PDF (CMYK), Web-Assets (PNG/SVG), Vorlagen (Canva/Figma),
+                                    Icons, Banner-Formate.
+                                </div>
+                            </details>
+
+                            <details class="panel rounded-3xl p-6">
+                                <summary class="cursor-pointer text-sm font-semibold">Macht ihr auch “nur”
+                                    Visitenkarten?</summary>
+                                <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                    Ja — aber am stärksten wirkt es, wenn wir zuerst einen konsistenten Look definieren
+                                    (Farben/Typo/Regeln) und daraus Print + Web ableiten.
+                                </div>
+                            </details>
+
+                            <details class="panel rounded-3xl p-6">
+                                <summary class="cursor-pointer text-sm font-semibold">Wie lange dauert Branding?
+                                </summary>
+                                <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                    Kleine Assets: wenige Tage. Komplettes Mini-CD: meistens 7–14 Tage (abhängig von
+                                    Feedback-Runden).
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="lg:col-span-7">
+                    <article class="panel premium-card rounded-3xl overflow-hidden">
+                        <div class="media-premium media-sep">
+                            <img src="images/visiten-new.webp" alt="Corporate-Design-Set mit Visitenkarte"
+                                class="block w-full h-64 sm:h-80 lg:h-96 object-cover" loading="lazy"
+                                decoding="async" />
+                        </div>
+
+                        <div class="p-7">
+                            <div class="grid gap-8 lg:grid-cols-2">
+                                <div>
+                                    <div class="text-sm font-semibold">Lieferumfang</div>
+                                    <ul class="mt-3 space-y-2 text-sm text-[color:var(--muted)]">
+                                        <li>• Logo-Feinschliff / Varianten (optional)</li>
+                                        <li>• Farben, Typo, Design-Richtlinien</li>
+                                        <li>• Visitenkarte, Briefkopf, Banner</li>
+                                        <li>• Social-Templates (optional)</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <div class="text-sm font-semibold">Resultat</div>
+                                    <p class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                                        Einheitlicher Auftritt, mehr Vertrauen, weniger “selbst gebastelt”.
+                                        Alles wirkt wie aus einem Guss.
+                                    </p>
+
+                                    <div class="mt-6 panel rounded-2xl p-4 text-sm text-[color:var(--muted)]">
+                                        <span class="font-medium text-[color:var(--text)]">Optional:</span>
+                                        Angebots-/Rechnungs-Vorlagen, Signaturen, Social Kits, Icon-Set.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="sep-wrap">
+        <div class="section-sep"></div>
+    </div>
+
+    <!-- =========================
+       PAKETE
+  ========================= -->
+    <section id="pakete" class="scroll-mt-28 py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl">
+                <h2 class="h-display text-3xl sm:text-4xl font-semibold">Pakete & Einstieg</h2>
+                <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
+                    Klarer Rahmen statt Rätselraten. Final nach Kurz-Analyse und Umfang.
+                </p>
+            </div>
+
+            <div class="mt-10 grid gap-6 lg:grid-cols-3">
+                <div class="panel rounded-3xl p-7 hover-lift">
+                    <div class="text-sm font-semibold">Start</div>
+                    <div class="mt-2 text-3xl font-semibold">ab 1.500€</div>
+                    <p class="mt-2 text-sm text-[color:var(--muted)]">Für saubere Basis + klaren Auftritt.</p>
+                    <ul class="mt-5 text-sm text-[color:var(--muted)] space-y-2">
+                        <li>• 1–3 Seiten (oder kompakt)</li>
+                        <li>• Design + Umsetzung</li>
+                        <li>• Kontakt + CTA</li>
+                    </ul>
+                    <a href="./index.html#kontakt"
+                        class="mt-6 btn-primary inline-flex w-full justify-center">Anfragen</a>
+                </div>
+
+                <div class="panel rounded-3xl p-7 hover-lift">
+                    <div class="text-sm font-semibold">Business</div>
+                    <div class="mt-2 text-3xl font-semibold">1.500–3.000€</div>
+                    <p class="mt-2 text-sm text-[color:var(--muted)]">Für starke Inhalte + bessere Conversion.</p>
+                    <ul class="mt-5 text-sm text-[color:var(--muted)] space-y-2">
+                        <li>• Struktur + Content-Plan</li>
+                        <li>• SEO-Basis + Performance</li>
+                        <li>• Branchen-/Leistungsseiten</li>
+                    </ul>
+                    <a href="./index.html#kontakt"
+                        class="mt-6 btn-primary inline-flex w-full justify-center">Anfragen</a>
+                </div>
+
+                <div class="panel rounded-3xl p-7 hover-lift">
+                    <div class="text-sm font-semibold">Premium</div>
+                    <div class="mt-2 text-3xl font-semibold">ab 3.000€</div>
+                    <p class="mt-2 text-sm text-[color:var(--muted)]">Für Markenwirkung + Automationen + Wachstum.</p>
+                    <ul class="mt-5 text-sm text-[color:var(--muted)] space-y-2">
+                        <li>• Premium Visuals & UI-System</li>
+                        <li>• Automationen / CRM</li>
+                        <li>• SEO-Lokal Setup + Inhalte</li>
+                    </ul>
+                    <a href="./index.html#kontakt"
+                        class="mt-6 btn-primary inline-flex w-full justify-center">Anfragen</a>
+                </div>
+            </div>
+
+            <div class="mt-8 panel rounded-3xl p-6 text-sm text-[color:var(--muted)]">
+                Hinweis: Preise sind Richtwerte. Bei Bedarf: Wartung, Updates, Inhalte, SEO-Betreuung monatlich.
+            </div>
+        </div>
+    </section>
+
+    <div class="sep-wrap">
+        <div class="section-sep"></div>
+    </div>
+
+    <!-- =========================
+       FAQ (global)
+  ========================= -->
+    <section id="faq" class="scroll-mt-28 py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl">
+                <h2 class="h-display text-3xl sm:text-4xl font-semibold">FAQ</h2>
+                <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
+                    Kurz, klar, ohne Marketing-Nebel.
+                </p>
+            </div>
+
+            <div class="mt-10 grid gap-4 max-w-3xl">
+                <details class="panel rounded-3xl p-6">
+                    <summary class="cursor-pointer text-sm font-semibold">Brauche ich Inhalte (Texte/Bilder) selbst?
+                    </summary>
+                    <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                        Optimal: ja. Wenn nicht, erstelle ich Content-Struktur + Text-Entwürfe und wir finalisieren
+                        gemeinsam.
+                    </div>
+                </details>
+
+                <details class="panel rounded-3xl p-6">
+                    <summary class="cursor-pointer text-sm font-semibold">Was ist mit Hosting & Domain?</summary>
+                    <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                        Kann über Ihren Anbieter laufen oder ich helfe bei Setup/Umzug. Wichtig: stabil, schnell,
+                        nachvollziehbar.
+                    </div>
+                </details>
+
+                <details class="panel rounded-3xl p-6">
+                    <summary class="cursor-pointer text-sm font-semibold">Kann ich später erweitern?</summary>
+                    <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
+                        Ja. Die Seiten werden so gebaut, dass Erweiterungen (neue Leistungen, Landingpages,
+                        Mehrsprachigkeit)
+                        sauber möglich sind.
+                    </div>
+                </details>
+            </div>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-3">
+                <a href="./index.html#kontakt" class="btn-primary inline-flex items-center justify-center">Projekt
+                    anfragen</a>
+                <a href="./index.html#top"
+                    class="panel rounded-2xl px-5 py-3 text-sm font-medium hover-lift inline-flex items-center justify-center">
+                    Zur Startseite
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+       FOOTER
+  ========================= -->
+    <footer class="py-10">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="sep-wrap mb-8">
+                <div class="section-sep"></div>
+            </div>
+
+            <div
+                class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-xs text-[color:var(--muted)]">
+                <p>© <span id="year"></span> Visual Struktur</p>
+                <div class="flex gap-4">
+                    <a class="hover:opacity-90" href="./index.html#kontakt">Kontakt</a>
+                    <a class="hover:opacity-90" href="./index.html#top">Startseite</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================
+       JS
+  ========================= -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const btn = document.getElementById('menuBtn');
+        const menu = document.getElementById('mobileMenu');
+
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                const open = !menu.classList.contains('hidden');
+                menu.classList.toggle('hidden');
+                btn.setAttribute('aria-expanded', String(!open));
+            });
+        }
+    </script>
+
+</body>
+
+</html>
