@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="de" class="h-full">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Branchen — Visual Struktur | Websites für lokale Unternehmen</title>
+    <meta name="description"
+        content="Websites & Digitalisierung für lokale Branchen: Praxis, Handwerk, Gastro, Kanzlei, Beauty und lokale Unternehmen. Klar, modern, schnell, erweiterbar." />
+
+    <!-- Tailwind (CDN) – du nutzt es bereits im Projekt -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Dein globales Stylesheet (Tokens, Buttons, Nav, Background etc.) -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        /* =========================================================
+        BRANCHEN — Dark Premium Cards (passend zu deinen 3D-Visuals)
+        Hinweis: Du kannst diesen Block später ins styles.css auslagern.
+       ========================================================= */
+
+        /* ---------- Card Base ---------- */
+        .b-card {
+            border-radius: 24px;
+            overflow: hidden;
+            background: rgba(10, 18, 32, 0.78);
+            /* dark glass */
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
+            transition: transform .22s ease, box-shadow .22s ease;
+        }
+
+        .b-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
+        }
+
+        /* ---------- Media (Image Top) ---------- */
+        .b-media {
+            position: relative;
+            height: 190px;
+            background: #070d18;
+            /* fallback while loading */
+        }
+
+        .b-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transform: scale(1.01);
+        }
+
+        /* Premium overlay (Glow + Vignette) */
+        .b-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(600px 260px at 30% 25%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 55%),
+                radial-gradient(900px 420px at 80% 20%, rgba(99, 160, 255, 0.22), rgba(99, 160, 255, 0) 60%),
+                linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.16) 70%, rgba(0, 0, 0, 0.24) 100%);
+        }
+
+        /* ---------- Badge / Tag on Image ---------- */
+        .b-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(10, 18, 32, 0.65);
+            color: rgba(249, 250, 251, 0.78);
+            font-size: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .b-icon {
+            width: 18px;
+            height: 18px;
+            display: inline-grid;
+            place-items: center;
+            color: rgba(99, 160, 255, 0.95);
+        }
+
+        /* ---------- Card Body Typography ---------- */
+        .b-body {
+            padding: 18px 18px 20px;
+        }
+
+        .b-title {
+            font-weight: 700;
+            color: rgba(249, 250, 251, 0.95);
+        }
+
+        .b-desc {
+            margin-top: 6px;
+            color: rgba(249, 250, 251, 0.72);
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        /* “Was wir bauen” list on dark background */
+        .b-list {
+            margin-top: 14px;
+            display: grid;
+            gap: 8px;
+            color: rgba(249, 250, 251, 0.70);
+            font-size: 13.5px;
+            line-height: 1.45;
+        }
+
+        /* Small inline CTA */
+        .b-mini-cta {
+            margin-top: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(99, 160, 255, 0.95);
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .b-mini-cta:hover {
+            opacity: .92;
+        }
+
+        /* ---------- CTA Panel ---------- */
+        .cta-slim {
+            border-radius: 26px;
+            background: linear-gradient(135deg, rgba(10, 18, 32, 0.78), rgba(13, 23, 41, 0.72));
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            box-shadow: 0 22px 70px rgba(0, 0, 0, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-slim::after {
+            content: "";
+            position: absolute;
+            inset: -20%;
+            background: radial-gradient(closest-side, rgba(99, 160, 255, 0.20), rgba(99, 160, 255, 0) 70%);
+            transform: translate(22%, -10%);
+            pointer-events: none;
+        }
+
+        /* Check list style */
+        .check {
+            position: relative;
+            padding-left: 22px;
+            color: rgba(249, 250, 251, 0.72);
+            font-size: 14px;
+        }
+
+        .check::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: rgba(99, 160, 255, 0.95);
+            font-weight: 800;
+        }
+
+        /* ---------- FAQ ---------- */
+        .faq {
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            background: rgba(10, 18, 32, 0.72);
+            padding: 14px 16px;
+        }
+
+        .faq summary {
+            cursor: pointer;
+            font-weight: 650;
+            color: rgba(249, 250, 251, 0.92);
+            list-style: none;
+        }
+
+        .faq summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq p {
+            margin-top: 10px;
+            color: rgba(249, 250, 251, 0.72);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body class="smooth-scroll bg-grid">
+
+    <!-- =========================================================
+        NAVIGATION
+        (Dein Projekt-Header: nutzt Klassen aus styles.css)
+       ========================================================= -->
+    <nav class="w-full sticky top-0 z-50 glass-header">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 nav-wrap">
+            <div class="flex items-center justify-between gap-6">
+
+                <!-- Brand -->
+                <a href="index.html" class="flex items-center gap-3" aria-label="Startseite">
+                    <div class="leading-tight">
+                        <div class="brand-title text-[1.25rem] md:text-2xl font-semibold text-[color:var(--text)]">
+                            <span class="brand-gradient">Visual</span> Struktur
+                        </div>
+                        <div class="text-xs md:text-sm text-[color:var(--muted2)]">
+                            Webdesign · Digitalisierung · SEO
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-2">
+                    <a href="leistungen.html" class="nav-link">Leistungen</a>
+                    <a href="vertrauen.html" class="nav-link">Vertrauen</a>
+                    <a href="ablauf.html" class="nav-link">Ablauf</a>
+                    <a href="branchen.html" class="nav-link is-active" aria-current="page">Branchen</a>
+                    <a href="kontakt.html" class="nav-link">Kontakt</a>
+                </div>
+
+                <!-- Primary CTA -->
+                <div class="hidden md:flex">
+                    <a href="kontakt.html" class="btn-primary">Projekt anfragen</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================================
+        HERO
+    ========================================================= -->
+    <header class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 md:pt-14 pb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-chip">
+            <span class="dot-accent" aria-hidden="true"></span>
+            <span class="text-xs md:text-sm text-[color:var(--muted)]">Branchen & Use-Cases</span>
+        </div>
+
+        <h1 class="mt-4 font-display text-3xl md:text-5xl leading-tight text-[color:var(--text)]">
+            Für wen wir bauen
+        </h1>
+
+        <p class="mt-3 text-base md:text-lg text-[color:var(--muted)] max-w-3xl">
+            Ideal für lokale Unternehmen, die professionell auftreten und Prozesse vereinfachen wollen.
+            Wir kombinieren Premium-Design, saubere Technik und klare Nutzerführung – damit aus Besuchern Anfragen
+            werden.
+        </p>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="#cards" class="btn-primary">Branchen ansehen</a>
+            <a href="kontakt.html" class="btn-secondary">Unverbindlich anfragen</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- =========================================================
+            BRANCHEN-CARDS (6x)
+            Bildpfade: Passe die Dateinamen an deine echten Bilder an:
+            images/branche-*.webp
+        ========================================================= -->
+        <section id="cards" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+            <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+            <!-- =====================================================
+                1) Praxis & Gesundheit
+                Ziel: Vertrauen + klare Infos + schnelle Kontaktwege
+            ===================================================== -->
+                <article class="b-card">
+                    <div class="b-media">
+                        <span class="b-tag absolute left-4 top-4">
+                            <span class="b-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 21s7-4.4 7-11a7 7 0 10-14 0c0 6.6 7 11 7 11z" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M12 12.2a2.2 2.2 0 110-4.4 2.2 2.2 0 010 4.4z" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            Vertrauen
+                        </span>
+                        <img src="images/branche-praxis.webp" alt="Praxis & Gesundheit" loading="lazy"
+                            decoding="async" />
+                    </div>
+
+                    <div class="b-body">
+                        <h3 class="b-title text-lg">Praxis & Gesundheit</h3>
+                        <p class="b-desc">Vertrauen, klare Infos, schnelle Kontaktwege – ruhig, seriös, ohne Hürden.</p>
+
+                        <ul class="b-list">
+                            <li>• Leistungsseiten logisch strukturiert (Ablauf, Kosten, FAQ)</li>
+                            <li>• Schnelle Kontakt-CTAs: Anruf, Formular, Rückruf, Termin-Anfrage</li>
+                            <li>• Vertrauenssignale: Team, Qualifikationen, Bewertungen, Anfahrt</li>
+                            <li>• Lokal-SEO: „Praxis + Ort“, Einzugsgebiet, Google Business Profile</li>
+                        </ul>
+
+                        <a class="b-mini-cta" href="kontakt.html">
+                            Website für Praxis anfragen <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- =====================================================
+                2) Handwerk & Bau
+                Ziel: Projekte zeigen + Anfragen ohne Reibung
+                ===================================================== -->
+                <article class="b-card">
+                    <div class="b-media">
+                        <span class="b-tag absolute left-4 top-4">
+                            <span class="b-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M4 12h16M7 9h10M9 15h6" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </span>
+                            Projekte
+                        </span>
+                        <img src="images/branche-handwerk.webp" alt="Handwerk & Bau" loading="lazy" decoding="async" />
+                    </div>
+
+                    <div class="b-body">
+                        <h3 class="b-title text-lg">Handwerk & Bau</h3>
+                        <p class="b-desc">Leistungen, Referenzen, Angebote – schnell, klar, vertrauenswürdig.</p>
+
+                        <ul class="b-list">
+                            <li>• Leistungsübersicht + Pakete (verständlich statt „Textwüste“)</li>
+                            <li>• Projekt-Galerie/Referenzen (Vorher/Nachher möglich)</li>
+                            <li>• Anfrage-Funnel: kurze Fragen → schneller zum Angebot</li>
+                            <li>• Lokal-SEO: „Handwerker + Ort“, Einsatzgebiet, Maps</li>
+                        </ul>
+
+                        <a class="b-mini-cta" href="kontakt.html">
+                            Website für Handwerk anfragen <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- =====================================================
+                3) Gastro & Events
+                Ziel: Buchungen/Anfragen + Sichtbarkeit
+                ===================================================== -->
+                <article class="b-card">
+                    <div class="b-media">
+                        <span class="b-tag absolute left-4 top-4">
+                            <span class="b-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M7 3v8M10 3v8M7 7h3M14 3v6a3 3 0 003 3v9" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            Buchungen
+                        </span>
+                        <img src="images/branche-gastro.webp" alt="Gastro & Events" loading="lazy" decoding="async" />
+                    </div>
+
+                    <div class="b-body">
+                        <h3 class="b-title text-lg">Gastro & Events</h3>
+                        <p class="b-desc">Buchungen, Anfragen, Sichtbarkeit – auf den Punkt, ohne Chaos.</p>
+
+                        <ul class="b-list">
+                            <li>• Angebote sauber getrennt (Catering, Events, Feiern, Specials)</li>
+                            <li>• Anfrage/Buchung: Datum, Personen, Ort → schnelle Rückmeldung</li>
+                            <li>• Galerie + Social Proof (Bilder, Reviews, Partner)</li>
+                            <li>• Lokal-SEO: „Catering + Ort“, Eventlocation, Maps</li>
+                        </ul>
+
+                        <a class="b-mini-cta" href="kontakt.html">
+                            Website für Gastro anfragen <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- =====================================================
+                4) Kanzlei & Beratung
+                Ziel: Seriosität + klare Erstberatung-CTA
+                ===================================================== -->
+                <article class="b-card">
+                    <div class="b-media">
+                        <span class="b-tag absolute left-4 top-4">
+                            <span class="b-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 3l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linejoin="round" />
+                                    <path d="M3 8v8l9 5 9-5V8" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            Seriosität
+                        </span>
+                        <img src="images/branche-kanzlei.webp" alt="Kanzlei & Beratung" loading="lazy"
+                            decoding="async" />
+                    </div>
+
+                    <div class="b-body">
+                        <h3 class="b-title text-lg">Kanzlei & Beratung</h3>
+                        <p class="b-desc">Seriöses Auftreten, klare Struktur, starke Erstberatung-CTAs.</p>
+
+                        <ul class="b-list">
+                            <li>• Leistungen verständlich erklärt (für Nicht-Juristen)</li>
+                            <li>• Erstberatung: Termin / Rückruf / Formular – ohne Umwege</li>
+                            <li>• Vertrauenssignale: Schwerpunkte, Erfahrung, Publikationen</li>
+                            <li>• Strukturierte Inhalte: FAQ, Themen-Seiten, lokale Auffindbarkeit</li>
+                        </ul>
+
+                        <a class="b-mini-cta" href="kontakt.html">
+                            Website für Kanzlei anfragen <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- =====================================================
+                5) Beauty & Services
+                Ziel: Termine + Angebote + Vertrauen
+                ===================================================== -->
+                <article class="b-card">
+                    <div class="b-media">
+                        <span class="b-tag absolute left-4 top-4">
+                            <span class="b-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 21s-7-4-7-11a7 7 0 0114 0c0 7-7 11-7 11z" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linejoin="round" />
+                                    <path d="M9.5 10.5l1.5 1.5 3.5-3.8" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            Termine
+                        </span>
+                        <img src="images/branche-beauty.webp" alt="Beauty & Services" loading="lazy" decoding="async" />
+                    </div>
+
+                    <div class="b-body">
+                        <h3 class="b-title text-lg">Beauty & Services</h3>
+                        <p class="b-desc">Termin-Logik, Angebote, Vertrauen durch Design – modern und ruhig.</p>
+
+                        <ul class="b-list">
+                            <li>• Leistungen + Preise premium präsentiert (klar, ohne Überladung)</li>
+                            <li>• Termin-Anfrage oder Tool-Anbindung (je nach Workflow)</li>
+                            <li>• Portfolio/Ergebnisse + Bewertungen (Trust ohne Worte)</li>
+                            <li>• Instagram/Maps/Local SEO sauber verbunden</li>
+                        </ul>
+
+                        <a class="b-mini-cta" href="kontakt.html">
+                            Website für Beauty anfragen <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- =====================================================
+                6) Lokale Unternehmen
+                Ziel: schnell online + ausbaufähig + lokal sichtbar
+                ===================================================== -->
+                <article class="b-card">
+                    <div class="b-media">
+                        <span class="b-tag absolute left-4 top-4">
+                            <span class="b-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M4 19h16M6 19V9l6-4 6 4v10" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10 19v-6h4v6" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            Schnell online
+                        </span>
+                        <img src="images/branche-lokal.webp" alt="Lokale Unternehmen" loading="lazy" decoding="async" />
+                    </div>
+
+                    <div class="b-body">
+                        <h3 class="b-title text-lg">Lokale Unternehmen</h3>
+                        <p class="b-desc">Schnell online, professionell, ausbaufähig – mit klarer Struktur.</p>
+
+                        <ul class="b-list">
+                            <li>• Solider Aufbau: Start, Leistungen, Über uns, Kontakt, FAQ</li>
+                            <li>• Klare CTA: Anfrage / Rückruf / Angebot – ohne Reibung</li>
+                            <li>• Wartbar & erweiterbar: später Landingpages / SEO-Ausbau</li>
+                            <li>• Lokale Sichtbarkeit: Google, Maps, Reviews, Keywords</li>
+                        </ul>
+
+                        <a class="b-mini-cta" href="kontakt.html">
+                            Website für Unternehmen anfragen <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- =========================================================
+            CTA / Ergebnis-Block
+        ========================================================= -->
+        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+            <div class="cta-slim p-7 md:p-10">
+                <div class="grid md:grid-cols-12 gap-6 items-center relative">
+                    <div class="md:col-span-8">
+                        <h2 class="font-display text-2xl md:text-4xl text-[color:var(--text)]">
+                            Ergebnis: klar, modern, lokal sichtbar
+                        </h2>
+                        <p class="mt-2 text-[color:var(--muted)]">
+                            Egal welche Branche — wir bauen ein System, das Anfragen auslöst, Vertrauen aufbaut und
+                            wachsen kann.
+                            Saubere Struktur + Premium-Design + technische Basis, die langfristig funktioniert.
+                        </p>
+
+                        <div class="mt-5 grid sm:grid-cols-2 gap-3">
+                            <div class="check">Klarer Aufbau & ruhige Nutzerführung</div>
+                            <div class="check">Performance + SEO-Basis (lokal gedacht)</div>
+                            <div class="check">Kontaktwege ohne Reibung (CTA-Logik)</div>
+                            <div class="check">Wartbar & erweiterbar (kein Neubau nötig)</div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-4 flex md:justify-end">
+                        <a href="kontakt.html" class="btn-primary w-full md:w-auto text-center relative">Projekt
+                            anfragen</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+            FAQ
+        ========================================================= -->
+        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+            <h2 class="font-display text-2xl md:text-3xl text-[color:var(--text)]">FAQ</h2>
+            <p class="mt-2 text-[color:var(--muted)]">Kurz & klar — damit du schnell entscheiden kannst.</p>
+
+            <div class="mt-6 grid md:grid-cols-2 gap-4">
+
+                <details class="faq">
+                    <summary>Kannst du auch nur eine Branchen-Seite (Landingpage) bauen?</summary>
+                    <p>
+                        Ja. Oft reicht eine starke Landingpage mit klarer Struktur, überzeugenden Inhalten und einem
+                        sauberen Kontakt-CTA.
+                        Später kann man daraus Schritt für Schritt ein komplettes System machen.
+                    </p>
+                </details>
+
+                <details class="faq">
+                    <summary>Machst du auch Inhalte / Texte?</summary>
+                    <p>
+                        Ja. Entweder auf Basis deiner Stichpunkte oder komplett neu — strukturiert, verständlich und auf
+                        lokale Suchanfragen ausgerichtet
+                        (ohne „SEO-Textwüste“).
+                    </p>
+                </details>
+
+                <details class="faq">
+                    <summary>Welche Bilder nutzt du?</summary>
+                    <p>
+                        Premium-Visuals (3D/Studio) oder echte Fotos. Wichtig ist ein konsistenter Look: ruhig,
+                        hochwertig und ohne „Stock“-Gefühl.
+                        Auf Wunsch helfe ich bei der Generierung/Selektion und beim Optimieren (WebP).
+                    </p>
+                </details>
+
+                <details class="faq">
+                    <summary>Wie schnell ist ein Projekt online?</summary>
+                    <p>
+                        Wenn Inhalte grob stehen, kann ein solides Setup oft in wenigen Tagen live gehen. Für
+                        umfangreichere Projekte planen wir sauber
+                        vorab, damit es später nicht teuer „umgebaut“ werden muss.
+                    </p>
+                </details>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

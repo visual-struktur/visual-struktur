@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="de" class="h-full">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Vertrauen & Prozess — Visual Struktur</title>
+    <meta name="description"
+        content="Warum Vertrauen entsteht: klare Struktur, saubere Umsetzung, transparente Schritte. So arbeitet Visual Struktur – nachvollziehbar, schnell, ohne Überraschungen." />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        /* ===== Premium Icon System (drop-in) ===== */
+        .icon-premium {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(37, 99, 235, 0.18);
+            box-shadow:
+                0 10px 24px rgba(15, 23, 42, 0.08),
+                0 1px 0 rgba(255, 255, 255, 0.7) inset;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .icon-premium::after {
+            content: "";
+            position: absolute;
+            inset: -30%;
+            background: radial-gradient(closest-side, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0) 70%);
+            transform: translate(18%, -18%);
+            pointer-events: none;
+        }
+
+        .icon-premium svg {
+            width: 22px;
+            height: 22px;
+            color: rgb(37, 99, 235);
+            position: relative;
+        }
+
+        /* Cards – чуть “дороже” и спокойнее */
+        .vs-card {
+            border-radius: 22px;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08);
+        }
+
+        .vs-muted {
+            color: rgba(15, 23, 42, 0.66);
+        }
+
+        .vs-line {
+            border-color: rgba(15, 23, 42, 0.10);
+        }
+
+        /* Timeline bullets */
+        .step-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: rgba(37, 99, 235, 0.9);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.22);
+        }
+    </style>
+</head>
+
+<body class="smooth-scroll bg-grid">
+
+    <!-- NAV (оставь свой, тут минимально) -->
+    <nav class="w-full sticky top-0 z-50 glass-header">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 nav-wrap">
+            <div class="flex items-center justify-between gap-6">
+                <a href="index.html" class="flex items-center gap-3" aria-label="Startseite">
+                    <div class="leading-tight">
+                        <div class="brand-title text-[1.25rem] md:text-2xl font-semibold text-[color:var(--text)]">
+                            <span class="brand-gradient">Visual</span> Struktur
+                        </div>
+                        <div class="text-xs md:text-sm text-[color:var(--muted2)]">
+                            Webdesign · Digitalisierung · SEO
+                        </div>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center gap-2">
+                    <a href="leistungen.html" class="nav-link">Leistungen</a>
+                    <a href="vertrauen.html" class="nav-link is-active" aria-current="page">Vertrauen</a>
+                    <a href="projekte.html" class="nav-link">Projekte</a>
+                    <a href="kontakt.html" class="nav-link">Kontakt</a>
+                </div>
+
+                <div class="hidden md:flex">
+                    <a href="kontakt.html" class="btn-primary">Projekt anfragen</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 md:pt-14 pb-8">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+            <div class="lg:col-span-7">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-chip">
+                    <span class="dot-accent" aria-hidden="true"></span>
+                    <span class="text-xs md:text-sm text-[color:var(--muted)]">Vertrauen & Arbeitsweise</span>
+                </div>
+
+                <h1 class="mt-4 font-display text-3xl md:text-5xl leading-tight text-[color:var(--text)]">
+                    Vertrauen entsteht nicht durch Worte —
+                    <span class="brand-gradient">sondern durch Struktur</span>.
+                </h1>
+
+                <p class="mt-4 text-base md:text-lg text-[color:var(--muted)] max-w-2xl">
+                    Klare Kommunikation, saubere Umsetzung und ein System, das langfristig funktioniert.
+                    Hier siehst du, wie wir arbeiten — nachvollziehbar, ruhig, professionell.
+                </p>
+
+                <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                    <a href="#prinzipien" class="btn-primary">Warum Vertrauen entsteht</a>
+                    <a href="#prozess" class="btn-secondary">Unser Prozess</a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5">
+                <figure class="hero-media media-premium" aria-label="Prozess Visual">
+                    <picture>
+                        <source srcset="images/prozess.webp" type="image/webp" />
+                        <img src="images/prozess.webp" alt="Prozess, Struktur und Klarheit – Premium Visual"
+                            class="hero-media-img" width="1600" height="1000" loading="eager" decoding="async" />
+                    </picture>
+
+                </figure>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <!-- Prinzipien -->
+        <section id="prinzipien" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+            <div class="flex items-end justify-between gap-6 flex-wrap">
+                <div>
+                    <h2 class="font-display text-2xl md:text-4xl text-[color:var(--text)]">Warum Vertrauen entsteht</h2>
+                    <p class="mt-2 text-[color:var(--muted)]">
+                        Nicht laut. Nicht hektisch. Sondern klar, sauber, nachvollziehbar.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-7 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- 01 -->
+                <article class="vs-card p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="icon-premium" aria-hidden="true">
+                            <!-- Structure icon -->
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M4 7h16M4 12h10M4 17h16" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-semibold text-[color:var(--muted2)]">01</span>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Klare Struktur</h3>
+                    <p class="mt-2 vs-muted">
+                        Kein Chaos, keine „Sammelseite“. Wir bauen eine klare Hierarchie: Inhalte, Fokus, CTA.
+                    </p>
+                    <ul class="mt-3 grid gap-2 text-sm vs-muted">
+                        <li>• Sitemap + Seitenlogik</li>
+                        <li>• Prioritäten nach Wirkung</li>
+                        <li>• Verständliche Nutzerführung</li>
+                    </ul>
+                </article>
+
+                <!-- 02 -->
+                <article class="vs-card p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="icon-premium" aria-hidden="true">
+                            <!-- Clean build icon -->
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M8 7l-4 5 4 5M16 7l4 5-4 5" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M10.5 19l3-14" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-semibold text-[color:var(--muted2)]">02</span>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Saubere Umsetzung</h3>
+                    <p class="mt-2 vs-muted">
+                        Performance, Semantik, Basics sauber. Damit es nicht nur „schön“, sondern stabil ist.
+                    </p>
+                    <ul class="mt-3 grid gap-2 text-sm vs-muted">
+                        <li>• schnelle Ladezeiten</li>
+                        <li>• SEO-Basis & Semantik</li>
+                        <li>• DSGVO-Logik (so weit möglich)</li>
+                    </ul>
+                </article>
+
+                <!-- 03 -->
+                <article class="vs-card p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="icon-premium" aria-hidden="true">
+                            <!-- Transparent steps -->
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M6 7h6M6 12h12M6 17h9" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" />
+                                <path d="M4 7h0M4 12h0M4 17h0" stroke="currentColor" stroke-width="4"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-semibold text-[color:var(--muted2)]">03</span>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Transparente Schritte</h3>
+                    <p class="mt-2 vs-muted">
+                        Du weißt immer, was als Nächstes passiert. Keine Überraschungen, keine Nebel-Taktik.
+                    </p>
+                    <ul class="mt-3 grid gap-2 text-sm vs-muted">
+                        <li>• klare Milestones</li>
+                        <li>• kurze Feedback-Schleifen</li>
+                        <li>• ehrliche Einschätzung</li>
+                    </ul>
+                </article>
+
+                <!-- 04 -->
+                <article class="vs-card p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="icon-premium" aria-hidden="true">
+                            <!-- Maintainable / layers -->
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 4l8 4-8 4-8-4 8-4z" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linejoin="round" />
+                                <path d="M4 12l8 4 8-4" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linejoin="round" />
+                                <path d="M4 16l8 4 8-4" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-semibold text-[color:var(--muted2)]">04</span>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Wartbar & erweiterbar</h3>
+                    <p class="mt-2 vs-muted">
+                        Keine Einbahnstraße. Das System soll wachsen können: neue Seiten, neue Angebote, neue Ziele.
+                    </p>
+                    <ul class="mt-3 grid gap-2 text-sm vs-muted">
+                        <li>• sauberer Aufbau</li>
+                        <li>• wiederverwendbare Blöcke</li>
+                        <li>• dokumentierbar</li>
+                    </ul>
+                </article>
+
+                <!-- 05 -->
+                <article class="vs-card p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="icon-premium" aria-hidden="true">
+                            <!-- Local / map pin -->
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 21s7-4.4 7-11a7 7 0 10-14 0c0 6.6 7 11 7 11z" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M12 12.2a2.2 2.2 0 110-4.4 2.2 2.2 0 010 4.4z" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-semibold text-[color:var(--muted2)]">05</span>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Lokal gedacht</h3>
+                    <p class="mt-2 vs-muted">
+                        Ton, Inhalte, Google-Signale. Besonders wichtig für Dienstleister in Hameln & Region.
+                    </p>
+                    <ul class="mt-3 grid gap-2 text-sm vs-muted">
+                        <li>• lokale Keywords & Seitenlogik</li>
+                        <li>• Google Business Profile</li>
+                        <li>• Vertrauen durch Klarheit</li>
+                    </ul>
+                </article>
+
+                <!-- Extra card (optional) -->
+                <article class="vs-card p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="icon-premium" aria-hidden="true">
+                            <!-- Shield / quality -->
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 3l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V7l8-4z" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linejoin="round" />
+                                <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-semibold text-[color:var(--muted2)]">06</span>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Qualitätsfokus</h3>
+                    <p class="mt-2 vs-muted">
+                        Lieber weniger, dafür richtig. Premium wirkt nur, wenn Details stimmen: Typo, Abstand, Rhythmus.
+                    </p>
+                    <ul class="mt-3 grid gap-2 text-sm vs-muted">
+                        <li>• ruhiges Premium-Design</li>
+                        <li>• saubere Micro-Details</li>
+                        <li>• konsistente UX</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Prozess -->
+        <section id="prozess" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+            <div class="flex items-end justify-between gap-6 flex-wrap">
+                <div>
+                    <h2 class="font-display text-2xl md:text-4xl text-[color:var(--text)]">So arbeiten wir</h2>
+                    <p class="mt-2 text-[color:var(--muted)]">
+                        Ein klarer Prozess: schnell, nachvollziehbar, ohne Überraschungen.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-7 grid lg:grid-cols-2 gap-4">
+                <!-- Timeline -->
+                <div class="vs-card p-6 md:p-7">
+                    <div class="flex items-center gap-3">
+                        <div class="icon-premium" aria-hidden="true">
+                            <!-- roadmap -->
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M6 7h6a3 3 0 010 6H9a3 3 0 000 6h9" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" />
+                                <path d="M6 7h0M12 10h0M9 13h0M18 19h0" stroke="currentColor" stroke-width="4"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-[color:var(--text)]">Ablauf in 4 Schritten</h3>
+                    </div>
+
+                    <div class="mt-5 grid gap-4">
+                        <div class="flex gap-4">
+                            <div class="mt-2 step-dot"></div>
+                            <div>
+                                <div class="font-semibold text-[color:var(--text)]">01 — Analyse</div>
+                                <p class="vs-muted text-sm mt-1">Ziele, Zielgruppe, Inhalte, Wettbewerb, Prioritäten.
+                                    Was bringt am meisten Wirkung?</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-2 step-dot"></div>
+                            <div>
+                                <div class="font-semibold text-[color:var(--text)]">02 — Konzept</div>
+                                <p class="vs-muted text-sm mt-1">Struktur, Wireframe, Text-Logik, Designrichtung. Alles
+                                    wird „vor dem Bauen“ klar.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-2 step-dot"></div>
+                            <div>
+                                <div class="font-semibold text-[color:var(--text)]">03 — Build</div>
+                                <p class="vs-muted text-sm mt-1">Umsetzung, Performance, SEO-Basics,
+                                    Formulare/Automationen — sauber und stabil.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-2 step-dot"></div>
+                            <div>
+                                <div class="font-semibold text-[color:var(--text)]">04 — Launch & Pflege</div>
+                                <p class="vs-muted text-sm mt-1">Go-live, Indexierung, Tracking (wenn nötig), kleine
+                                    Optimierungen nach echten Daten.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Details / Deliverables -->
+                <div class="vs-card p-6 md:p-7">
+                    <div class="flex items-center gap-3">
+                        <div class="icon-premium" aria-hidden="true">
+                            <!-- deliverables -->
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M7 4h7l3 3v13H7V4z" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linejoin="round" />
+                                <path d="M14 4v4h4" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                                <path d="M9 12h6M9 16h8" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-[color:var(--text)]">Was du am Ende bekommst</h3>
+                    </div>
+
+                    <ul class="mt-5 grid gap-3 text-sm vs-muted">
+                        <li>• klare Seitenstruktur + CTA-Logik (Anfragen, Termine, Leads)</li>
+                        <li>• Premium UI: Typografie, Abstände, visuelle Hierarchie</li>
+                        <li>• Technik: schnelle Ladezeit, saubere Semantik, solide Basis</li>
+                        <li>• SEO-Start: Titles/Descriptions, interne Struktur, lokale Signale</li>
+                        <li>• Hand-over: Zugriff, kurze Doku, optional Wartung/Weiterentwicklung</li>
+                    </ul>
+
+                    <div class="mt-6 pt-5 border-t vs-line flex flex-col sm:flex-row gap-3">
+                        <a class="btn-primary flex-1 text-center" href="kontakt.html">Projekt anfragen</a>
+                        <a class="btn-secondary flex-1 text-center" href="leistungen.html">Leistungen ansehen</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+            <div class="cta-panel rounded-3xl p-7 md:p-10">
+                <div class="grid md:grid-cols-12 gap-6 items-center">
+                    <div class="md:col-span-8">
+                        <h2 class="font-display text-2xl md:text-4xl text-[color:var(--text)]">
+                            Wenn du Klarheit willst — lass uns starten.
+                        </h2>
+                        <p class="mt-2 text-[color:var(--muted)]">
+                            15–30 Minuten. Danach weißt du: was sinnvoll ist, was nicht — und wie der nächste Schritt
+                            aussieht.
+                        </p>
+                    </div>
+                    <div class="md:col-span-4 flex md:justify-end">
+                        <a href="kontakt.html" class="btn-primary w-full md:w-auto text-center">Unverbindlich
+                            anfragen</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
