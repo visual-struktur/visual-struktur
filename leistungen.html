@@ -634,31 +634,34 @@
     </section>
 
     <!-- =========================
-        FOOTER
+        FOOTER (Dark)
+        Ziel: Trust + Rechtliches + klare Navigation
     ========================= -->
-    <footer class="py-12">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="panel rounded-3xl p-7">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                    <div>
-                        <div class="text-lg font-semibold">
-                            <span class="brand-gradient">Visual</span> Struktur
-                        </div>
-                        <div class="mt-1 text-sm text-[color:var(--muted)]">
-                            Webdesign · Digitalisierung · SEO
-                        </div>
-                    </div>
+    <footer class="matte-footer">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 
-                    <div class="flex flex-wrap gap-3 text-sm">
-                        <a href="./impressum.html" class="nav-link">Impressum</a>
-                        <a href="./datenschutz.html" class="nav-link">Datenschutz</a>
-                        <a href="./agb.html" class="nav-link">AGB</a>
+                <!-- Brand -->
+                <div>
+                    <div class="brand-title text-2xl font-semibold text-white">
+                        <span class="brand-gradient">Visual</span> <span class="text-white">Struktur</span>
                     </div>
+                    <p class="mt-2 text-sm text-white/70">
+                        Webdesign · Digitalisierung · SEO — Hameln
+                    </p>
                 </div>
 
-                <div class="mt-6 text-xs text-[color:var(--muted2)]">
-                    © <span id="y"></span> Visual Struktur. Alle Rechte vorbehalten.
+                <!-- Footer Links -->
+                <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/75">
+                    <!-- Hinweis: Verlinke hier auf deine echten Rechtstexte -->
+                    <a href="./impressum.html" class="hover:underline">Impressum</a>
+                    <a href="./datenschutz.html" class="hover:underline">Datenschutz</a>
+                    <a href="./agb.html" class="hover:underline">AGB</a>
                 </div>
+            </div>
+
+            <div class="mt-8 text-xs text-white/55">
+                © <span id="year"></span> Visual Struktur. Alle Rechte vorbehalten.
             </div>
         </div>
     </footer>
