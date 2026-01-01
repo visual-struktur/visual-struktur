@@ -1,6 +1,6 @@
 /* =========================================================
   Visual Struktur — Premium Light (Lux)
-  - Split hero layout, anthrazit buttons, subtle motion
+  - Anthrazit buttons, safe reveal, subtle premium UI
 ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
@@ -55,7 +55,6 @@ body {
     color: transparent;
 }
 
-/* Optional better wrapping */
 .text-balance {
     text-wrap: balance;
 }
@@ -97,7 +96,7 @@ body {
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
 }
 
-/* HERO (Light Lux, no image) */
+/* HERO (Lux light, no image) */
 .hero-bg {
     position: relative;
     isolation: isolate;
@@ -160,7 +159,7 @@ body {
     box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.10);
 }
 
-/* Premium pills */
+/* Pills */
 .pill {
     display: inline-flex;
     align-items: center;
@@ -181,8 +180,8 @@ body {
     filter: drop-shadow(0 22px 55px rgba(15, 23, 42, .22));
 }
 
-.hero-logo--split {
-    width: min(460px, 86vw);
+.hero-logo--top {
+    width: min(520px, 92vw);
 }
 
 /* Buttons (Anthrazit) */
@@ -245,7 +244,7 @@ body {
         0 1px 0 rgba(255, 255, 255, 0.70) inset;
 }
 
-/* Focus (non-blue) */
+/* Focus */
 .btn-primary:focus-visible,
 .btn-ghost:focus-visible,
 a:focus-visible,
@@ -266,7 +265,7 @@ button:focus-visible {
     border-color: rgba(15, 23, 42, 0.14);
 }
 
-/* Reveal (SAFE): without JS visible, with JS animated */
+/* Reveal (SAFE) */
 .reveal {
     opacity: 1;
     transform: none;
@@ -283,23 +282,30 @@ button:focus-visible {
     transform: translateY(0);
 }
 
-/* Small premium motion (logo only, very subtle) */
-@keyframes floaty {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-6px);
-    }
+/* Form */
+.form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(15, 23, 42, 0.70);
+    margin-bottom: 6px;
 }
 
-@media (min-width: 768px) {
-    .hero-logo {
-        animation: floaty 8s ease-in-out infinite;
-    }
+.form-input {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(15, 23, 42, 0.14);
+    background: rgba(255, 255, 255, 0.80);
+    padding: 12px 14px;
+    font-size: 15px;
+    color: rgba(15, 23, 42, 0.92);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: rgba(15, 23, 42, 0.22);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.10);
 }
 
 /* Reduced motion */
@@ -314,10 +320,6 @@ button:focus-visible {
         transition: none;
     }
 
-    .hero-logo {
-        animation: none;
-    }
-
     .hover-lift,
     .btn-primary,
     .btn-ghost {
@@ -330,7 +332,7 @@ button:focus-visible {
     background: linear-gradient(180deg, #0b1220 0%, #050913 100%);
 }
 
-/* sr-only helper (если вдруг Tailwind CDN не подхватит) */
+/* sr-only fallback */
 .sr-only {
     position: absolute;
     width: 1px;
