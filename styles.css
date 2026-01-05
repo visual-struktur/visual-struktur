@@ -506,3 +506,21 @@ button:focus-visible {
     white-space: nowrap;
     border: 0;
 }
+/* =========================================================
+    LEISTUNGEN: Höhe der Bildfläche auf Desktop erhöhen
+    Damit bleibt mehr Motiv sichtbar (unten "verschwindet" nicht)
+   ========================================================= */
+
+@media (min-width: 1024px) {
+    .leist-card .media-raw>img {
+        height: 560px;
+        /* было 384px (h-96), теперь выше */
+        object-fit: cover;
+        object-position: 50% 55%;
+        /* лёгкий Fokus вниз, чтобы der "Nis" bleibt */
+    }
+}
+/* =========================================================
+    LEISTUNGEN: Bild-Fokus auf Tablet etwas höher setzen
+    Ziel: Motiv bleibt "cover" (vollflächig), aber nicht zu tief gecroppt
+   ========================================================= */
