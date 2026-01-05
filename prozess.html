@@ -120,7 +120,6 @@
                 <div class="hidden md:flex items-center gap-2">
                     <a href="leistungen.html" class="nav-link">Leistungen</a>
                     <a href="branchen.html" class="nav-link">Branchen</a>
-                    <a href="vertrauen.html" class="nav-link is-active" aria-current="page">Vertrauen</a>
                     <a href="projekte.html" class="nav-link">Projekte</a>
                     <a href="kontakt.html" class="nav-link">Kontakt</a>
                 </div>
@@ -148,7 +147,6 @@
                     <div class="grid gap-1">
                         <a href="leistungen.html" class="nav-link">Leistungen</a>
                         <a href="branchen.html" class="nav-link">Branchen</a>
-                        <a href="vertrauen.html" class="nav-link is-active" aria-current="page">Vertrauen</a>
                         <a href="projekte.html" class="nav-link">Projekte</a>
                         <a href="kontakt.html" class="nav-link">Kontakt</a>
                     </div>
@@ -161,44 +159,53 @@
         </div>
     </nav>
 
-    <!-- =========================
-        HERO
-    ========================= -->
-    <header class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 md:pt-14 pb-8">
-        <div class="grid lg:grid-cols-12 gap-10 items-start">
-            <div class="lg:col-span-7">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-chip">
-                    <span class="dot-accent" aria-hidden="true"></span>
-                    <span class="text-xs md:text-sm text-[color:var(--muted)]">Vertrauen & Arbeitsweise</span>
+<!-- =========================================================
+  HERO (als Premium-Card)
+========================================================== -->
+        <header class="py-10 sm:py-14">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <!-- Premium Card -->
+        <section class="panel rounded-3xl overflow-hidden">
+            <div class="grid gap-0 lg:grid-cols-12 lg:items-center">
+
+                <!-- Text -->
+                <div class="lg:col-span-7 p-8 sm:p-10 lg:p-12">
+                    <div class="text-xs font-semibold tracking-wide text-[color:var(--muted2)]">
+                        Vertrauen &amp; Arbeitsweise
+                    </div>
+
+                    <h1 class="mt-3 h-display text-4xl sm:text-5xl font-semibold leading-[1.05]">
+                        Vertrauen entsteht nicht durch Worte — sondern durch Struktur.
+                    </h1>
+
+                    <p class="mt-5 text-[color:var(--muted)] leading-relaxed max-w-xl">
+                        Klare Kommunikation, saubere Umsetzung und ein System, das langfristig funktioniert.
+                        Hier siehst du, wie wir arbeiten — nachvollziehbar, ruhig, professionell.
+                    </p>
+
+                    <div class="mt-7 flex flex-col sm:flex-row gap-3">
+                        <a href="#warum" class="btn-primary">Warum Vertrauen entsteht</a>
+                        <a href="#prozess" class="btn-ghost">Unser Prozess</a>
+                    </div>
                 </div>
 
-                <h1 class="mt-4 font-display text-3xl md:text-5xl leading-tight text-[color:var(--text)]">
-                    Vertrauen entsteht nicht durch Worte —
-                    <span class="brand-gradient">sondern durch Struktur</span>.
-                </h1>
-
-                <p class="mt-4 text-base md:text-lg text-[color:var(--muted)] max-w-2xl">
-                    Klare Kommunikation, saubere Umsetzung und ein System, das langfristig funktioniert.
-                    Hier siehst du, wie wir arbeiten — nachvollziehbar, ruhig, professionell.
-                </p>
-
-                <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                    <a href="#prinzipien" class="btn-primary">Warum Vertrauen entsteht</a>
-                    <a href="#prozess" class="btn-secondary">Unser Prozess</a>
+                <!-- Media -->
+                <div class="lg:col-span-5">
+                    <!-- Bildfläche: fix und sauber, damit es wie ein "Hero-Visual" wirkt -->
+                    <div class="relative w-full h-56 sm:h-72 lg:h-[420px] overflow-hidden">
+                        <img src="images/prozess.webp" alt="Prozess und Struktur"
+                            class="absolute inset-0 w-full h-full object-cover object-center" loading="eager"
+                            decoding="async" />
+                    </div>
                 </div>
-            </div>
 
-            <div class="lg:col-span-5">
-                <figure class="hero-media media-premium" aria-label="Prozess Visual">
-                    <picture>
-                        <source srcset="images/prozess.webp" type="image/webp" />
-                        <img src="images/prozess.webp" alt="Prozess, Struktur und Klarheit – Premium Visual"
-                            class="hero-media-img" width="1600" height="1000" loading="eager" decoding="async" />
-                    </picture>
-                </figure>
             </div>
-        </div>
-    </header>
+        </section>
+
+    </div>
+</header>
+
 
     <main id="content">
         <!-- =========================
