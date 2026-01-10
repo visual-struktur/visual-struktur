@@ -76,6 +76,124 @@ body {
         0 18px 55px rgba(15, 23, 42, 0.10),
         0 1px 0 rgba(255, 255, 255, 0.70) inset;
 }
+/* =========================================================
+  HERO Panel (Leistungen) — Dark text area LEFT, image ORIGINAL right
+  Goal: text readable on left, image NOT darkened on right
+========================================================= */
+
+.hero-panel{
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  border-radius: calc(var(--radius) + 14px);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 26px 80px rgba(2,6,23,.22);
+
+  background: #050913;
+  min-height: 420px;
+}
+
+/* Background image (original look) */
+.hero-panel__bg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: right center;
+
+  opacity: 1;          /* IMPORTANT: no dimming */
+  filter: none;        /* IMPORTANT: no dimming */
+  pointer-events: none;
+}
+
+/* Overlay ONLY on the LEFT (right side stays original) */
+.hero-panel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+
+  /* strong left -> transparent right */
+  background: linear-gradient(90deg,
+    rgba(2,6,23,.86) 0%,
+    rgba(2,6,23,.76) 36%,
+    rgba(2,6,23,.52) 56%,
+    rgba(2,6,23,.22) 70%,
+    rgba(2,6,23,0) 82%);
+}
+
+/* NO global vignette here (it would darken the image) */
+/* .hero-panel::after intentionally removed */
+
+/* Content above overlay */
+.hero-panel__content{
+  position: relative;
+  z-index: 2;
+  padding: 56px 44px;
+
+  color: rgba(248,250,252,.92);
+}
+
+.hero-panel__content .h-display{
+  color: rgba(248,250,252,.98);
+}
+
+.hero-panel__content p{
+  color: rgba(248,250,252,.76);
+}
+
+/* Badge in dark hero */
+.hero-panel__content .hero-badge{
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 10px 28px rgba(0,0,0,.22);
+  color: rgba(255,255,255,.88);
+}
+.hero-panel__content .hero-badge-dot{
+  background: rgba(96,165,250,.95);
+  box-shadow: 0 0 0 3px rgba(96,165,250,.18);
+}
+
+/* Ghost button in dark hero */
+.hero-panel__content .btn-ghost{
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.18);
+  color: rgba(255,255,255,.92);
+}
+.hero-panel__content .btn-ghost:hover{
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.22);
+}
+
+/* Mobile */
+@media (max-width: 640px){
+  .hero-panel{
+    border-radius: calc(var(--radius) + 10px);
+    min-height: 520px;
+  }
+
+  /* On mobile we need readability across full width */
+  .hero-panel::before{
+    background: linear-gradient(180deg,
+      rgba(2,6,23,.86) 0%,
+      rgba(2,6,23,.78) 55%,
+      rgba(2,6,23,.55) 100%);
+  }
+
+  .hero-panel__content{
+    padding: 36px 22px;
+  }
+
+  .hero-panel__bg{
+    object-position: 78% 50%;
+  }
+}
 
 /* =========================================================
   NAV
@@ -507,20 +625,36 @@ button:focus-visible {
     border: 0;
 }
 /* =========================================================
-    LEISTUNGEN: Höhe der Bildfläche auf Desktop erhöhen
-    Damit bleibt mehr Motiv sichtbar (unten "verschwindet" nicht)
+   LEISTUNGEN: Media-Image Control (Cover + Focus)
+   Ziel: Motiv bleibt vollflächig, aber sinnvoll gecroppt
    ========================================================= */
 
+/* Desktop: больше высота, чуть ниже фокус (чтобы низ не "исчезал") */
 @media (min-width: 1024px) {
-    .leist-card .media-raw>img {
-        height: 560px;
-        /* было 384px (h-96), теперь выше */
-        object-fit: cover;
-        object-position: 50% 55%;
-        /* лёгкий Fokus вниз, чтобы der "Nis" bleibt */
-    }
+  .leist-card .media-raw > img {
+    height: 560px;             /* было ~384px */
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 55%;  /* чуть вниз: показывает больше нижней части */
+  }
 }
-/* =========================================================
-    LEISTUNGEN: Bild-Fokus auf Tablet etwas höher setzen
-    Ziel: Motiv bleibt "cover" (vollflächig), aber nicht zu tief gecroppt
-   ========================================================= */
+
+/* Tablet: обычно кроп ощущается сильнее -> поднимаем фокус немного вверх */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .leist-card .media-raw > img {
+    height: 460px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 45%;  /* чуть вверх: меньше "провала" вниз */
+  }
+}
+
+/* Mobile: меньше высота, фокус ближе к центру (самый стабильный вариант) */
+@media (max-width: 639.98px) {
+  .leist-card .media-raw > img {
+    height: 320px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
