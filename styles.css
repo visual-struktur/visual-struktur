@@ -1,17 +1,17 @@
 /* =========================================================
-  Visual Struktur — Premium Light (Lux)
-  - Anthrazit Buttons, Premium UI, klare Struktur
-  - Mobile Fixes: weniger Layout-Shift / kein "Ruckeln" von Bildern
+    Visual Struktur — Premium Light (Lux)
+    - Anthrazit Buttons, Premium UI, klare Struktur
+    - Mobile Fixes: weniger Layout-Shift / kein "Ruckeln" von Bildern
 ========================================================= */
 
 /* =========================================================
-  WICHTIG (Fonts):
-  Bitte NICHT per @import laden, das verursacht auf Mobile oft Reflow/CLS.
-  Stattdessen im <head> einfügen (auf jeder Seite):
+    WICHTIG (Fonts):
+    Bitte NICHT per @import laden, das verursacht auf Mobile oft Reflow/CLS.
+    Stattdessen im <head> einfügen (auf jeder Seite):
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 ========================================================= */
 
 /* @import ENTFERNT (war hier) */
@@ -71,7 +71,7 @@ body {
 }
 
 /* =========================================================
-  Panels
+    Panels
 ========================================================= */
 
 .panel {
@@ -89,11 +89,11 @@ body {
 }
 
 /* =========================================================
-  HERO Panel (Leistungen)
-  Ziel:
-  - Text links lesbar
-  - Bild rechts bleibt "original" (nicht abgedunkelt)
-  - Mobile: keine Sprünge (stabile Höhe)
+    HERO Panel (Leistungen)
+    Ziel:
+    - Text links lesbar
+    - Bild rechts bleibt "original" (nicht abgedunkelt)
+    - Mobile: keine Sprünge (stabile Höhe)
 ========================================================= */
 
 .hero-panel {
@@ -185,8 +185,8 @@ body {
 }
 
 /* =========================================================
-  Mobile: Hero stabilisieren (kein "Ruckeln" beim Laden/Scroll)
-  Grund: Wenn Höhe springt, wirkt object-fit:cover wie "Bild bewegt sich".
+    Mobile: Hero stabilisieren (kein "Ruckeln" beim Laden/Scroll)
+    Grund: Wenn Höhe springt, wirkt object-fit:cover wie "Bild bewegt sich".
 ========================================================= */
 @media (max-width: 640px) {
     .hero-panel {
@@ -215,7 +215,7 @@ body {
 }
 
 /* =========================================================
-  NAV
+    NAV
 ========================================================= */
 
 .glass-header {
@@ -240,8 +240,8 @@ body {
 }
 
 /* =========================================================
-  Mobile Fix: Nav darf NICHT in der Höhe schrumpfen
-  Grund: sonst rutscht der Content (Hero) und wirkt "ruckelnd".
+    Mobile Fix: Nav darf NICHT in der Höhe schrumpfen
+    Grund: sonst rutscht der Content (Hero) und wirkt "ruckelnd".
 ========================================================= */
 @media (max-width: 640px) {
     .nav-wrap {
@@ -256,7 +256,7 @@ body {
 }
 
 /* =========================================================
-  HERO (Standard Lux Light, ohne Bild)
+    HERO (Standard Lux Light, ohne Bild)
 ========================================================= */
 
 .hero-bg {
@@ -322,9 +322,9 @@ body {
 }
 
 /* =========================================================
-  HERO CARD — Projekte (Bild oben / Content unten)
-  Variante: EIN gemeinsamer transparenter Container (Glass)
-  für LEFT + RIGHT parallel nebeneinander
+    HERO CARD — Projekte (Bild oben / Content unten)
+    Variante: EIN gemeinsamer transparenter Container (Glass)
+    für LEFT + RIGHT parallel nebeneinander
 ========================================================= */
 
 .hero-card {
@@ -352,8 +352,8 @@ body {
 }
 
 /* ===== BOTTOM content zone (без белой заливки) =====
-   ВАЖНО: фон/blur переносим в .hero-card__inner,
-   чтобы LEFT+RIGHT были внутри одного общего стекла
+    ВАЖНО: фон/blur переносим в .hero-card__inner,
+    чтобы LEFT+RIGHT были внутри одного общего стекла
 */
 .hero-card__content {
     position: relative;
@@ -458,7 +458,7 @@ body {
     }
 }
 /* =========================================================
-  Buttons (Anthrazit)
+    Buttons (Anthrazit)
 ========================================================= */
 
 .btn-primary {
@@ -542,8 +542,8 @@ button:focus-visible {
 }
 
 /* =========================================================
-  HERO (nur Branchen-Seite) – Bild + dunkler Verlauf links
-  WICHTIG: Im HTML muss die Klasse .hero-branchen gesetzt sein.
+    HERO (nur Branchen-Seite) – Bild + dunkler Verlauf links
+    WICHTIG: Im HTML muss die Klasse .hero-branchen gesetzt sein.
 ========================================================= */
 
 .hero-branchen {
@@ -611,7 +611,7 @@ button:focus-visible {
 }
 
 /* =========================================================
-  BRANCHEN CARDS
+    BRANCHEN CARDS
 ========================================================= */
 
 .branch-card {
@@ -707,7 +707,7 @@ button:focus-visible {
 }
 
 /* =========================================================
-  CTA (Slim)
+    CTA (Slim)
 ========================================================= */
 
 .cta-slim {
@@ -735,7 +735,7 @@ button:focus-visible {
 }
 
 /* =========================================================
-  Footer
+    Footer
 ========================================================= */
 
 .matte-footer {
@@ -762,7 +762,7 @@ button:focus-visible {
 }
 
 /* =========================================================
-  Reduced motion
+    Reduced motion
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -791,10 +791,10 @@ button:focus-visible {
 }
 
 /* =========================================================
-  LEISTUNGEN: Media-Image Stabilisierung (gegen "Ruckeln"/CLS)
-  WICHTIG:
-  - Statt "height: ...px" auf dem <img> reservieren wir Platz über aspect-ratio
-  - Dadurch springt der Bereich beim Laden NICHT mehr.
+    LEISTUNGEN: Media-Image Stabilisierung (gegen "Ruckeln"/CLS)
+    WICHTIG:
+    - Statt "height: ...px" auf dem <img> reservieren wir Platz über aspect-ratio
+    - Dadurch springt der Bereich beim Laden NICHT mehr.
 ========================================================= */
 
 /* Container reserviert Platz */
@@ -846,8 +846,8 @@ button:focus-visible {
     }
 }
 /* =========================================================
-  FIX: Desktop-Bilder nicht zu groß (Leistungen)
-  - weniger Höhe, weiterhin stabil (kein CLS)
+    FIX: Desktop-Bilder nicht zu groß (Leistungen)
+    - weniger Höhe, weiterhin stabil (kein CLS)
 ========================================================= */
 @media (min-width: 1024px) {
 
@@ -864,9 +864,9 @@ button:focus-visible {
     }
 }
 /* =========================================================
-  FIX (Leistungen): Bild oben über volle Breite
-  Ursache: .leist-card wurde irgendwo als Grid (2 Spalten) gesetzt.
-  Lösung: Card wieder als Block/Stack -> Bild oben 100%, Inhalt darunter.
+    FIX (Leistungen): Bild oben über volle Breite
+    Ursache: .leist-card wurde irgendwo als Grid (2 Spalten) gesetzt.
+    Lösung: Card wieder als Block/Stack -> Bild oben 100%, Inhalt darunter.
 ========================================================= */
 
 .leist-card {
@@ -896,9 +896,9 @@ button:focus-visible {
     width: 100%;
 }
 /* =========================================================
-  Mobile Fix: Hero nicht zu hoch
-  - keine fixe Höhe (verursacht viel Leerraum)
-  - stabile Mindesthöhe, ohne "Ruckeln"
+    Mobile Fix: Hero nicht zu hoch
+    - keine fixe Höhe (verursacht viel Leerraum)
+    - stabile Mindesthöhe, ohne "Ruckeln"
 ========================================================= */
 @media (max-width: 640px) {
     .hero-panel {
