@@ -5,11 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Safe reveal mode (как в index) -->
+    <!-- Safe reveal mode -->
     <script>document.documentElement.classList.add('js');</script>
 
     <!-- =========================================================
-    SEO Basis (später: canonical + og + hreflang, wenn Domain final)
+    SEO Basis
     ========================================================== -->
     <title>Vertrauen & Prozess — Visual Struktur | SEO + GEO (AI-SEO)</title>
     <meta name="description"
@@ -21,62 +21,58 @@
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="styles.css" />
-
     <script src="./js/app.js" defer></script>
-
 
     <!-- =========================================================
     GEO / AI-SEO: FAQ Schema (JSON-LD)
-    Ziel: KI-Antworten + saubere Snippets
     WICHTIG: FAQ-Texte müssen zum sichtbaren FAQ passen
     ========================================================== -->
     <script type="application/ld+json">
-{
+    {
     "@context":"https://schema.org",
     "@type":"FAQPage",
     "mainEntity":[
     {
-        "@type":"Question",
-        "name":"Wie läuft ein Projekt bei Visual Struktur ab?",
-        "acceptedAnswer":{
+    "@type":"Question",
+    "name":"Wie läuft ein Projekt bei Visual Struktur ab?",
+    "acceptedAnswer":{
         "@type":"Answer",
         "text":"Typischer Ablauf: Analyse → Konzept → Build → Launch. Ziel ist ein wartbares System mit Performance-Basis, SEO + GEO (AI-SEO) und klaren Kontaktstrecken."
-        }
+    }
     },
     {
-        "@type":"Question",
-        "name":"Was ist GEO (AI-SEO) und warum gehört es in den Prozess?",
-        "acceptedAnswer":{
+    "@type":"Question",
+    "name":"Was ist GEO (AI-SEO) und warum gehört es in den Prozess?",
+    "acceptedAnswer":{
         "@type":"Answer",
         "text":"GEO (Generative Engine Optimization) ergänzt klassisches SEO. Inhalte werden so strukturiert, dass KI-Systeme das Angebot korrekt verstehen und konsistent wiedergeben (klare Entitäten, FAQ, Struktur, Schema/JSON-LD)."
-        }
+    }
     },
     {
-        "@type":"Question",
-        "name":"Welche Ergebnisse bekomme ich am Ende?",
-        "acceptedAnswer":{
+    "@type":"Question",
+    "name":"Welche Ergebnisse bekomme ich am Ende?",
+    "acceptedAnswer":{
         "@type":"Answer",
         "text":"Du erhältst eine klare Seitenstruktur, Premium-UI, schnelle technische Basis, SEO-Start (Meta/Struktur) plus GEO-Elemente (FAQ, strukturierte Inhalte, Schema/JSON-LD) sowie eine saubere Übergabe mit Dokumentation."
-        }
+    }
     },
     {
-        "@type":"Question",
-        "name":"Gibt es Wartung und Weiterentwicklung?",
-        "acceptedAnswer":{
+    "@type":"Question",
+    "name":"Gibt es Wartung und Weiterentwicklung?",
+    "acceptedAnswer":{
         "@type":"Answer",
         "text":"Ja, optional. Sinnvoll sind Updates, Backups, Monitoring sowie laufende Optimierung von SEO + GEO und Inhalten, wenn du kontinuierlich wachsen willst."
-        }
+    }
     }
     ]
     }
     </script>
 
     <!-- =========================================================
-        PAGE-LOCAL CSS
-        Hinweis: Wenn du willst, verschieben wir das später in styles.css
+    PAGE-LOCAL CSS
     ========================================================== -->
     <style>
-        /* ===== Premium Icon System (drop-in) ===== */
+        /* ===== Premium Icon System ===== */
         .icon-premium {
             width: 44px;
             height: 44px;
@@ -147,7 +143,7 @@
             left: 12px;
         }
 
-        /* Reveal: базовые классы (если они уже есть в styles.css — ок) */
+        /* Reveal */
         .js .reveal {
             opacity: 0;
             transform: translateY(10px);
@@ -167,8 +163,7 @@
     <a class="skip-link" href="#content">Zum Inhalt springen</a>
 
     <!-- =========================================================
-    NAV (как в index: Desktop + Mobile)
-    Hinweis: Menü-IDs унифицированы с index (menuBtn/mobileMenu)
+    NAV
     ========================================================== -->
     <nav id="siteNav" class="w-full sticky top-0 z-50 glass-header" aria-label="Hauptnavigation">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 nav-wrap">
@@ -188,13 +183,13 @@
                     </div>
                 </a>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-2">
-                    <a href="leistungen.html" class="nav-link">Leistungen</a>
-                    <a href="branchen.html" class="nav-link">Branchen</a>
-                    <a href="prozess.html" class="nav-link" aria-current="page">Prozess</a>
-                    <a href="projekte.html" class="nav-link">Projekte</a>
-                    <a href="kontakt.html" class="nav-link">Kontakt</a>
+                <!-- Desktop Menu (FIX: mehr Abstand) -->
+                <div class="hidden md:flex items-center gap-3 lg:gap-5">
+                    <a href="leistungen.html" class="nav-link px-3 py-2">Leistungen</a>
+                    <a href="branchen.html" class="nav-link px-3 py-2">Branchen</a>
+                    <a href="prozess.html" class="nav-link px-3 py-2" aria-current="page">Prozess</a>
+                    <a href="projekte.html" class="nav-link px-3 py-2">Projekte</a>
+                    <a href="kontakt.html" class="nav-link px-3 py-2">Kontakt</a>
                 </div>
 
                 <!-- Desktop CTA -->
@@ -217,11 +212,11 @@
             <div id="mobileMenu" class="md:hidden hidden mt-3 pb-4" role="dialog" aria-label="Mobile Navigation">
                 <div class="rounded-2xl border border-white/12 bg-white/10 backdrop-blur p-3">
                     <div class="grid gap-1">
-                        <a href="leistungen.html" class="nav-link">Leistungen</a>
-                        <a href="branchen.html" class="nav-link">Branchen</a>
-                        <a href="prozess.html" class="nav-link" aria-current="page">Prozess</a>
-                        <a href="projekte.html" class="nav-link">Projekte</a>
-                        <a href="kontakt.html" class="nav-link">Kontakt</a>
+                        <a href="leistungen.html" class="nav-link px-3 py-2">Leistungen</a>
+                        <a href="branchen.html" class="nav-link px-3 py-2">Branchen</a>
+                        <a href="prozess.html" class="nav-link px-3 py-2" aria-current="page">Prozess</a>
+                        <a href="projekte.html" class="nav-link px-3 py-2">Projekte</a>
+                        <a href="kontakt.html" class="nav-link px-3 py-2">Kontakt</a>
                     </div>
                     <div class="mt-3">
                         <a href="kontakt.html" class="btn-primary w-full text-center block">Projekt anfragen</a>
@@ -232,63 +227,120 @@
         </div>
     </nav>
 
-    <!-- =========================================================
-    HERO (Premium Card)
-    ========================================================== -->
-    <header class="py-10 sm:py-14">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<!-- =========================================================
+HERO – Prozess
+Mobile: Bild oben + Content unten (anthrazit)
+Desktop: Full-Card Background + Bio bottom-right
+========================================================== -->
+<header class="py-10 sm:py-14">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-            <section class="panel rounded-3xl overflow-hidden reveal">
-                <div class="grid gap-0 lg:grid-cols-12 lg:items-center">
+        <section class="panel rounded-3xl overflow-hidden reveal relative bg-[#0B0F16] lg:bg-transparent">
 
-                    <!-- Text -->
-                    <div class="lg:col-span-7 p-8 sm:p-10 lg:p-12">
-                        <div class="text-xs font-semibold tracking-wide text-[color:var(--muted2)]">
-                            Vertrauen · Prozess · SEO + GEO (AI-SEO)
-                        </div>
+            <!-- ======================
+                MOBILE TOP IMAGE
+            ====================== -->
+            <div class="relative lg:hidden">
+                <img src="images/prozess.webp" alt="Prozess und Struktur"
+                    class="w-full h-[260px] sm:h-[320px] object-cover object-[78%_48%]" loading="eager"
+                    decoding="async" />
+                <!-- overlays only for image -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/25 to-black/0 pointer-events-none">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-black/0 pointer-events-none">
+                </div>
+                <div class="absolute inset-0 ring-1 ring-white/10 pointer-events-none"></div>
 
-                        <h1 class="mt-3 h-display text-4xl sm:text-5xl font-semibold leading-[1.05]">
-                            Vertrauen entsteht nicht durch Worte — sondern durch Struktur.
-                        </h1>
+                <!-- smooth transition into anthracite content -->
+                <div
+                    class="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-b from-black/0 to-[#0B0F16] pointer-events-none">
+                </div>
+            </div>
 
-                        <p class="mt-5 text-[color:var(--muted)] leading-relaxed max-w-xl">
-                            Klare Kommunikation, saubere Umsetzung und ein System, das langfristig funktioniert.
-                            Hier siehst du, wie wir arbeiten — nachvollziehbar, ruhig, professionell.
-                        </p>
+            <!-- ======================
+                DESKTOP FULL BG
+            ====================== -->
+            <div class="hidden lg:block absolute inset-0 overflow-hidden">
+                <img src="images/prozess.webp" alt="Prozess und Struktur"
+                    class="absolute inset-0 w-full h-full object-cover object-[78%_46%]"
+                    style="transform: scale(1.06); transform-origin: center;" loading="eager" decoding="async" />
+            </div>
 
-                        <div class="mt-7 flex flex-col sm:flex-row gap-3">
-                            <a href="#prinzipien" class="btn-primary">Warum Vertrauen entsteht</a>
-                            <a href="#prozess" class="btn-ghost">Unser Prozess</a>
-                        </div>
+            <!-- overlays for DESKTOP only -->
+            <div
+                class="hidden lg:block absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/0 pointer-events-none">
+            </div>
+            <div
+                class="hidden lg:block absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-black/0 pointer-events-none">
+            </div>
+            <div class="hidden lg:block absolute inset-0 ring-1 ring-white/10 pointer-events-none"></div>
 
-                        <!-- GEO/AI-ready Mini-Definition (kurz, zitierfähig) -->
-                        <p class="mt-4 text-[13px] sm:text-sm text-[color:var(--muted2)] leading-relaxed max-w-xl">
-                            Visual Struktur liefert Webdesign, Digitalisierung sowie SEO + GEO (AI-SEO) als System:
-                            klare Inhalte, saubere Technik und strukturierte Antworten — damit aus Besuchern Anfragen
-                            werden.
-                        </p>
+            <!-- ======================
+                CONTENT
+            ====================== -->
+            <div class="relative z-10 p-7 sm:p-9 lg:p-12
+                lg:min-h-[620px] xl:min-h-[700px]
+                flex items-start lg:items-center
+                bg-transparent">
+                <div class="max-w-[520px] lg:max-w-[560px] lg:pr-10">
+
+                    <div class="text-sm text-white/70">
+                        Vertrauen <span class="opacity-40">·</span> Prozess <span class="opacity-40">·</span> Local SEO
+                        <span class="opacity-40">·</span> AI-SEO (GEO)
                     </div>
 
-                    <!-- Media -->
-                    <div class="lg:col-span-5">
-                        <div class="relative w-full h-56 sm:h-72 lg:h-[420px] overflow-hidden">
-                            <img src="images/prozess.webp" alt="Prozess und Struktur"
-                                class="absolute inset-0 w-full h-full object-cover object-center" loading="eager"
-                                decoding="async" />
+                    <h1 class="mt-5 h-display text-4xl sm:text-5xl font-semibold leading-[1.05] text-white">
+                        Vertrauen entsteht nicht durch Worte — sondern durch Struktur.
+                    </h1>
+
+                    <p class="mt-5 text-white/80 leading-relaxed max-w-xl">
+                        Klare Kommunikation, saubere Umsetzung und ein System, das langfristig funktioniert.
+                        Hier siehst du, wie wir arbeiten — nachvollziehbar, ruhig, professionell.
+                    </p>
+
+                    <div class="mt-7 flex flex-col sm:flex-row gap-3">
+                        <a href="#prozess" class="btn-primary">Unser Prozess</a>
+                        <a href="#faq" class="btn-ghost">FAQ</a>
+                    </div>
+
+                    <!-- ===== MOBILE BIO (compact, anthracite plate) ===== -->
+                    <div class="mt-6 lg:hidden">
+                        <div
+                            class="rounded-2xl bg-[#0A0D14] ring-1 ring-white/10 px-4 py-3 shadow-[0_18px_60px_rgba(0,0,0,.35)]">
+                            <p class="text-[13px] sm:text-sm text-white/70 leading-relaxed">
+                                Visual Struktur liefert Webdesign, Digitalisierung sowie SEO + GEO (AI-SEO) als System:
+                                klare Inhalte, saubere Technik und strukturierte Antworten — damit aus Besuchern
+                                Anfragen werden.
+                            </p>
                         </div>
                     </div>
 
                 </div>
-            </section>
+            </div>
 
-        </div>
-    </header>
+            <!-- ===== DESKTOP BIO (bottom-right) ===== -->
+            <div class="hidden lg:block absolute right-8 bottom-8 z-20 max-w-[420px]">
+                <div class="rounded-2xl bg-black/35 backdrop-blur-md ring-1 ring-white/10 px-4 py-3
+                    shadow-[0_18px_60px_rgba(0,0,0,.35)]">
+                    <p class="text-sm text-white/75 leading-relaxed">
+                        Visual Struktur liefert Webdesign, Digitalisierung sowie SEO + GEO (AI-SEO) als System:
+                        klare Inhalte, saubere Technik und strukturierte Antworten — damit aus Besuchern Anfragen
+                        werden.
+                    </p>
+                </div>
+            </div>
 
-    <main id="content">
+        </section>
+
+    </div>
+</header>
+
+<main id="content">
 
         <!-- =========================================================
-            01) Prinzipien
-        ========================================================== -->
+    01) Prinzipien
+    ========================================================== -->
         <section id="prinzipien" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-14">
             <div class="flex items-end justify-between gap-6 flex-wrap reveal">
                 <div>
@@ -300,7 +352,7 @@
             </div>
 
             <div class="mt-7 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <!-- 01 -->
+
                 <article class="vs-card p-6 reveal">
                     <div class="flex items-start justify-between gap-4">
                         <div class="icon-premium" aria-hidden="true">
@@ -322,7 +374,6 @@
                     </ul>
                 </article>
 
-                <!-- 02 -->
                 <article class="vs-card p-6 reveal">
                     <div class="flex items-start justify-between gap-4">
                         <div class="icon-premium" aria-hidden="true">
@@ -346,7 +397,6 @@
                     </ul>
                 </article>
 
-                <!-- 03 -->
                 <article class="vs-card p-6 reveal">
                     <div class="flex items-start justify-between gap-4">
                         <div class="icon-premium" aria-hidden="true">
@@ -370,7 +420,6 @@
                     </ul>
                 </article>
 
-                <!-- 04 -->
                 <article class="vs-card p-6 reveal">
                     <div class="flex items-start justify-between gap-4">
                         <div class="icon-premium" aria-hidden="true">
@@ -396,7 +445,6 @@
                     </ul>
                 </article>
 
-                <!-- 05 -->
                 <article class="vs-card p-6 reveal">
                     <div class="flex items-start justify-between gap-4">
                         <div class="icon-premium" aria-hidden="true">
@@ -420,7 +468,6 @@
                     </ul>
                 </article>
 
-                <!-- 06 -->
                 <article class="vs-card p-6 reveal">
                     <div class="flex items-start justify-between gap-4">
                         <div class="icon-premium" aria-hidden="true">
@@ -443,13 +490,13 @@
                         <li>• konsistente UX</li>
                     </ul>
                 </article>
+
             </div>
         </section>
 
         <!-- =========================================================
-            02) GEO Layer (AI-ready) — neu
-            Ziel: klare Definition + Prozess-Integration
-        ========================================================== -->
+    02) GEO Layer (AI-ready)
+    ========================================================== -->
         <section id="geo" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
             <div class="panel rounded-3xl p-7 md:p-10 reveal">
                 <div class="max-w-3xl">
@@ -510,85 +557,121 @@
         </section>
 
         <!-- =========================================================
-            03) Prozess
-        ========================================================== -->
+    03) Prozess (Unified)
+    ========================================================== -->
         <section id="prozess" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
-            <div class="flex items-end justify-between gap-6 flex-wrap reveal">
-                <div>
-                    <h2 class="font-display text-2xl md:text-4xl text-[color:var(--text)]">So arbeiten wir</h2>
-                    <p class="mt-2 text-[color:var(--muted)]">
-                        Ein klarer Prozess: schnell, nachvollziehbar, ohne Überraschungen.
-                    </p>
+            <div class="reveal">
+                <div class="text-xs font-semibold tracking-wide text-[color:var(--muted2)] uppercase">
+                    Prozess
                 </div>
+                <h2 class="mt-2 font-display text-2xl md:text-4xl text-[color:var(--text)]">
+                    Analyse → Konzept → Build → Launch
+                </h2>
+                <p class="mt-3 text-[color:var(--muted)] leading-relaxed max-w-3xl">
+                    Ein klarer Ablauf mit sichtbaren Milestones. SEO + GEO werden nicht „später draufgeklebt“, sondern
+                    von Anfang an in Struktur, Inhalte und Kontaktlogik integriert.
+                </p>
             </div>
 
-            <div class="mt-7 grid lg:grid-cols-2 gap-4">
-                <!-- Timeline -->
-                <div class="vs-card p-6 md:p-7 reveal">
-                    <div class="flex items-center gap-3">
+            <div class="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                <article class="vs-card p-6 reveal">
+                    <div class="flex items-start justify-between gap-4">
                         <div class="icon-premium" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M6 7h6a3 3 0 010 6H9a3 3 0 000 6h9" stroke="currentColor" stroke-width="1.8"
-                                    stroke-linecap="round" />
-                                <path d="M6 7h0M12 10h0M9 13h0M18 19h0" stroke="currentColor" stroke-width="4"
+                                <path d="M4 7h16M4 12h10M4 17h16" stroke="currentColor" stroke-width="1.8"
                                     stroke-linecap="round" />
                             </svg>
                         </div>
-                        <h3 class="font-semibold text-[color:var(--text)]">Ablauf in 4 Schritten</h3>
+                        <span class="text-sm font-semibold text-[color:var(--muted2)]">01</span>
                     </div>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Analyse</h3>
+                    <p class="mt-2 text-sm vs-muted">
+                        Ziele, Zielgruppe, Angebot, Regionen, Prioritäten. Wir definieren auch, welche Aussagen
+                        KI-Systeme
+                        später korrekt verstehen sollen (GEO-Basis).
+                    </p>
+                    <ul class="mt-3 grid gap-2 text-sm vs-muted">
+                        <li>• Inhalte & Wettbewerb</li>
+                        <li>• Seitenlogik & CTA</li>
+                        <li>• Entitäten (Services/Regionen)</li>
+                    </ul>
+                </article>
 
-                    <div class="mt-5 grid gap-4">
-                        <div class="flex gap-4">
-                            <div class="mt-2 step-dot"></div>
-                            <div>
-                                <div class="font-semibold text-[color:var(--text)]">01 — Analyse</div>
-                                <p class="vs-muted text-sm mt-1">
-                                    Ziele, Zielgruppe, Inhalte, Wettbewerb, Prioritäten. Wir definieren auch, welche
-                                    Aussagen KI-Systeme
-                                    später korrekt verstehen sollen (GEO-Basis).
-                                </p>
-                            </div>
+                <article class="vs-card p-6 reveal">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="icon-premium" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M7 7h10M7 12h6M7 17h10" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" />
+                            </svg>
                         </div>
-
-                        <div class="flex gap-4">
-                            <div class="mt-2 step-dot"></div>
-                            <div>
-                                <div class="font-semibold text-[color:var(--text)]">02 — Konzept</div>
-                                <p class="vs-muted text-sm mt-1">
-                                    Struktur, Wireframe, Text-Logik, Designrichtung. SEO + GEO werden in die Seitenlogik
-                                    integriert
-                                    (FAQ, Entitäten, klare Überschriften).
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <div class="mt-2 step-dot"></div>
-                            <div>
-                                <div class="font-semibold text-[color:var(--text)]">03 — Build</div>
-                                <p class="vs-muted text-sm mt-1">
-                                    Umsetzung, Performance, Semantik, Formulare/Automationen. Dazu: strukturierte Daten
-                                    (Schema/JSON-LD)
-                                    und Content-Blöcke für AI-Sichtbarkeit.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <div class="mt-2 step-dot"></div>
-                            <div>
-                                <div class="font-semibold text-[color:var(--text)]">04 — Launch & Pflege</div>
-                                <p class="vs-muted text-sm mt-1">
-                                    Go-live, Indexierung, Checks. Optional: laufende Optimierung von SEO + GEO, Inhalte
-                                    und Conversion,
-                                    basierend auf echten Daten.
-                                </p>
-                            </div>
-                        </div>
+                        <span class="text-sm font-semibold text-[color:var(--muted2)]">02</span>
                     </div>
-                </div>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Konzept</h3>
+                    <p class="mt-2 text-sm vs-muted">
+                        Struktur, Wireframe, Text-Logik, Designrichtung. SEO + GEO werden in die Seitenlogik integriert
+                        (FAQ, Entitäten, klare Überschriften).
+                    </p>
+                    <ul class="mt-3 grid gap-2 text-sm vs-muted">
+                        <li>• Sitemap & Hierarchie</li>
+                        <li>• Content-Plan</li>
+                        <li>• FAQ & AI-ready Absätze</li>
+                    </ul>
+                </article>
 
-                <!-- Deliverables -->
+                <article class="vs-card p-6 reveal">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="icon-premium" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M8 7l-4 5 4 5M16 7l4 5-4 5" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M10.5 19l3-14" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-semibold text-[color:var(--muted2)]">03</span>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Build</h3>
+                    <p class="mt-2 text-sm vs-muted">
+                        Umsetzung, Performance, Semantik, Formulare/Automationen. Dazu: strukturierte Daten
+                        (Schema/JSON-LD)
+                        und Content-Blöcke für AI-Sichtbarkeit.
+                    </p>
+                    <ul class="mt-3 grid gap-2 text-sm vs-muted">
+                        <li>• Performance & Accessibility</li>
+                        <li>• SEO-Basis & Local</li>
+                        <li>• Schema/JSON-LD</li>
+                    </ul>
+                </article>
+
+                <article class="vs-card p-6 reveal">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="icon-premium" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 3l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V7l8-4z" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linejoin="round" />
+                                <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-semibold text-[color:var(--muted2)]">04</span>
+                    </div>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Launch & Pflege</h3>
+                    <p class="mt-2 text-sm vs-muted">
+                        Go-live, Indexierung, Checks. Optional: laufende Optimierung von SEO + GEO, Inhalte und
+                        Conversion
+                        basierend auf echten Daten.
+                    </p>
+                    <ul class="mt-3 grid gap-2 text-sm vs-muted">
+                        <li>• Index/Checks</li>
+                        <li>• Updates/Monitoring</li>
+                        <li>• Iterative Optimierung</li>
+                    </ul>
+                </article>
+            </div>
+
+            <!-- Deliverables -->
+            <div class="mt-4 grid gap-4 lg:grid-cols-2">
                 <div class="vs-card p-6 md:p-7 reveal">
                     <div class="flex items-center gap-3">
                         <div class="icon-premium" aria-hidden="true">
@@ -617,12 +700,30 @@
                         <a class="btn-secondary flex-1 text-center" href="leistungen.html">Leistungen ansehen</a>
                     </div>
                 </div>
+
+                <div class="panel rounded-3xl p-7 md:p-8 reveal">
+                    <div class="text-xs font-semibold tracking-wide text-[color:var(--muted2)] uppercase">
+                        Hinweis
+                    </div>
+                    <h3 class="mt-2 font-semibold text-[color:var(--text)]">
+                        GEO ist Teil der Seitenlogik
+                    </h3>
+                    <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
+                        GEO funktioniert stabil, wenn Begriffe eindeutig sind, Inhalte sauber strukturiert sind
+                        und FAQs/Schema nicht widersprüchlich sind. Deshalb planen wir das früh — nicht am Ende.
+                    </p>
+                    <ul class="mt-4 grid gap-2 text-sm text-[color:var(--muted2)]">
+                        <li>• gleiche Aussagen sichtbar + im JSON-LD</li>
+                        <li>• klare Zuordnung: Leistung → Seite → CTA</li>
+                        <li>• kurze, zitierfähige Abschnitte</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <!-- =========================================================
-            04) FAQ (sichtbar) — wichtig für GEO
-        ========================================================== -->
+    04) FAQ
+    ========================================================== -->
         <section id="faq" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
             <div class="panel rounded-3xl p-7 md:p-10 reveal">
                 <div class="max-w-3xl">
@@ -687,8 +788,8 @@
         </section>
 
         <!-- =========================================================
-        05) CTA
-        ========================================================== -->
+    05) CTA
+    ========================================================== -->
         <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
             <div class="cta-panel rounded-3xl p-7 md:p-10 reveal">
                 <div class="grid md:grid-cols-12 gap-6 items-center">
@@ -712,14 +813,13 @@
     </main>
 
     <!-- =========================================================
-        FOOTER (как в index)
-    ========================================================== -->
+  FOOTER
+  ========================================================== -->
     <footer class="matte-footer">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
 
             <div class="grid gap-8 md:grid-cols-12">
 
-                <!-- Brand -->
                 <div class="md:col-span-5">
                     <div class="brand-title text-2xl font-semibold text-white">
                         <span class="footer-gradient">Visual</span> <span class="text-white">Struktur</span>
@@ -730,7 +830,6 @@
                     </p>
                 </div>
 
-                <!-- Navigation -->
                 <div class="md:col-span-3">
                     <h3 class="text-sm font-semibold text-white/90">Navigation</h3>
                     <ul class="mt-3 grid gap-2 text-sm text-white/70">
@@ -742,7 +841,6 @@
                     </ul>
                 </div>
 
-                <!-- Kontakt (Platzhalter) -->
                 <div class="md:col-span-4">
                     <h3 class="text-sm font-semibold text-white/90">Kontakt</h3>
                     <p class="mt-3 text-sm text-white/70">
@@ -769,84 +867,6 @@
         </div>
     </footer>
 
-    <!-- =========================================================
-        JS: Year + Mobile Menu + Shrink Nav + Reveal
-        (унифицировано по логике с index)
-    ========================================================== -->
-    <script>
-        // Footer year
-        (function () {
-            const y = document.getElementById('year');
-            if (y) y.textContent = new Date().getFullYear();
-        })();
-
-        // Mobile menu
-        (function () {
-            const btn = document.getElementById("menuBtn");
-            const menu = document.getElementById("mobileMenu");
-            if (!btn || !menu) return;
-
-            const closeMenu = () => {
-                menu.classList.add("hidden");
-                btn.setAttribute("aria-expanded", "false");
-            };
-
-            btn.addEventListener("click", () => {
-                const isOpen = btn.getAttribute("aria-expanded") === "true";
-                if (isOpen) closeMenu();
-                else {
-                    menu.classList.remove("hidden");
-                    btn.setAttribute("aria-expanded", "true");
-                }
-            });
-
-            // close on link click
-            menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
-
-            // close on ESC
-            window.addEventListener("keydown", (e) => {
-                if (e.key === "Escape") closeMenu();
-            });
-        })();
-
-        // Nav shrink
-        (function () {
-            const nav = document.getElementById('siteNav');
-            if (!nav) return;
-
-            const onScroll = () => {
-                const y = window.scrollY || 0;
-                nav.classList.toggle('nav-shrink', y > 8);
-                nav.classList.toggle('nav-shadow', y > 12);
-            };
-
-            onScroll();
-            window.addEventListener('scroll', onScroll, { passive: true });
-        })();
-
-        // Reveal (safe)
-        (function () {
-            const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-            const items = document.querySelectorAll(".reveal");
-            const showAll = () => items.forEach(el => el.classList.add("is-visible"));
-
-            if (prefersReduced || !("IntersectionObserver" in window)) {
-                showAll();
-                return;
-            }
-
-            const io = new IntersectionObserver((entries) => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) {
-                        e.target.classList.add("is-visible");
-                        io.unobserve(e.target);
-                    }
-                });
-            }, { threshold: 0.12 });
-
-            items.forEach(el => io.observe(el));
-        })();
-    </script>
 
 </body>
 
