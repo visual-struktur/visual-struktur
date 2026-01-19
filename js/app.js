@@ -95,15 +95,22 @@
     })();
 
     /* =========================
-        4) Mobile Menu Toggle
-        IDs:
-        - button#mobileBtn
-        - div#mobileMenu
-        (fallbacks: #menuBtn / #menuMenu)
-    ========================= */
+    4) Mobile Menu Toggle (universal)
+    Supports:
+    - #menuBtn + #mobileMenu   (dein prozess.html)
+    - #mobileBtn + #mobileMenu
+    - [data-mobile-btn] + [data-mobile-panel]
+========================= */
     (() => {
-        const btn = qs("#mobileBtn") || qs("#menuBtn");
-        const menu = qs("#mobileMenu");
+        const btn =
+            qs("#menuBtn") ||
+            qs("#mobileBtn") ||
+            qs("[data-mobile-btn]");
+
+        const menu =
+            qs("#mobileMenu") ||
+            qs("[data-mobile-panel]");
+
         if (!btn || !menu) return;
 
         const isOpen = () => btn.getAttribute("aria-expanded") === "true";
@@ -118,9 +125,12 @@
             btn.setAttribute("aria-expanded", "false");
         };
 
-        btn.addEventListener("click", () => (isOpen() ? close() : open()));
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            isOpen() ? close() : open();
+        });
 
-        // Close on link click
+        // Close on link click inside menu
         menu.addEventListener("click", (e) => {
             const a = e.target && e.target.closest ? e.target.closest("a") : null;
             if (a) close();

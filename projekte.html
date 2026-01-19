@@ -23,62 +23,81 @@
 
 <body id="top" class="bg-app text-[color:var(--text)]">
 
-    <!-- =========================
-        NAV (Glass + Shrink) — wie index.html
-    ========================= -->
-    <nav id="siteNav" class="w-full sticky top-0 z-50 glass-header">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 nav-wrap">
-            <div class="flex items-center justify-between gap-6">
+<!-- =========================================================
+  NAV (Global) — one version for ALL pages
+  - Active page highlighting via app.js (aria-current)
+  - Mobile menu toggle via #menuBtn + #mobileMenu
+========================================================== -->
+<nav id="siteNav" class="w-full sticky top-0 z-50 glass-header" aria-label="Hauptnavigation">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 nav-wrap">
+    <div class="flex items-center justify-between gap-6">
 
-                <!-- Brand -->
-                <a href="./index.html" class="flex items-center gap-3" aria-label="Startseite">
-                    <img src="images/logo-visual.png" alt="Visual Struktur Logo" class="h-10 md:h-11 w-auto shrink-0"
-                        decoding="async" />
-                    <div class="leading-tight">
-                        <div
-                            class="brand-title text-[1.15rem] md:text-[1.25rem] font-semibold text-[color:var(--text)]">
-                            <span class="brand-gradient">Visual</span> Struktur
-                        </div>
-                        <div class="text-xs md:text-sm text-[color:var(--muted2)]">
-                            Webdesign · Digitalisierung · SEO
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-7 text-sm font-medium text-[color:var(--muted)]">
-                    <a class="hover:opacity-90" href="./leistungen.html">Leistungen</a>
-                    <a class="hover:opacity-90" href="./branchen.html">Branchen</a>
-                    <a class="hover:opacity-90" href="./prozess.html">Prozess</a>
-                    <a class="hover:opacity-90" href="./projekte.html" aria-current="page">Projekte</a>
-                    <a class="hover:opacity-90" href="./kontakt.html">Kontakt</a>
-                </div>
-
-                <!-- Desktop CTA -->
-                <div class="hidden md:flex">
-                    <a href="./kontakt.html" class="btn-primary">Projekt anfragen</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="menuBtn" class="md:hidden btn-ghost px-4 py-2" aria-expanded="false"
-                    aria-controls="mobileMenu">
-                    Menü
-                </button>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="md:hidden hidden mt-3 panel rounded-2xl p-4">
-                <div class="flex flex-col gap-3 text-sm font-medium text-[color:var(--muted)]">
-                    <a class="hover:opacity-90" href="./leistungen.html">Leistungen</a>
-                    <a class="hover:opacity-90" href="./branchen.html">Branchen</a>
-                    <a class="hover:opacity-90" href="./prozess.html">Prozess</a>
-                    <a class="hover:opacity-90" href="./projekte.html" aria-current="page">Projekte</a>
-                    <a class="hover:opacity-90" href="./kontakt.html">Kontakt</a>
-                    <a href="./kontakt.html" class="btn-primary mt-2">Projekt anfragen</a>
-                </div>
-            </div>
+      <!-- Brand -->
+      <a href="./index.html" class="flex items-center gap-3" aria-label="Startseite">
+        <img
+          src="images/logo-visual.png"
+          alt="Visual Struktur Logo"
+          class="h-10 md:h-11 w-auto shrink-0"
+          decoding="async"
+        />
+        <div class="leading-tight">
+          <div class="brand-title text-[1.15rem] md:text-[1.25rem] font-semibold text-[color:var(--text)]">
+            <span class="brand-gradient">Visual</span> Struktur
+          </div>
+          <div class="text-xs md:text-sm text-[color:var(--muted2)]">
+            Webdesign · Digitalisierung · SEO + GEO
+          </div>
         </div>
-    </nav>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-[color:var(--muted)]">
+        <a class="hover:opacity-90" href="./leistungen.html">Leistungen</a>
+        <a class="hover:opacity-90" href="./branchen.html">Branchen</a>
+        <a class="hover:opacity-90" href="./prozess.html">Prozess</a>
+        <a class="hover:opacity-90" href="./projekte.html">Projekte</a>
+        <a class="hover:opacity-90" href="./kontakt.html">Kontakt</a>
+      </div>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:flex">
+        <a href="./kontakt.html" class="btn-primary">Projekt anfragen</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="menuBtn"
+        type="button"
+        class="md:hidden btn-ghost px-4 py-2"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        aria-label="Menü öffnen"
+      >
+        Menü
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobileMenu"
+      class="md:hidden hidden mt-3 panel rounded-2xl p-4"
+      role="dialog"
+      aria-label="Mobile Navigation"
+    >
+      <div class="flex flex-col gap-3 text-sm font-medium text-[color:var(--muted)]">
+        <a class="hover:opacity-90" href="./leistungen.html">Leistungen</a>
+        <a class="hover:opacity-90" href="./branchen.html">Branchen</a>
+        <a class="hover:opacity-90" href="./prozess.html">Prozess</a>
+        <a class="hover:opacity-90" href="./projekte.html">Projekte</a>
+        <a class="hover:opacity-90" href="./kontakt.html">Kontakt</a>
+
+        <a href="./kontakt.html" class="btn-primary mt-2">Projekt anfragen</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
 
 <!-- =========================
     HERO – Projekte (Bild oben + Content unten)
