@@ -1,14 +1,14 @@
 /* =========================================================
-  Visual Struktur — Global App JS
-  - Active nav highlighting (aria-current="page")
-  - Mobile menu toggle (universal + safe outside click)
-  - Sticky nav shrink + shadow
-  - Footer year
-  - Reveal on scroll (IntersectionObserver)
-  - FAQ: single-open per .faq group
-  Notes:
-  - Works even if elements are missing on some pages
-  - No dependencies
+    Visual Struktur — Global App JS
+    - Active nav highlighting (aria-current="page")
+    - Mobile menu toggle (universal + safe outside click)
+    - Sticky nav shrink + shadow
+    - Footer year
+    - Reveal on scroll (IntersectionObserver)
+    - FAQ: single-open per .faq group
+    Notes:
+    - Works even if elements are missing on some pages
+    - No dependencies
 ========================================================= */
 
 (() => {
@@ -28,17 +28,33 @@
         }
     };
 
-    const normalizePath = (p) => {
-        if (!p) return "";
-        p = p.split("#")[0].split("?")[0];
-        p = p.replace(/^\.\//, "").replace(/^\//, "");
-        return p.toLowerCase();
-    };
+    /* =========================
+        URL helpers (for nav active)
+            - Handles:
+            /            -> index.html
+            /index.html  -> index.html
+            /ru/         -> ru/index.html
+            /ru/index.html -> ru/index.html
+            - Ignores query/hash automatically in URL parsing
+    ========================= */
+    const normalizePathname = (pathname) => {
+        if (!pathname) return "index.html";
 
-    const getCurrentPage = () => {
-        const parts = (location.pathname || "").split("/").filter(Boolean);
-        const last = parts.length ? parts[parts.length - 1] : "";
-        return normalizePath(last || "index.html");
+        let p = String(pathname);
+
+        // ensure leading slash consistency
+        if (!p.startsWith("/")) p = `/${p}`;
+
+        // folder -> add index.html
+        if (p.endsWith("/")) p += "index.html";
+
+        // root -> /index.html
+        if (p === "/") p = "/index.html";
+
+        // remove leading slash
+        p = p.replace(/^\//, "");
+
+        return p.toLowerCase();
     };
 
     /* =========================
@@ -52,26 +68,29 @@
     /* =========================
         2) Active Navigation
         - sets aria-current="page" automatically
+        - IMPORTANT: This only marks the link. You still need CSS for visual highlight,
+        e.g. nav a[aria-current="page"] { ... }
     ========================= */
     safe("Active Navigation", () => {
-        const current = getCurrentPage();
+        const current = normalizePathname(location.pathname);
 
-        // nav + footer links
-        const links = qsa('a.nav-link, nav a[href$=".html"], footer a[href$=".html"]');
+        // nav + footer links + explicit .nav-link
+        const links = qsa('a.nav-link, nav a[href], footer a[href]');
 
         links.forEach((a) => {
             const hrefRaw = a.getAttribute("href") || "";
             if (!hrefRaw) return;
 
-            // ignore external links
-            if (/^https?:\/\//i.test(hrefRaw)) return;
+            // ignore: external links, pure anchors, tel/mail
+            if (/^(https?:)?\/\//i.test(hrefRaw)) return;
+            if (hrefRaw.startsWith("#")) return;
+            if (/^(tel:|mailto:)/i.test(hrefRaw)) return;
 
-            const href = normalizePath(hrefRaw);
-            const hrefParts = href.split("/").filter(Boolean);
-            const hrefLast = hrefParts.length ? hrefParts[hrefParts.length - 1] : "";
-            const hrefFile = hrefLast === "" ? "index.html" : hrefLast;
+            // Resolve relative href safely
+            const url = new URL(hrefRaw, location.origin);
+            const target = normalizePathname(url.pathname);
 
-            if (hrefFile === current) a.setAttribute("aria-current", "page");
+            if (target === current) a.setAttribute("aria-current", "page");
             else a.removeAttribute("aria-current");
         });
     });
@@ -138,7 +157,6 @@
             const willOpen = !isOpen();
             if (willOpen) {
                 justOpened = true;
-                // allow current click stack to finish
                 setTimeout(() => {
                     justOpened = false;
                 }, 0);
