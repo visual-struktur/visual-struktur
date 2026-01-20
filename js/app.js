@@ -1,7 +1,7 @@
 /* =========================================================
   Visual Struktur — Global App JS
   - Active nav highlighting (aria-current="page")
-  - Mobile menu toggle
+  - Mobile menu toggle (universal + safe outside click)
   - Sticky nav shrink + shadow
   - Footer year
   - Reveal on scroll (IntersectionObserver)
@@ -20,6 +20,14 @@
     const qs = (sel, root = document) => root.querySelector(sel);
     const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+    const safe = (name, fn) => {
+        try {
+            fn();
+        } catch (e) {
+            console.warn(`[VS] ${name} failed:`, e);
+        }
+    };
+
     const normalizePath = (p) => {
         if (!p) return "";
         p = p.split("#")[0].split("?")[0];
@@ -36,16 +44,16 @@
     /* =========================
         1) Footer Year
     ========================= */
-    (() => {
+    safe("Footer Year", () => {
         const y = qs("#year");
         if (y) y.textContent = String(new Date().getFullYear());
-    })();
+    });
 
     /* =========================
         2) Active Navigation
         - sets aria-current="page" automatically
     ========================= */
-    (() => {
+    safe("Active Navigation", () => {
         const current = getCurrentPage();
 
         // nav + footer links
@@ -66,12 +74,12 @@
             if (hrefFile === current) a.setAttribute("aria-current", "page");
             else a.removeAttribute("aria-current");
         });
-    })();
+    });
 
     /* =========================
         3) Sticky Nav: shrink + shadow
     ========================= */
-    (() => {
+    safe("Sticky Nav", () => {
         const nav = qs("#siteNav") || qs(".glass-header");
         if (!nav) return;
 
@@ -92,24 +100,20 @@
 
         update();
         window.addEventListener("scroll", onScroll, { passive: true });
-    })();
+    });
 
     /* =========================
-    4) Mobile Menu Toggle (universal)
-    Supports:
-    - #menuBtn + #mobileMenu   (dein prozess.html)
-    - #mobileBtn + #mobileMenu
-    - [data-mobile-btn] + [data-mobile-panel]
-========================= */
-    (() => {
-        const btn =
-            qs("#menuBtn") ||
-            qs("#mobileBtn") ||
-            qs("[data-mobile-btn]");
-
-        const menu =
-            qs("#mobileMenu") ||
-            qs("[data-mobile-panel]");
+        4) Mobile Menu Toggle (universal)
+        Supports:
+        - #menuBtn + #mobileMenu
+        - #mobileBtn + #mobileMenu
+        - [data-mobile-btn] + [data-mobile-panel]
+        Fix:
+        - Prevent "open then instantly close" via outside click
+    ========================= */
+    safe("Mobile Menu", () => {
+        const btn = qs("#menuBtn") || qs("#mobileBtn") || qs("[data-mobile-btn]");
+        const menu = qs("#mobileMenu") || qs("[data-mobile-panel]");
 
         if (!btn || !menu) return;
 
@@ -125,9 +129,23 @@
             btn.setAttribute("aria-expanded", "false");
         };
 
+        // Important: ignore the very next outside-click right after opening
+        let justOpened = false;
+
         btn.addEventListener("click", (e) => {
             e.preventDefault();
-            isOpen() ? close() : open();
+
+            const willOpen = !isOpen();
+            if (willOpen) {
+                justOpened = true;
+                // allow current click stack to finish
+                setTimeout(() => {
+                    justOpened = false;
+                }, 0);
+                open();
+            } else {
+                close();
+            }
         });
 
         // Close on link click inside menu
@@ -143,17 +161,20 @@
 
         // Close on outside click
         document.addEventListener("click", (e) => {
+            if (justOpened) return;
             if (!isOpen()) return;
+
             const t = e.target;
             if (t === btn || btn.contains(t) || menu.contains(t)) return;
+
             close();
         });
-    })();
+    });
 
     /* =========================
         5) Reveal on scroll
     ========================= */
-    (() => {
+    safe("Reveal", () => {
         const items = qsa(".reveal");
         if (!items.length) return;
 
@@ -176,12 +197,12 @@
         );
 
         items.forEach((el) => io.observe(el));
-    })();
+    });
 
     /* =========================
         6) FAQ: open only one per .faq group
     ========================= */
-    (() => {
+    safe("FAQ single-open", () => {
         qsa(".faq").forEach((faqRoot) => {
             faqRoot.addEventListener(
                 "toggle",
@@ -196,5 +217,5 @@
                 true
             );
         });
-    })();
+    });
 })();
