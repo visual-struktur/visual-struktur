@@ -1085,3 +1085,10 @@ button:focus-visible {
     white-space: nowrap;
     border: 0;
 }
+/* MOBILE: Prozess-Hero bleibt anthrazit trotz .panel */
+@media (max-width: 1023.98px){
+header .panel.bg-\[\#0B0F16\]{
+    background: #0B0F16 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+}
