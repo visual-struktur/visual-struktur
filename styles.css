@@ -215,38 +215,38 @@ body {
 }
 
 /* =========================================================
-    NAV
-========================================================= */
-
-.glass-header {
-    background: rgba(255, 255, 255, 0.72);
-    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-    backdrop-filter: blur(14px);
-}
-
-.nav-wrap {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    transition: padding .22s ease;
-}
-
-.nav-shrink .nav-wrap {
-    padding-top: 6px;
-    padding-bottom: 6px;
-}
-
-.nav-shadow {
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
-}
-
-/* =========================================================
     NAV — Active Link Highlight (aria-current="page")
-    Работает с JS: a.setAttribute("aria-current","page")
+    Цель:
+    - НЕ трогаем логотип/бренд
+    - Пункты меню читаемые (не “как фон”)
+    - Active заметный (не прозрачный)
+    - Работает с JS: aria-current="page"
 ========================================================= */
 
-/* базовый вид ссылок в nav (мягкий premium pill) */
-nav a,
-nav .nav-link {
+/* -------------------------
+   0) BRAND / LOGO (не pill)
+   Добавь на ссылку логотипа class="brand-link"
+------------------------- */
+nav a.brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+nav a.brand-link::after {
+    display: none;
+}
+
+/* -------------------------
+   1) BASE: только пункты меню
+------------------------- */
+nav a.nav-link {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -255,32 +255,46 @@ nav .nav-link {
     padding: 10px 12px;
     border-radius: 999px;
 
-    color: rgba(15, 23, 42, 0.78);
+    /* важное: читаемо на стекле */
+    color: rgba(15, 23, 42, 0.94);
     font-weight: 800;
     text-decoration: none;
+
+    /* по умолчанию без плашки */
+    background: transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
 
     transition: background .18s ease, border-color .18s ease, box-shadow .18s ease, color .18s ease;
 }
 
-/* hover */
-nav a:hover,
-nav .nav-link:hover {
-    background: rgba(17, 24, 39, 0.06);
-    color: rgba(15, 23, 42, 0.92);
+/* -------------------------
+   2) HOVER: мягкая плашка
+------------------------- */
+nav a.nav-link:hover {
+    color: rgba(15, 23, 42, 0.98);
+    background-color: rgba(255, 255, 255, 0.72);
+    border-color: rgba(15, 23, 42, 0.10);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-/* ACTIVE (текущая страница) — ТОЛЬКО пункты меню */
-nav a.nav-link[aria-current="page"],
-nav .nav-link[aria-current="page"] {
-    color: var(--text);
-    background: rgba(17, 24, 39, 0.08);
-    border: 1px solid rgba(15, 23, 42, 0.12);
-    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+/* -------------------------
+   3) ACTIVE: плотная заметная плашка
+   (ставится JS-ом через aria-current="page")
+------------------------- */
+nav a.nav-link[aria-current="page"] {
+    color: rgba(15, 23, 42, 0.98);
+    background-color: rgba(255, 255, 255, 0.92);
+    border-color: rgba(15, 23, 42, 0.14);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.10);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-/* тонкая “премиум-линия” снизу внутри pill — ТОЛЬКО пункты меню */
-nav a.nav-link[aria-current="page"]::after,
-nav .nav-link[aria-current="page"]::after {
+/* тонкая “премиум-линия” снизу (только active) */
+nav a.nav-link[aria-current="page"]::after {
     content: "";
     position: absolute;
     left: 14px;
@@ -288,18 +302,23 @@ nav .nav-link[aria-current="page"]::after {
     bottom: 6px;
     height: 2px;
     border-radius: 999px;
-    background: linear-gradient(90deg, rgba(17,24,39,0.00), rgba(17,24,39,0.55), rgba(17,24,39,0.00));
+    background: linear-gradient(90deg,
+            rgba(17, 24, 39, 0.00),
+            rgba(17, 24, 39, 0.55),
+            rgba(17, 24, 39, 0.00));
     opacity: 0.9;
     pointer-events: none;
 }
 
-/* Mobile menu: если там ссылки без .nav-link — оставляем как было */
+/* -------------------------
+   4) MOBILE MENU
+   Если в mobile-menu ссылки без .nav-link — оставляем как есть
+------------------------- */
 #mobileMenu a[aria-current="page"] {
-    background: rgba(17, 24, 39, 0.08);
-    border: 1px solid rgba(15, 23, 42, 0.12);
+    background-color: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.14);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
 }
-
-
 /* =========================================================
     Mobile Fix: Nav darf NICHT in der Höhe schrumpfen
     Grund: sonst rutscht der Content (Hero) und wirkt "ruckelnd".
