@@ -65,35 +65,47 @@
         if (y) y.textContent = String(new Date().getFullYear());
     });
 
-    /* =========================
-        2) Active Navigation
-        - sets aria-current="page" automatically
-        - IMPORTANT: This only marks the link. You still need CSS for visual highlight,
-        e.g. nav a[aria-current="page"] { ... }
-    ========================= */
-    safe("Active Navigation", () => {
-        const current = normalizePathname(location.pathname);
+    // =========================
+    // Active nav highlighting (GitHub Pages safe)
+    // =========================
+    const normalizePath = (p) => {
+        if (!p) return "";
+        // remove hash + query
+        p = p.split("#")[0].split("?")[0];
 
-        // nav + footer links + explicit .nav-link
-        const links = qsa('a.nav-link, nav a[href], footer a[href]');
+        // if it's a full URL, take pathname
+        try { p = new URL(p, window.location.origin).pathname; } catch (e) { }
 
-        links.forEach((a) => {
-            const hrefRaw = a.getAttribute("href") || "";
-            if (!hrefRaw) return;
+        // remove leading slash
+        p = p.replace(/^\/+/, "");
 
-            // ignore: external links, pure anchors, tel/mail
-            if (/^(https?:)?\/\//i.test(hrefRaw)) return;
-            if (hrefRaw.startsWith("#")) return;
-            if (/^(tel:|mailto:)/i.test(hrefRaw)) return;
+        // remove GitHub Pages repo prefix (e.g. "visual-struktur/")
+        const repo = window.location.pathname.split("/")[1]; // "visual-struktur"
+        if (repo && p.startsWith(repo + "/")) p = p.slice(repo.length + 1);
 
-            // Resolve relative href safely
-            const url = new URL(hrefRaw, location.origin);
-            const target = normalizePathname(url.pathname);
+        // treat root as index.html
+        if (p === "" || p.endsWith("/")) p += "index.html";
 
-            if (target === current) a.setAttribute("aria-current", "page");
-            else a.removeAttribute("aria-current");
+        return p.toLowerCase();
+    };
+
+    (() => {
+        const current = normalizePath(window.location.pathname);
+
+        document.querySelectorAll('a.nav-link[href]').forEach((a) => {
+            const href = a.getAttribute("href");
+            const target = normalizePath(href);
+
+            if (target && target === current) {
+                a.classList.add("is-active");
+                a.setAttribute("aria-current", "page");
+            } else {
+                a.classList.remove("is-active");
+                a.removeAttribute("aria-current");
+            }
         });
-    });
+    })();
+
 
     /* =========================
         3) Sticky Nav: shrink + shadow
