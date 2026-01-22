@@ -44,13 +44,14 @@ body {
 /* =========================================================
     GLOBAL BACKGROUND (единый)
 ========================================================= */
-.bg-app {
-    background:
-        radial-gradient(1200px 650px at 18% -10%, rgba(59, 130, 246, .10), rgba(255, 255, 255, 0) 60%),
-        radial-gradient(1100px 700px at 82% -12%, rgba(99, 102, 241, .09), rgba(255, 255, 255, 0) 62%),
-        radial-gradient(900px 700px at 55% 105%, rgba(56, 189, 248, .08), rgba(255, 255, 255, 0) 58%),
-        linear-gradient(180deg, #f7f9fd 0%, #f3f6fb 52%, #f7f9fd 100%);
+.bg-app{
+  background:
+    radial-gradient(1000px 620px at 50% -10%, rgba(56,189,248,.14), transparent 60%),
+    radial-gradient(900px 600px at 20% 15%, rgba(99,102,241,.09), transparent 55%),
+    linear-gradient(180deg, #fbfcff 0%, #f3f6fb 45%, #eef2f9 100%);
+  background-attachment: fixed;
 }
+
 
 .brand-title {
     font-family: var(--font-display);
