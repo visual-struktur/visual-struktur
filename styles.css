@@ -1,14 +1,14 @@
 /* =========================================================
-  Visual Struktur — Premium Light (Lux) — FULL CSS (COMPLETE)
-  single-file, production-ready, no duplicates
+    Visual Struktur — Premium Light (Lux) — FULL CSS (COMPLETE)
+    single-file, production-ready, no duplicates
 ========================================================= */
 
 /* =========================================================
-  PART 1/2
+    PART 1/2
 ========================================================= */
 
 /* =========================================================
-  BASE RESET / SAFETY
+    BASE RESET / SAFETY
 ========================================================= */
 *,
 *::before,
@@ -60,7 +60,7 @@ a:hover {
 }
 
 /* =========================================================
-  TOKENS / ROOT
+    TOKENS / ROOT
 ========================================================= */
 :root {
     --font-ui: 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
@@ -84,7 +84,7 @@ a:hover {
 }
 
 /* =========================================================
-  GLOBAL BACKGROUND (единый)
+    GLOBAL BACKGROUND (единый)
 ========================================================= */
 .bg-app {
     background:
@@ -110,7 +110,7 @@ a:hover {
 }
 
 /* =========================================================
-  TYPOGRAPHY HELPERS (чтобы не пропадали стили)
+    TYPOGRAPHY HELPERS (чтобы не пропадали стили)
 ========================================================= */
 .h-display {
     font-family: var(--font-display);
@@ -141,7 +141,7 @@ a:hover {
 }
 
 /* =========================================================
-  PANELS / CARDS (glass)
+    PANELS / CARDS (glass)
 ========================================================= */
 .panel {
     background: var(--surface);
@@ -159,7 +159,7 @@ a:hover {
 }
 
 /* =========================================================
-  HEADER (glass)
+    HEADER (glass)
 ========================================================= */
 .glass-header {
     position: sticky;
@@ -232,7 +232,7 @@ a:hover {
 }
 
 /* =========================================================
-  NAV LINKS (desktop) + active aria-current
+    NAV LINKS (desktop) + active aria-current
 ========================================================= */
 nav a.brand-link {
     display: inline-flex;
@@ -311,7 +311,7 @@ nav a.nav-link[aria-current="page"]::after {
 }
 
 /* =========================================================
-  MOBILE MENU (если используешь #mobileMenu + кнопка)
+    MOBILE MENU (если используешь #mobileMenu + кнопка)
 ========================================================= */
 #mobileMenu {
     border-radius: 20px;
@@ -346,7 +346,7 @@ nav a.nav-link[aria-current="page"]::after {
 }
 
 /* =========================================================
-  BUTTONS
+    BUTTONS
 ========================================================= */
 .btn-primary {
     display: inline-flex;
@@ -429,7 +429,7 @@ button:focus-visible {
 }
 
 /* =========================================================
-  BADGES
+    BADGES
 ========================================================= */
 .hero-badge {
     display: inline-flex;
@@ -489,7 +489,7 @@ button:focus-visible {
 }
 
 /* =========================================================
-  REVEAL ON SCROLL (для .reveal + js класс .js)
+    REVEAL ON SCROLL (для .reveal + js класс .js)
 ========================================================= */
 html.js .reveal {
     opacity: 0;
@@ -503,7 +503,7 @@ html.js .reveal.is-visible {
 }
 
 /* =========================================================
-  HERO HELPERS (прозрачный)
+    HERO HELPERS (прозрачный)
 ========================================================= */
 .hero-bg {
     background: transparent !important;
@@ -518,11 +518,11 @@ html.js .reveal.is-visible {
 }
 
 /* =========================================================
-  PART 2/2
+    PART 2/2
 ========================================================= */
 
 /* =========================================================
-  HERO PANEL — BASE + VARIANTS
+    HERO PANEL — BASE + VARIANTS
 ========================================================= */
 .hero-wrap {
     padding-top: 18px;
@@ -584,9 +584,9 @@ html.js .reveal.is-visible {
 }
 
 /* =========================================================
-  START HERO (hero-panel--full)
-  Desktop/Tablet: contain (картинка целиком)
-  Mobile: cover (16:9)
+    START HERO (hero-panel--full)
+    Desktop/Tablet: contain (картинка целиком)
+    Mobile: cover (16:9)
 ========================================================= */
 .hero-panel--full .hero-panel__bg {
     object-fit: contain;
@@ -630,6 +630,24 @@ html.js .reveal.is-visible {
         aspect-ratio: 4 / 3;
     }
 }
+/* Mobile: zoom hero image inside the visual card */
+@media (max-width: 640px) {
+  .hero-panel {
+    overflow: hidden; /* важно, чтобы zoom не вылезал за края */
+  }
+
+  .hero-panel__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* приближение */
+    transform: scale(1.18) translateY(6%);
+    transform-origin: 50% 50%;
+    will-change: transform;
+  }
+}
+
 
 /* =========================================================
   PAGE HERO (Leistungen) hero-panel--lightleft
