@@ -100,7 +100,7 @@ a:hover {
     BRAND (Header) — logo-like typography
     (REPLACES old .brand-title { font-family: var(--font-display); })
 ========================================================= */
-.brand-title{
+.brand-title {
     font-family: var(--font-brand);
     font-weight: 600;
     letter-spacing: .08em;
@@ -110,11 +110,11 @@ a:hover {
     text-rendering: geometricPrecision;
 }
 
-.brand-title .brand-gradient{
+.brand-title .brand-gradient {
     letter-spacing: .10em;
 }
 
-.brand-title .brand-plain{
+.brand-title .brand-plain {
     font-weight: 500;
     letter-spacing: .08em;
 }
@@ -131,18 +131,20 @@ a:hover {
 .brand-subtitle {
     font-family: var(--font-brand);
     font-weight: 500;
-     /* было 500 */
+    /* было 500 */
     color: rgba(15, 23, 42, .66);
-     /* чуть контрастнее, чем muted2 */
+    /* чуть контрастнее, чем muted2 */
     letter-spacing: .12em;
-     /* чуть меньше, чтобы читалось */
+    /* чуть меньше, чтобы читалось */
     line-height: 1.15;
     text-transform: none;
     white-space: nowrap;
 }
 
-@media (max-width: 360px){
-    .brand-subtitle{ white-space: normal; }
+@media (max-width: 360px) {
+    .brand-subtitle {
+        white-space: normal;
+    }
 }
 
 .text-balance {
@@ -671,22 +673,24 @@ html.js .reveal.is-visible {
         aspect-ratio: 4 / 3;
     }
 }
+
 /* Mobile: zoom hero image inside the visual card */
 @media (max-width: 640px) {
-  .hero-panel {
-    overflow: hidden; /* важно, чтобы zoom не вылезал за края */
-  }
+    .hero-panel {
+        overflow: hidden;
+        /* важно, чтобы zoom не вылезал за края */
+    }
 
-  .hero-panel__bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    .hero-panel__bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
 
-    /* приближение */
-    transform: scale(1.18) translateY(6%);
-    transform-origin: 50% 50%;
-    will-change: transform;
-  }
+        /* приближение */
+        transform: scale(1.18) translateY(6%);
+        transform-origin: 50% 50%;
+        will-change: transform;
+    }
 }
 
 
@@ -1469,87 +1473,92 @@ html.js .reveal.is-visible {
 .matte-footer * {
     opacity: 1;
 }
+
 /* =========================================================
    [VS-FIX] PROZESS — Mobile hero must be anthrazit (no Tailwind hex utils)
    Reason: .panel is light glass; Tailwind bg-[#...] may be purged from output.css
 ========================================================= */
 
 .page-prozess header .panel {
-  background: #0B0F16 !important;
-  border-color: rgba(255,255,255,.10) !important;
-  box-shadow: 0 34px 120px rgba(2,6,23,.22) !important;
+    background: #0B0F16 !important;
+    border-color: rgba(255, 255, 255, .10) !important;
+    box-shadow: 0 34px 120px rgba(2, 6, 23, .22) !important;
 }
 
 /* Desktop: panel can stay transparent because you have full-bg image */
 @media (min-width: 1024px) {
-  .page-prozess header .panel {
-    background: transparent !important;
-  }
+    .page-prozess header .panel {
+        background: transparent !important;
+    }
 }
 
 /* Fix the “fade to anthrazit” strip under the mobile image
    (Tailwind class to-[#0B0F16] may not exist in output.css) */
 .page-prozess .vs-hero-fade {
-  background: linear-gradient(to bottom, rgba(0,0,0,0), #0B0F16) !important;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0B0F16) !important;
 }
+
 /* =========================================================
    PROZESS HERO — hard safe colors (no Tailwind hex utils)
 ========================================================= */
 
 /* сама панель: на мобиле тёмная, на lg — прозрачная (как у тебя) */
 .vs-prozess-hero {
-  background: #0B0F16 !important;
-  border-color: rgba(255,255,255,.10) !important;
+    background: #0B0F16 !important;
+    border-color: rgba(255, 255, 255, .10) !important;
 }
 
 @media (min-width: 1024px) {
-  .vs-prozess-hero {
-    background: transparent !important;
-  }
+    .vs-prozess-hero {
+        background: transparent !important;
+    }
 }
 
 /* контентный блок: на мобиле тёмная подложка, на lg — прозрачный */
 .vs-prozess-content {
-  background: #0B0F16;
+    background: #0B0F16;
 }
+
 @media (min-width: 1024px) {
-  .vs-prozess-content {
-    background: transparent;
-  }
+    .vs-prozess-content {
+        background: transparent;
+    }
 }
 
 /* fade-полоска под картинкой на мобиле */
 .vs-prozess-fade {
-  background: linear-gradient(to bottom, rgba(0,0,0,0), #0B0F16);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0B0F16);
 }
 
 /* био-плашка на мобиле */
 .vs-prozess-bio {
-  background: #0A0D14;
+    background: #0A0D14;
 }
+
 /* =========================================================
    PROZESS — FIX (Tailwind-arbitrary safe)
    Делает мобилу тёмной независимо от Tailwind билда
 ========================================================= */
 
-.page-prozess .vs-prozess-hero.panel{
-  background: #0B0F16 !important;              /* перекрываем .panel светлый glass */
-  border-color: rgba(255,255,255,.10) !important;
+.page-prozess .vs-prozess-hero.panel {
+    background: #0B0F16 !important;
+    /* перекрываем .panel светлый glass */
+    border-color: rgba(255, 255, 255, .10) !important;
 }
 
 /* Контент-область на мобиле должна быть тёмной “плитой” */
-.page-prozess .vs-prozess-content{
-  background: #0B0F16 !important;
+.page-prozess .vs-prozess-content {
+    background: #0B0F16 !important;
 }
 
 /* На десктопе контент поверх картинки — прозрачный */
-@media (min-width: 1024px){
-  .page-prozess .vs-prozess-content{
-    background: transparent !important;
-  }
+@media (min-width: 1024px) {
+    .page-prozess .vs-prozess-content {
+        background: transparent !important;
+    }
 }
 
 /* Плавный переход снизу картинки в тёмную плиту */
-.page-prozess .vs-prozess-fade{
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #0B0F16 100%) !important;
+.page-prozess .vs-prozess-fade {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0B0F16 100%) !important;
 }
