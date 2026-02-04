@@ -178,3 +178,22 @@ dialog.vs-sheet::backdrop{ background: rgba(0,0,0,.60); }
   #servicesRow, #timelineRow, #budgetRow,
   .svc-chip, .sheet-opt { transition: none !important; }
 }
+/* FIX: selected service row must stay light (no dark stripe) */
+.svc-chip {
+  background: rgba(255,255,255,.92) !important;
+  border: 1px solid rgba(15,23,42,.14) !important;
+  color: rgba(15,23,42,.92) !important;
+}
+
+.svc-chip:has(input:checked) {
+  background: rgba(255,255,255,.98) !important;
+  border-color: rgba(37,99,235,.30) !important;
+  box-shadow:
+    0 14px 34px rgba(15,23,42,.10),
+    0 0 0 3px rgba(37,99,235,.10) !important;
+}
+
+/* если внутри есть текстовый span/label — фикс цвета */
+.svc-chip * {
+  color: inherit !important;
+}

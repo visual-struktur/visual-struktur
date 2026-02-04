@@ -2,518 +2,505 @@
 <html lang="de" class="h-full">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Safe reveal mode -->
-    <script>document.documentElement.classList.add('js');</script>
+  <!-- Safe reveal mode -->
+  <script>document.documentElement.classList.add('js');</script>
 
-    <title>Visual Struktur — Webdesign & Digitalisierung | Hameln</title>
-    <meta name="description"
-        content="Premium Webdesign, Digitalisierung und SEO: klare Struktur, schnelle Performance und anfragenorientiertes Design." />
+  <title>Visual Struktur — Premium Webdesign & Digitale Systeme | Hameln</title>
+  <meta name="description"
+    content="Premium Webdesign, digitale Systeme und SEO/Local: klare Struktur, schnelle Performance, messbare Anfragen." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#f6f8fb" />
 
-    <!-- Fonts: Brand (logo-like) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts: Brand (logo-like) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CDN + Custom CSS -->
-    <link rel="stylesheet" href="./css/output.css">
-    <link rel="stylesheet" href="./styles.css" />
+  <!-- Tailwind + Custom CSS -->
+  <link rel="stylesheet" href="./css/output.css">
+  <link rel="stylesheet" href="./styles.css" />
 
-    <script src="./js/app.js" defer></script>
+  <script src="./js/app.js" defer></script>
 
-
-    <!-- =========================
-        GEO: FAQ Schema (JSON-LD)
-    ========================= -->
-    <script type="application/ld+json">
-    {
+  <!-- =========================
+      GEO: FAQ Schema (JSON-LD)
+  ========================= -->
+  <script type="application/ld+json">
+  {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-    {
+      {
         "@type": "Question",
         "name": "Was macht Visual Struktur?",
         "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Visual Struktur entwickelt strukturierte Websites und digitale Workflows für KMU in Deutschland — performance-stark, SEO-sauber und erweiterbar. Fokus: klare Informationsarchitektur, messbare Anfragen und sinnvolle Automatisierung."
+          "@type": "Answer",
+          "text": "Visual Struktur entwickelt Premium Websites und digitale Strecken für KMU in Deutschland — klar strukturiert, performance-stark und SEO-sauber. Ziel: messbare Anfragen statt nur „online sein“."
         }
-        },
-    {
+      },
+      {
         "@type": "Question",
         "name": "Was ist GEO und warum ist es wichtig?",
         "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "GEO (Generative Engine Optimization) optimiert Inhalte so, dass KI-Systeme sie verstehen und in Antworten zitieren. GEO ergänzt SEO: SEO liefert Sichtbarkeit über Rankings, GEO liefert Sichtbarkeit in KI-Antworten."
+          "@type": "Answer",
+          "text": "GEO (Generative Engine Optimization) macht Inhalte für KI-Systeme verständlich, damit sie korrekt in Antworten genutzt werden. GEO ergänzt SEO: SEO bringt Rankings, GEO bringt Sichtbarkeit in KI-Antworten."
         }
-        },
-    {
+      },
+      {
         "@type": "Question",
         "name": "Wie läuft ein Projekt ab?",
         "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Typischer Ablauf: Analyse → Konzept → Build → Launch. Ziel ist ein sauberer, wartbarer Aufbau mit Performance- und SEO-Basis sowie klarer Übergabe."
+          "@type": "Answer",
+          "text": "Analyse → Konzept → Build → Launch. Klare Schritte, wenig Meetings, saubere Übergabe."
         }
-        },
-    {
+      },
+      {
         "@type": "Question",
         "name": "Übernehmt ihr Hosting und Wartung?",
         "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Optional ja. Wichtig sind ein stabiles Setup, Backups, Updates und klare Verantwortlichkeiten für Domain, DNS und Hosting."
+          "@type": "Answer",
+          "text": "Optional ja. Wichtig sind sauberes Setup, Updates, Backups und klare Zuständigkeiten (Domain/DNS/Hosting)."
         }
-        },
-    {
+      },
+      {
         "@type": "Question",
         "name": "Was kostet eine Website bei Visual Struktur?",
         "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Kosten hängen vom Umfang ab (One-Pager vs. Mehrseiten-System, Inhalte, Integrationen). Nach einer kurzen Erst-Analyse kann der Rahmen konkret genannt werden."
+          "@type": "Answer",
+          "text": "Abhängig vom Umfang (One-Pager, Mehrseiten-System, Inhalte, Integrationen). Nach einer kurzen Erst-Analyse nennen wir einen klaren Rahmen."
         }
-        }
+      }
     ]
-    }
-</script>
+  }
+  </script>
 </head>
 
 <body id="top" class="bg-app text-[color:var(--text)] page-home">
 
+  <!-- =========================================================
+      NAV (Index)
+  ========================================================== -->
+  <nav id="siteNav" class="w-full sticky top-0 z-50 glass-header" aria-label="Hauptnavigation">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 nav-wrap">
+      <div class="flex items-center justify-between gap-6">
 
-    <!-- =========================================================
-                NAV (Index) — wie in prozess.html
-    ========================================================== -->
-    <nav id="siteNav" class="w-full sticky top-0 z-50 glass-header" aria-label="Hauptnavigation">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 nav-wrap">
-            <div class="flex items-center justify-between gap-6">
-
-                <!-- Brand -->
-                <a href="./index.html" class="flex items-center gap-3" aria-label="Startseite">
-                    <img src="images/logo-visual.png" alt="Visual Struktur Logo"
-                        class="h-12 md:h-14 lg:h-16 w-auto shrink-0" />
-                    <div class="leading-tight">
-                        <div class="brand-title text-[1.25rem] md:text-2xl font-semibold text-[color:var(--text)]">
-                            <span class="brand-gradient">Visual</span> Struktur
-                        </div>
-                        <div class="text-xs md:text-sm text-[color:var(--muted2)]">
-                            Webdesign · Digitalisierung · SEO + GEO
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-3 lg:gap-5">
-                    <a href="leistungen.html" class="nav-link px-3 py-2">Leistungen</a>
-                    <a href="branchen.html" class="nav-link px-3 py-2">Branchen</a>
-                    <a href="prozess.html" class="nav-link px-3 py-2">Prozess</a>
-                    <a href="projekte.html" class="nav-link px-3 py-2">Projekte</a>
-                    <a href="kontakt.html" class="nav-link px-3 py-2">Kontakt</a>
-                </div>
-
-                <!-- Desktop CTA -->
-                <div class="hidden md:flex">
-                    <a href="kontakt.html" class="btn-primary">Projekt anfragen</a>
-                </div>
-
-                <!-- Mobile Button -->
-                <button id="menuBtn" type="button"
-                    class="md:hidden inline-flex items-center justify-center rounded-xl px-3 py-2 border border-white/15 bg-white/10 text-[color:var(--text)]"
-                    aria-controls="mobileMenu" aria-expanded="false" aria-label="Menü öffnen">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-                    </svg>
-                </button>
+        <!-- Brand -->
+        <a href="./index.html" class="flex items-center gap-3" aria-label="Startseite">
+          <img src="images/logo-visual.png" alt="Visual Struktur Logo" class="h-12 md:h-14 lg:h-16 w-auto shrink-0" />
+          <div class="leading-tight">
+            <div class="brand-title text-[1.25rem] md:text-2xl font-semibold text-[color:var(--text)]">
+              <span class="brand-gradient">Visual</span> Struktur
             </div>
-
-            <!-- Mobile Menu Panel -->
-            <div id="mobileMenu" class="md:hidden hidden mt-3 pb-4" role="dialog" aria-label="Mobile Navigation">
-                <div class="rounded-2xl border border-white/12 bg-white/10 backdrop-blur p-3">
-                    <div class="grid gap-1">
-                        <a href="leistungen.html" class="nav-link px-3 py-2">Leistungen</a>
-                        <a href="branchen.html" class="nav-link px-3 py-2">Branchen</a>
-                        <a href="prozess.html" class="nav-link px-3 py-2">Prozess</a>
-                        <a href="projekte.html" class="nav-link px-3 py-2">Projekte</a>
-                        <a href="kontakt.html" class="nav-link px-3 py-2">Kontakt</a>
-                    </div>
-
-                    <div class="mt-3">
-                        <a href="kontakt.html" class="btn-primary w-full text-center block">Projekt anfragen</a>
-                    </div>
-                </div>
+            <div class="text-xs md:text-sm text-[color:var(--muted2)]">
+              Webdesign · Digitalisierung · SEO + GEO
             </div>
+          </div>
+        </a>
 
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-3 lg:gap-5">
+          <a href="leistungen.html" class="nav-link px-3 py-2">Leistungen</a>
+          <a href="branchen.html" class="nav-link px-3 py-2">Branchen</a>
+          <a href="prozess.html" class="nav-link px-3 py-2">Prozess</a>
+          <a href="projekte.html" class="nav-link px-3 py-2">Projekte</a>
+          <a href="kontakt.html" class="nav-link px-3 py-2">Kontakt</a>
         </div>
-    </nav>
 
-    <!-- =========================
-        HERO (Full-Width Visual) + Intro Text + CTA
-    ========================= -->
-<header class="hero-shell" aria-label="Hero">
+        <!-- Desktop CTA -->
+        <div class="hidden md:flex">
+          <a href="kontakt.html" class="btn-primary">Projekt anfragen</a>
+        </div>
+
+        <!-- Mobile Button -->
+        <button id="menuBtn" type="button"
+          class="md:hidden inline-flex items-center justify-center rounded-xl px-3 py-2 border border-white/15 bg-white/10 text-[color:var(--text)]"
+          aria-controls="mobileMenu" aria-expanded="false" aria-label="Menü öffnen">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Panel -->
+      <div id="mobileMenu" class="md:hidden hidden mt-3 pb-4" role="dialog" aria-label="Mobile Navigation">
+        <div class="rounded-2xl border border-white/12 bg-white/10 backdrop-blur p-3">
+          <div class="grid gap-1">
+            <a href="leistungen.html" class="nav-link px-3 py-2">Leistungen</a>
+            <a href="branchen.html" class="nav-link px-3 py-2">Branchen</a>
+            <a href="prozess.html" class="nav-link px-3 py-2">Prozess</a>
+            <a href="projekte.html" class="nav-link px-3 py-2">Projekte</a>
+            <a href="kontakt.html" class="nav-link px-3 py-2">Kontakt</a>
+          </div>
+
+          <div class="mt-3">
+            <a href="kontakt.html" class="btn-primary w-full text-center block">Projekt anfragen</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- =========================
+      HERO (Full Visual) + Premium Intro
+  ========================= -->
+  <header class="hero-shell" aria-label="Hero">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 hero-wrap">
 
-        <!-- HERO VISUAL CARD -->
-        <section class="hero-panel hero-panel--full has-hairline" aria-label="Visual Struktur Hero">
-            <img src="./images/hero-visual-dark.webp" alt="Visual Struktur – Webdesign, Digitalisierung, SEO + GEO"
-                class="hero-panel__bg" width="1600" height="900" loading="eager" decoding="async"
-                fetchpriority="high" />
-        </section>
+      <!-- HERO VISUAL CARD -->
+      <section class="hero-panel hero-panel--full has-hairline" aria-label="Visual Struktur Hero">
+        <img src="./images/hero-visual-dark.webp" alt="Visual Struktur – Premium Webdesign, Systeme, SEO + GEO"
+          class="hero-panel__bg" width="1600" height="900" loading="eager" decoding="async" fetchpriority="high" />
+      </section>
 
-<!-- INTRO CARD (Premium copy + CTA) -->
-<section class="hero-intro" aria-label="Intro">
-    <div class="hero-intro__card">
-        <h1 class="hero-intro__title">
-            Premium Webdesign, das Kunden gewinnt.
-        </h1>
+      <!-- INTRO CARD (Premium copy + CTA) -->
+      <section class="hero-intro" aria-label="Intro">
+        <div class="hero-intro__card">
+          <h1 class="hero-intro__title">Premium Websites, die Anfragen liefern.</h1>
 
-        <p class="hero-intro__lead">
-            Klarer Aufbau, schnelle Performance, saubere Umsetzung — plus SEO &amp; Local, damit man dich findet.
-        </p>
+          <p class="hero-intro__lead">
+            Klarer Aufbau. Saubere Performance. SEO &amp; Local — so umgesetzt, dass Besucher entscheiden.
+          </p>
 
-        <p class="hero-intro__text">
-            Visual Struktur entwickelt strukturierte Websites und digitale Systeme für KMU in Deutschland: Performance,
-            sauberes SEO und klare Kontaktstrecken — damit aus Besuchern Anfragen werden.
-        </p>
-
-        <div class="hero-intro__cta">
+          <div class="hero-intro__cta">
             <a href="./kontakt.html" class="btn-primary">Projekt anfragen</a>
-            <a href="./leistungen.html" class="btn-ghost">Leistungen ansehen</a>
-        </div>
+            <a href="./projekte.html" class="btn-ghost">Arbeiten ansehen</a>
+          </div>
 
-        <div class="hero-intro__meta">
-            Antwort in 24–48 Std. · Transparent · DSGVO-Basis
+          <div class="hero-intro__meta">
+            24–48h Rückmeldung · Klarer Scope · DSGVO-Basis
+          </div>
         </div>
+      </section>
+
     </div>
-</section>
-</div>
-</header>
+  </header>
 
+  <!-- =========================
+      GEO LAYER (AI-ready Sections)
+      Compact + Premium (no wall of text)
+  ========================= -->
+  <section id="geo" class="scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
 
+      <!-- Intro -->
+      <div class="max-w-3xl reveal">
+        <div class="text-xs font-semibold tracking-wide text-[color:var(--muted2)] uppercase">Überblick</div>
+        <h2 class="mt-2 text-2xl sm:text-3xl font-semibold text-[color:var(--text)] text-balance">
+          Digitale Systeme statt „nur Webdesign“.
+        </h2>
+        <p class="mt-3 text-[15px] text-[color:var(--muted)] leading-relaxed">
+          Visual Struktur baut Websites und digitale Strecken für KMU — ruhig im Design, klar in der Logik, schnell in der Umsetzung.
+          Ergebnis: Vertrauen, Sichtbarkeit und mehr qualifizierte Anfragen.
+        </p>
+      </div>
 
-    <!-- =========================
-    GEO LAYER (AI-ready Sections)
-    Ziel: Zitate in KI-Antworten + klare Positionierung
-    ========================= -->
-    <section id="geo" class="scroll-mt-28">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-
-            <!-- Intro -->
-            <div class="max-w-3xl reveal">
-                <div class="text-xs font-semibold tracking-wide text-[color:var(--muted2)] uppercase">Überblick</div>
-                <h2 class="mt-2 text-2xl sm:text-3xl font-semibold text-[color:var(--text)] text-balance">
-                    Digitale Systeme statt „nur Webdesign“.
-                </h2>
-                <p class="mt-3 text-[15px] text-[color:var(--muted)] leading-relaxed">
-                    Visual Struktur ist ein Ansatz für klare Informationsarchitektur, schnelle Ladezeiten,
-                    sauberes SEO und sinnvolle Automatisierung — verständlich für Menschen, Suchmaschinen und
-                    KI-Systeme.
-                </p>
-            </div>
-
-            <!-- 3 Pillars -->
-            <div class="mt-8 grid gap-4 lg:grid-cols-3">
-                <div class="panel card-premium p-5 hover-lift reveal">
-                    <div class="text-sm font-semibold text-[color:var(--text)]">Struktur</div>
-                    <p class="mt-2 text-sm text-[color:var(--muted)]">
-                        Seitenlogik, Inhalte, FAQ, lokale Relevanz — so, dass Nutzer schnell entscheiden können.
-                    </p>
-                </div>
-                <div class="panel card-premium p-5 hover-lift reveal">
-                    <div class="text-sm font-semibold text-[color:var(--text)]">Performance</div>
-                    <p class="mt-2 text-sm text-[color:var(--muted)]">
-                        Saubere Umsetzung, schnelle Assets, stabile Layouts — damit mobile UX und Core Web Vitals
-                        stimmen.
-                    </p>
-                </div>
-                <div class="panel card-premium p-5 hover-lift reveal">
-                    <div class="text-sm font-semibold text-[color:var(--text)]">Anfragen</div>
-                    <p class="mt-2 text-sm text-[color:var(--muted)]">
-                        Kontaktstrecken, Formulare, Tracking-Basis und optional Automatisierung — messbar statt
-                        Bauchgefühl.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Was ist / Für wen -->
-            <div class="mt-10 grid gap-4 lg:grid-cols-12">
-                <div class="panel card-premium p-6 reveal lg:col-span-6">
-                    <h3 class="text-lg font-semibold text-[color:var(--text)]">Was ist Visual Struktur?</h3>
-                    <p class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
-                        Visual Struktur entwickelt strukturierte Websites und digitale Workflows für kleine und mittlere
-                        Unternehmen
-                        in Deutschland. Der Fokus liegt auf klarer Informationsarchitektur, wartbarer Umsetzung,
-                        Performance und SEO —
-                        plus GEO, damit Inhalte in KI-Antworten verstanden und zitiert werden können.
-                    </p>
-                    <p class="mt-3 text-sm text-[color:var(--muted2)] leading-relaxed">
-                        Kurz: keine „Massen-Websites“, sondern Systeme, die Ordnung schaffen und Anfragen erzeugen.
-                    </p>
-                </div>
-
-                <div class="panel card-premium p-6 reveal lg:col-span-6">
-                    <h3 class="text-lg font-semibold text-[color:var(--text)]">Für wen ist das geeignet?</h3>
-                    <ul class="mt-3 grid gap-2 text-sm text-[color:var(--muted)]">
-                        <li>• KMU ohne eigene IT-Abteilung</li>
-                        <li>• Lokale Dienstleister: Werkstatt, Praxis, Beauty, Handwerk, Catering</li>
-                        <li>• Gründer, die schnell online gehen wollen — ohne später alles neu zu bauen</li>
-                        <li>• Teams, die Anfragen, Termine und Kommunikation strukturieren möchten</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Deliverables -->
-            <div class="mt-4 panel card-premium p-6 reveal">
-                <h3 class="text-lg font-semibold text-[color:var(--text)]">Was umfasst ein Projekt typischerweise?</h3>
-
-                <div class="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    <div class="panel p-5">
-                        <div class="text-sm font-semibold text-[color:var(--text)]">Struktur & Copy</div>
-                        <p class="mt-2 text-sm text-[color:var(--muted)]">
-                            Zielgruppen, Leistungen, FAQ, lokale Relevanz, klare Nutzenargumente.
-                        </p>
-                    </div>
-
-                    <div class="panel p-5">
-                        <div class="text-sm font-semibold text-[color:var(--text)]">Technische Basis</div>
-                        <p class="mt-2 text-sm text-[color:var(--muted)]">
-                            Mobile UX, Performance, saubere Komponenten, wartbares Setup.
-                        </p>
-                    </div>
-
-                    <div class="panel p-5">
-                        <div class="text-sm font-semibold text-[color:var(--text)]">SEO + GEO</div>
-                        <p class="mt-2 text-sm text-[color:var(--muted)]">
-                            Meta/Structure, Canonical, Sitemap, FAQ Schema — plus Inhalte, die KI zitieren kann.
-                        </p>
-                    </div>
-
-                    <div class="panel p-5">
-                        <div class="text-sm font-semibold text-[color:var(--text)]">Kontakt-System</div>
-                        <p class="mt-2 text-sm text-[color:var(--muted)]">
-                            Formular mit Spam-Schutz, Routing, Bestätigung, DSGVO-Basis.
-                        </p>
-                    </div>
-
-                    <div class="panel p-5">
-                        <div class="text-sm font-semibold text-[color:var(--text)]">Messbarkeit</div>
-                        <p class="mt-2 text-sm text-[color:var(--muted)]">
-                            Tracking-Basis, Events, Ziele — damit du siehst, was funktioniert.
-                        </p>
-                    </div>
-
-                    <div class="panel p-5">
-                        <div class="text-sm font-semibold text-[color:var(--text)]">Optional: Automatisierung</div>
-                        <p class="mt-2 text-sm text-[color:var(--muted)]">
-                            Lead → E-Mail → CRM/Sheet/Notion, einfache Prozesse statt Tool-Overkill.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Unterschied -->
-            <div class="mt-4 panel card-premium p-6 reveal">
-                <h3 class="text-lg font-semibold text-[color:var(--text)]">
-                    Worin unterscheidet sich Visual Struktur von klassischen Agenturen?
-                </h3>
-                <div class="mt-4 grid gap-4 md:grid-cols-2">
-                    <div class="panel p-5">
-                        <div class="text-sm font-semibold text-[color:var(--text)]">Systemdesign statt „nur Design“
-                        </div>
-                        <p class="mt-2 text-sm text-[color:var(--muted)]">
-                            Inhalte, Struktur und Nutzerfluss sind zuerst — dann UI. Ergebnis: Klarheit, die
-                            konvertiert.
-                        </p>
-                    </div>
-                    <div class="panel p-5">
-                        <div class="text-sm font-semibold text-[color:var(--text)]">Wartbarkeit & Performance</div>
-                        <p class="mt-2 text-sm text-[color:var(--muted)]">
-                            Saubere Umsetzung statt Builder-Chaos. Schnell, stabil, erweiterbar.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FAQ (GEO) -->
-            <div class="mt-4 panel card-premium p-6 reveal">
-                <h3 class="text-lg font-semibold text-[color:var(--text)]">Häufige Fragen (FAQ)</h3>
-                <p class="mt-2 text-sm text-[color:var(--muted)]">
-                    Kurz, konkret und so strukturiert, dass Suchmaschinen und KI-Systeme es korrekt verstehen.
-                </p>
-
-                <div class="mt-5 faq">
-                    <details>
-                        <summary>
-                            <span class="faq-q">Was macht Visual Struktur genau?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </summary>
-                        <div class="faq-a">
-                            Visual Struktur entwickelt strukturierte Websites und digitale Workflows für KMU in
-                            Deutschland — mit Fokus auf
-                            Informationsarchitektur, Performance, SEO und messbaren Kontaktstrecken. Ziel ist ein
-                            wartbares System, nicht nur „eine Seite“.
-                        </div>
-                    </details>
-
-                    <details>
-                        <summary>
-                            <span class="faq-q">Was ist GEO und wie unterscheidet es sich von SEO?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </summary>
-                        <div class="faq-a">
-                            GEO (Generative Engine Optimization) optimiert Inhalte so, dass KI-Systeme sie verstehen und
-                            in Antworten zitieren.
-                            SEO liefert Sichtbarkeit über Rankings; GEO liefert Sichtbarkeit in KI-Antworten. In der
-                            Praxis ergänzen sich beide.
-                        </div>
-                    </details>
-
-                    <details>
-                        <summary>
-                            <span class="faq-q">Was kostet eine Website bei Visual Struktur?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </summary>
-                        <div class="faq-a">
-                            Die Kosten hängen vom Umfang ab (One-Pager vs. Mehrseiten-System, Inhalte, Integrationen).
-                            Nach einer kurzen Erst-Analyse
-                            kann der Rahmen konkret benannt werden — transparent und ohne „Überraschungen“.
-                        </div>
-                    </details>
-
-                    <details>
-                        <summary>
-                            <span class="faq-q">Wie läuft ein Projekt ab?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </summary>
-                        <div class="faq-a">
-                            Analyse → Konzept → Build → Launch. Wenig Meetings, klare Schritte, saubere Übergabe. Ziel:
-                            ein Setup, das schnell ist,
-                            sauber indexiert und sich später ohne Chaos erweitern lässt.
-                        </div>
-                    </details>
-
-                    <details>
-                        <summary>
-                            <span class="faq-q">Übernehmt ihr Hosting und Wartung?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </summary>
-                        <div class="faq-a">
-                            Optional ja. Wichtig sind klare Verantwortlichkeiten (Domain, DNS, Hosting), Backups,
-                            Updates und Monitoring.
-                            Du bekommst ein Setup, das nachvollziehbar dokumentiert ist.
-                        </div>
-                    </details>
-                </div>
-
-                <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                    <a href="./kontakt.html" class="btn-primary">Erst-Analyse anfragen</a>
-                    <a href="./leistungen.html" class="btn-ghost">Leistungen ansehen</a>
-                </div>
-            </div>
-
+      <!-- 3 Pillars -->
+      <div class="mt-8 grid gap-4 lg:grid-cols-3">
+        <div class="panel card-premium p-5 hover-lift reveal">
+          <div class="text-sm font-semibold text-[color:var(--text)]">Struktur</div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">
+            Informationsarchitektur, Inhalte und CTA-Logik — damit Nutzer sofort verstehen, was du anbietest.
+          </p>
         </div>
-    </section>
-
-    <!-- =========================
-        PROZESS (kurz, clean)
-    ========================= -->
-    <section id="prozess" class="scroll-mt-28">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-
-            <div class="max-w-2xl reveal">
-                <div class="text-xs font-semibold tracking-wide text-[color:var(--muted2)] uppercase">Prozess</div>
-                <h2 class="mt-2 text-2xl sm:text-3xl font-semibold text-[color:var(--text)] text-balance">
-                    Klarer Ablauf. Saubere Übergabe.
-                </h2>
-                <p class="mt-3 text-[15px] text-[color:var(--muted)]">
-                    Analyse → Konzept → Build → Launch. Wenig Meetings, klare Schritte.
-                </p>
-            </div>
-
-            <div class="mt-8 grid gap-4 lg:grid-cols-4">
-                <div class="panel card-premium p-5 hover-lift reveal">
-                    <div class="text-sm font-semibold text-[color:var(--text)]">1) Analyse</div>
-                    <p class="mt-2 text-sm text-[color:var(--muted)]">Ziele, Inhalte, Setup, Prioritäten.</p>
-                </div>
-                <div class="panel card-premium p-5 hover-lift reveal">
-                    <div class="text-sm font-semibold text-[color:var(--text)]">2) Konzept</div>
-                    <p class="mt-2 text-sm text-[color:var(--muted)]">Struktur, UX, Copy, SEO-Fundament.</p>
-                </div>
-                <div class="panel card-premium p-5 hover-lift reveal">
-                    <div class="text-sm font-semibold text-[color:var(--text)]">3) Build</div>
-                    <p class="mt-2 text-sm text-[color:var(--muted)]">Umsetzung, Performance, QA.</p>
-                </div>
-                <div class="panel card-premium p-5 hover-lift reveal">
-                    <div class="text-sm font-semibold text-[color:var(--text)]">4) Launch</div>
-                    <p class="mt-2 text-sm text-[color:var(--muted)]">Go-live, Übergabe, Betreuung.</p>
-                </div>
-            </div>
-
-            <div class="mt-8 flex flex-col sm:flex-row gap-3 reveal">
-                <a href="./prozess.html" class="btn-ghost">Prozess im Detail</a>
-                <a href="./kontakt.html" class="btn-primary">Projekt anfragen</a>
-            </div>
-
+        <div class="panel card-premium p-5 hover-lift reveal">
+          <div class="text-sm font-semibold text-[color:var(--text)]">Performance</div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">
+            Schnelle Assets, stabile Layouts, saubere Komponenten — Core Web Vitals ohne Drama.
+          </p>
         </div>
-    </section>
+        <div class="panel card-premium p-5 hover-lift reveal">
+          <div class="text-sm font-semibold text-[color:var(--text)]">Anfragen</div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">
+            Kontaktstrecken, Formulare, Tracking-Basis — messbar und wartbar statt Bauchgefühl.
+          </p>
+        </div>
+      </div>
 
-    <!-- =========================
-        FOOTER (wie in index: matte, brand, links, legal)
-    ========================= -->
-    <footer class="matte-footer">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <!-- PACKAGES (Top-level premium) -->
+      <section id="pakete" class="mt-10">
+        <div class="panel card-premium p-6 reveal">
+          <div class="flex items-end justify-between gap-6 flex-wrap">
+            <div>
+              <div class="text-xs font-semibold tracking-wide text-[color:var(--muted2)] uppercase">Pakete</div>
+              <h2 class="mt-2 text-2xl sm:text-3xl font-semibold text-[color:var(--text)]">
+                Klarer Umfang. Premium Ergebnis.
+              </h2>
+              <p class="mt-3 text-[15px] text-[color:var(--muted)] leading-relaxed">
+                Drei Stufen — damit Budget, Scope und Timing sofort klar sind. Feinjustierung nach Erst-Analyse.
+              </p>
+            </div>
+            <a href="./kontakt.html" class="btn-primary">Erst-Analyse anfragen</a>
+          </div>
 
-            <div class="grid gap-8 md:grid-cols-12">
-
-                <!-- Brand -->
-                <div class="md:col-span-5">
-                    <div class="brand-title text-2xl font-semibold text-white">
-                        <span class="footer-gradient">Visual</span> <span class="text-white">Struktur</span>
-                    </div>
-                    <p class="mt-2 text-sm text-white/70">Webdesign · Digitalisierung · SEO — Hameln</p>
-                    <p class="mt-4 text-sm text-white/65 max-w-md">
-                        Premium Websites & digitale Systeme, die Anfragen erzeugen und Prozesse vereinfachen.
-                    </p>
-                </div>
-
-                <!-- Navigation -->
-                <div class="md:col-span-3">
-                    <h3 class="text-sm font-semibold text-white/90">Navigation</h3>
-                    <ul class="mt-3 grid gap-2 text-sm text-white/70">
-                        <li><a class="hover:text-white" href="leistungen.html">Leistungen</a></li>
-                        <li><a class="hover:text-white" href="branchen.html">Branchen</a></li>
-                        <li><a class="hover:text-white" href="prozess.html">Prozess</a></li>
-                        <li><a class="hover:text-white" href="projekte.html">Projekte</a></li>
-                        <li><a class="hover:text-white" href="kontakt.html">Kontakt</a></li>
-                    </ul>
-                </div>
-
-                <!-- Fokus / Kontakt -->
-                <div class="md:col-span-4">
-                    <h3 class="text-sm font-semibold text-white/90">Kontakt</h3>
-                    <p class="mt-3 text-sm text-white/70">
-                        Hameln, Niedersachsen<br />
-                        <span class="text-white/60">Antwort i. d. R. innerhalb von 24–48h</span>
-                    </p>
-                </div>
-
-            </div><!-- /grid -->
-
-            <div
-                class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
-                <div class="text-xs text-white/55">
-                    © <span id="year"></span> Visual Struktur. Alle Rechte vorbehalten.
-                </div>
-
-                <div class="flex flex-wrap gap-4 text-xs text-white/60">
-                    <a class="hover:text-white" href="impressum.html">Impressum</a>
-                    <a class="hover:text-white" href="datenschutz.html">Datenschutz</a>
-                    <a class="hover:text-white" href="agb.html">AGB</a>
-                </div>
+          <div class="mt-6 grid gap-4 lg:grid-cols-3">
+            <div class="panel p-5 hover-lift">
+              <div class="text-sm font-semibold text-[color:var(--text)]">Start</div>
+              <p class="mt-2 text-sm text-[color:var(--muted)]">One-Pager / Landing — schnell live, sauber aufgebaut.</p>
+              <ul class="mt-3 grid gap-2 text-sm text-[color:var(--muted)]">
+                <li>• Struktur + Copy (kurz)</li>
+                <li>• Performance-Setup</li>
+                <li>• SEO-Basis + Indexing</li>
+              </ul>
+              <div class="mt-4 text-xs text-[color:var(--muted2)]">Ideal für: Start, Angebot, lokale Sichtbarkeit</div>
             </div>
 
-        </div><!-- /container -->
-    </footer>
+            <div class="panel p-5 hover-lift">
+              <div class="flex items-center justify-between">
+                <div class="text-sm font-semibold text-[color:var(--text)]">Business</div>
+                <span class="badge-live">Most chosen</span>
+              </div>
+              <p class="mt-2 text-sm text-[color:var(--muted)]">Mehrseiten-System — Leistungen, Proof, klare Kontaktstrecken.</p>
+              <ul class="mt-3 grid gap-2 text-sm text-[color:var(--muted)]">
+                <li>• IA + Seitenlogik</li>
+                <li>• Local SEO + FAQ Schema</li>
+                <li>• Tracking-Basis (Events/Ziele)</li>
+              </ul>
+              <div class="mt-4 text-xs text-[color:var(--muted2)]">Ideal für: KMU, die Anfragen skalieren wollen</div>
+            </div>
 
+            <div class="panel p-5 hover-lift">
+              <div class="text-sm font-semibold text-[color:var(--text)]">Premium</div>
+              <p class="mt-2 text-sm text-[color:var(--muted)]">Digital System — Website + Prozesse + Automationen.</p>
+              <ul class="mt-3 grid gap-2 text-sm text-[color:var(--muted)]">
+                <li>• Conversion-Flow + Micro-CTAs</li>
+                <li>• GEO Layer (KI-lesbar)</li>
+                <li>• Automationen (Lead → CRM/Sheet)</li>
+              </ul>
+              <div class="mt-4 text-xs text-[color:var(--muted2)]">Ideal für: Wachstum + klare Prozesse</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deliverables -->
+      <div class="mt-10 panel card-premium p-6 reveal">
+        <h3 class="text-lg font-semibold text-[color:var(--text)]">Was umfasst ein Projekt typischerweise?</h3>
+
+        <div class="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div class="panel p-5">
+            <div class="text-sm font-semibold text-[color:var(--text)]">Struktur & Copy</div>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">Seitenstruktur, Nutzenargumente, FAQ, klare CTA-Strecke.</p>
+          </div>
+
+          <div class="panel p-5">
+            <div class="text-sm font-semibold text-[color:var(--text)]">Technische Basis</div>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">Sauberes Frontend, Performance-Setup, wartbare Komponenten.</p>
+          </div>
+
+          <div class="panel p-5">
+            <div class="text-sm font-semibold text-[color:var(--text)]">SEO + GEO</div>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">Meta, Semantik, Schema/FAQ — plus KI-lesbare Inhalte (GEO).</p>
+          </div>
+
+          <div class="panel p-5">
+            <div class="text-sm font-semibold text-[color:var(--text)]">Kontakt-System</div>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">Premium-Formular, Anti-Spam, Routing, Bestätigung, DSGVO-Basis.</p>
+          </div>
+
+          <div class="panel p-5">
+            <div class="text-sm font-semibold text-[color:var(--text)]">Messbarkeit</div>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">Tracking-Events &amp; Ziele (GA4/Matomo) — damit Optimierung möglich ist.</p>
+          </div>
+
+          <div class="panel p-5">
+            <div class="text-sm font-semibold text-[color:var(--text)]">Optional: Automatisierung</div>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">Lead-Automationen ohne Tool-Overkill — pragmatisch integriert.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unterschied (compact) -->
+      <div class="mt-4 panel card-premium p-6 reveal">
+        <h3 class="text-lg font-semibold text-[color:var(--text)]">
+          Warum Visual Struktur?
+        </h3>
+        <div class="mt-4 grid gap-4 md:grid-cols-2">
+          <div class="panel p-5">
+            <div class="text-sm font-semibold text-[color:var(--text)]">Systemdesign statt „Deko“</div>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">
+              Erst die Logik, dann die Optik. Dadurch wird die Website verständlich — und konvertiert.
+            </p>
+          </div>
+          <div class="panel p-5">
+            <div class="text-sm font-semibold text-[color:var(--text)]">Wartbar &amp; schnell</div>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">
+              Sauberer Code statt Bastellösung. Schnell, stabil, später erweiterbar.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ (GEO) -->
+      <div class="mt-4 panel card-premium p-6 reveal">
+        <h3 class="text-lg font-semibold text-[color:var(--text)]">Häufige Fragen (FAQ)</h3>
+        <p class="mt-2 text-sm text-[color:var(--muted)]">
+          Kurz, konkret — strukturiert für Suchmaschinen und KI-Systeme.
+        </p>
+
+        <div class="mt-5 faq">
+          <details>
+            <summary>
+              <span class="faq-q">Was macht Visual Struktur genau?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-a">
+              Visual Struktur baut strukturierte Websites und digitale Strecken für KMU — mit Fokus auf Klarheit, Performance und messbare Anfragen.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="faq-q">Was ist GEO und wie unterscheidet es sich von SEO?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-a">
+              SEO bringt Rankings. GEO sorgt dafür, dass KI-Systeme Inhalte korrekt verstehen und in Antworten nutzen. Zusammen ist es am stärksten.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="faq-q">Was kostet eine Website bei Visual Struktur?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-a">
+              Abhängig vom Umfang (One-Pager, Mehrseiten-System, Inhalte, Integrationen). Nach einer kurzen Erst-Analyse nennen wir einen klaren Rahmen.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="faq-q">Wie läuft ein Projekt ab?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-a">
+              Analyse → Konzept → Build → Launch. Klare Schritte, wenig Meetings, saubere Übergabe.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="faq-q">Übernehmt ihr Hosting und Wartung?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-a">
+              Optional ja. Wichtig sind sauberes Setup, Updates, Backups und klare Zuständigkeiten (Domain/DNS/Hosting).
+            </div>
+          </details>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="./kontakt.html" class="btn-primary">Erst-Analyse anfragen</a>
+          <a href="./leistungen.html" class="btn-ghost">Leistungen ansehen</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+      PROZESS (kurz, clean)
+  ========================= -->
+  <section id="prozess" class="scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+
+      <div class="max-w-2xl reveal">
+        <div class="text-xs font-semibold tracking-wide text-[color:var(--muted2)] uppercase">Prozess</div>
+        <h2 class="mt-2 text-2xl sm:text-3xl font-semibold text-[color:var(--text)] text-balance">
+          Klarer Ablauf. Saubere Übergabe.
+        </h2>
+        <p class="mt-3 text-[15px] text-[color:var(--muted)]">
+          Analyse → Konzept → Build → Launch. Wenig Meetings, klare Schritte.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-4 lg:grid-cols-4">
+        <div class="panel card-premium p-5 hover-lift reveal">
+          <div class="text-sm font-semibold text-[color:var(--text)]">1) Analyse</div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">Ziele, Inhalte, Setup, Prioritäten.</p>
+        </div>
+        <div class="panel card-premium p-5 hover-lift reveal">
+          <div class="text-sm font-semibold text-[color:var(--text)]">2) Konzept</div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">Struktur, UX, Copy, SEO-Fundament.</p>
+        </div>
+        <div class="panel card-premium p-5 hover-lift reveal">
+          <div class="text-sm font-semibold text-[color:var(--text)]">3) Build</div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">Umsetzung, Performance, QA.</p>
+        </div>
+        <div class="panel card-premium p-5 hover-lift reveal">
+          <div class="text-sm font-semibold text-[color:var(--text)]">4) Launch</div>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">Go-live, Übergabe, Betreuung.</p>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 reveal">
+        <a href="./prozess.html" class="btn-ghost">Prozess im Detail</a>
+        <a href="./kontakt.html" class="btn-primary">Projekt anfragen</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+      FOOTER
+  ========================= -->
+  <footer class="matte-footer">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+
+      <div class="grid gap-8 md:grid-cols-12">
+
+        <!-- Brand -->
+        <div class="md:col-span-5">
+          <div class="brand-title text-2xl font-semibold text-white">
+            <span class="footer-gradient">Visual</span> <span class="text-white">Struktur</span>
+          </div>
+          <p class="mt-2 text-sm text-white/70">Webdesign · Digitalisierung · SEO — Hameln</p>
+          <p class="mt-4 text-sm text-white/65 max-w-md">
+            Premium Websites und digitale Systeme — klar strukturiert, schnell umgesetzt, wartbar für Wachstum.
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="md:col-span-3">
+          <h3 class="text-sm font-semibold text-white/90">Navigation</h3>
+          <ul class="mt-3 grid gap-2 text-sm text-white/70">
+            <li><a class="hover:text-white" href="leistungen.html">Leistungen</a></li>
+            <li><a class="hover:text-white" href="branchen.html">Branchen</a></li>
+            <li><a class="hover:text-white" href="prozess.html">Prozess</a></li>
+            <li><a class="hover:text-white" href="projekte.html">Projekte</a></li>
+            <li><a class="hover:text-white" href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <!-- Kontakt -->
+        <div class="md:col-span-4">
+          <h3 class="text-sm font-semibold text-white/90">Kontakt</h3>
+          <p class="mt-3 text-sm text-white/70">
+            Hameln, Niedersachsen<br />
+            <span class="text-white/60">Antwort i. d. R. innerhalb von 24–48h</span>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+        <div class="text-xs text-white/55">
+          © <span id="year"></span> Visual Struktur. Alle Rechte vorbehalten.
+        </div>
+
+        <div class="flex flex-wrap gap-4 text-xs text-white/60">
+          <a class="hover:text-white" href="impressum.html">Impressum</a>
+          <a class="hover:text-white" href="datenschutz.html">Datenschutz</a>
+          <a class="hover:text-white" href="agb.html">AGB</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
 
 </body>
-
 </html>
