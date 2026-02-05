@@ -22,12 +22,6 @@
     <!-- Tailwind + Custom CSS -->
     <link rel="stylesheet" href="./css/output.css">
     <link rel="stylesheet" href="./styles.css" />
-
-    <!-- Global JS (defer) -->
-    <script src="./js/app.js" defer></script>
-    <!-- Projects JS (defer) -->
-    <script src="./js/projects-data.js" defer></script>
-    <script src="./js/projects-ui.js" defer></script>
 </head>
 
 <body id="top" class="bg-app text-[color:var(--text)]">
@@ -550,6 +544,12 @@
             items.forEach(el => io.observe(el));
         }
     </script>
+
+    <!-- Projects JS - загружаем после inline скриптов -->
+    <script src="js/projects-data.js"></script>
+    <script src="js/projects-ui.js"></script>
+    <!-- Global JS -->
+    <script src="js/app.js"></script>
 
 </body>
 
