@@ -25,6 +25,9 @@
 
     <!-- Global JS (defer) -->
     <script src="./js/app.js" defer></script>
+    <!-- Projects JS (defer) -->
+    <script src="./js/projects-data.js" defer></script>
+    <script src="./js/projects-ui.js" defer></script>
 </head>
 
 <body id="top" class="bg-app text-[color:var(--text)]">
@@ -162,7 +165,7 @@
                                 <div class="hero-kicker">Ideal für</div>
 
                                 <p class="mt-4 text-sm leading-relaxed text-[color:var(--muted)]">
-                                    Unternehmen, die nicht „irgendeine“ Website wollen — sondern einen klaren, seriösen
+                                    Unternehmen, die nicht „irgendeine" Website wollen — sondern einen klaren, seriösen
                                     Auftritt, der Anfragen generiert.
                                 </p>
 
@@ -218,138 +221,130 @@
     </section>
 
     <!-- =========================
-        PROJECT GRID (mit Mini-Metrics)
+        PROJECT GRID
     ========================= -->
     <section>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 sm:pb-16">
             <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
 
-        <!-- 1) Vilana -->
-        <article class="proj-card panel card-premium hover-lift overflow-hidden reveal" data-cats="website seo branding">
-            <img src="images/skrin-vilana.webp" alt="Vilana Event &amp; Catering" class="block w-full h-48 object-cover"
-                loading="lazy" decoding="async" />
-
-            <div class="p-5">
-                <div class="flex items-start justify-between gap-3">
-                    <div>
-                        <div class="text-sm font-semibold text-[color:var(--text)]">Vilana Event &amp; Catering</div>
-                        <div class="mt-0.5 text-xs text-[color:var(--muted2)]">Branding · Website (DE/RU) · Local SEO</div>
-                    </div>
-                    <span class="badge-live">Live</span>
-                </div>
-
-                <p class="mt-2 text-sm text-[color:var(--muted)] leading-relaxed">
-                    Komplettpaket: Logo, Werbemittel &amp; zweisprachige Premium-Website inkl. SEO-Basis und Kontaktformular mit
-                    Anti-Spam.
-                </p>
-
-                <div class="mt-4 grid grid-cols-3 gap-2 text-xs text-[color:var(--muted2)]">
-                    <div class="panel rounded-xl px-3 py-2 text-center">Branding</div>
-                    <div class="panel rounded-xl px-3 py-2 text-center">DE/RU Website</div>
-                    <div class="panel rounded-xl px-3 py-2 text-center">Local SEO</div>
-                </div>
-
-                <div class="mt-5 flex items-center gap-3">
-                    <button type="button" class="btn-ghost px-4 py-2 text-sm proj-open" data-project="vilana">Details</button>
-                    <a href="https://www.vilana-event.de" target="_blank" rel="noopener"
-                        class="text-sm font-semibold underline underline-offset-4 hover:opacity-90">Website</a>
-                </div>
-            </div>
-        </article>
-
-                <!-- 2) Medizin anonym -->
-                <article class="proj-card panel card-premium hover-lift overflow-hidden reveal" data-cats="website seo">
-                    <img src="images/projekt-med-1.webp" alt="Praxis Website (anonymisiert)"
-                        class="block w-full h-48 object-cover" loading="lazy" decoding="async" />
-                    <div class="p-5">
-                        <div class="flex items-start justify-between gap-3">
-                            <div class="text-sm font-semibold text-[color:var(--text)]">Praxis-Website (anonymisiert)
-                            </div>
-                            <span class="panel rounded-full px-3 py-1 text-xs text-[color:var(--muted2)]">Case</span>
-                        </div>
-
-                        <p class="mt-2 text-sm text-[color:var(--muted)] leading-relaxed">
-                            Moderne Struktur, saubere Semantik, lokales SEO-Fundament und schnelle Ladezeit.
-                        </p>
-
-                        <div class="mt-4 grid grid-cols-3 gap-2 text-xs text-[color:var(--muted2)]">
-                            <div class="panel rounded-xl px-3 py-2 text-center">Semantik</div>
-                            <div class="panel rounded-xl px-3 py-2 text-center">Local SEO</div>
-                            <div class="panel rounded-xl px-3 py-2 text-center">UX-Klarheit</div>
-                        </div>
-
-                        <div class="mt-5">
-                            <button type="button" class="btn-ghost px-4 py-2 text-sm proj-open" data-project="med1">
-                                Details
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 3) Formular / Automation -->
+                <!-- 1) Vilana -->
                 <article class="proj-card panel card-premium hover-lift overflow-hidden reveal"
-                    data-cats="website automation">
-                    <img src="images/projekt-med-2.webp" alt="Praxis Website + Formular (anonymisiert)"
+                    data-cats="website seo branding">
+                    <img src="images/skrin-vilana.webp" alt="Vilana Event &amp; Catering"
                         class="block w-full h-48 object-cover" loading="lazy" decoding="async" />
+
                     <div class="p-5">
                         <div class="flex items-start justify-between gap-3">
-                            <div class="text-sm font-semibold text-[color:var(--text)]">Praxis + Anfrageformular</div>
-                            <span class="panel rounded-full px-3 py-1 text-xs text-[color:var(--muted2)]">System</span>
+                            <div>
+                                <div class="text-sm font-semibold text-[color:var(--text)]">Vilana Event &amp; Catering
+                                </div>
+                                <div class="mt-0.5 text-xs text-[color:var(--muted2)]">Branding · Website (DE/RU) ·
+                                    Local SEO</div>
+                            </div>
+                            <span class="badge-live">Live</span>
                         </div>
 
                         <p class="mt-2 text-sm text-[color:var(--muted)] leading-relaxed">
-                            Kontaktstrecke mit Validierung, Success-Message ohne Reload und Spam-Schutz.
+                            Von null auf professionellen Auftritt: Branding (Logo, Visitenkarte, Werbemittel),
+                            zweisprachige Website (DE/RU) mit klarer Angebotslogik, Kontakt-Flow und lokaler SEO-Basis.
                         </p>
 
                         <div class="mt-4 grid grid-cols-3 gap-2 text-xs text-[color:var(--muted2)]">
-                            <div class="panel rounded-xl px-3 py-2 text-center">Form-UX</div>
-                            <div class="panel rounded-xl px-3 py-2 text-center">Spam-Schutz</div>
-                            <div class="panel rounded-xl px-3 py-2 text-center">CRM-Ready</div>
+                            <div class="panel rounded-xl px-3 py-2 text-center">Branding</div>
+                            <div class="panel rounded-xl px-3 py-2 text-center">DE/RU Website</div>
+                            <div class="panel rounded-xl px-3 py-2 text-center">Local SEO</div>
                         </div>
 
-                        <div class="mt-5">
-                            <button type="button" class="btn-ghost px-4 py-2 text-sm proj-open" data-project="med2">
-                                Details
-                            </button>
+                        <div class="mt-5 flex items-center gap-3">
+                            <button type="button" class="btn-ghost px-4 py-2 text-sm proj-open"
+                                data-project="vilana">Details</button>
+                            <a href="https://www.vilana-event.de" target="_blank" rel="noopener"
+                                class="text-sm font-semibold underline underline-offset-4 hover:opacity-90">Website</a>
                         </div>
                     </div>
                 </article>
 
-            <!-- 4) Auto Atelier (Demo) -->
-            <article class="proj-card panel card-premium hover-lift overflow-hidden reveal" data-cats="website seo branding">
+                <!-- 2) Visual Struktur -->
+                <article class="proj-card panel card-premium hover-lift overflow-hidden reveal"
+                    data-cats="website seo branding">
+                    <img src="images/skrin-visual-struktur.webp" alt="Visual Struktur – eigene Website"
+                        class="block w-full h-48 object-cover" loading="lazy" decoding="async" />
 
-                <img src="images/skrin-auutowerkstat.webp" alt="Auto Atelier – Demo Website" class="block w-full h-48 object-cover"
-                    loading="lazy" decoding="async" />
+                    <div class="p-5">
+                        <div class="flex items-start justify-between gap-3">
+                            <div>
+                                <div class="text-sm font-semibold text-[color:var(--text)]">Visual Struktur – eigene
+                                    Website</div>
+                                <div class="mt-0.5 text-xs text-[color:var(--muted2)]">Agentur-Auftritt · SEO ·
+                                    System-Setup</div>
+                            </div>
+                            <span class="badge-live">Live</span>
+                        </div>
 
-                <div class="p-5">
-                    <div class="flex items-start justify-between gap-3">
-                        <div class="text-sm font-semibold text-[color:var(--text)]">Auto Atelier – Demo</div>
-                        <span class="badge-live">Live</span>
+                        <p class="mt-2 text-sm text-[color:var(--muted)] leading-relaxed">
+                            Eigener Auftritt: klare Positionierung, strukturierte Leistungen, durchdachte User Journey
+                            vom Hero bis zum Kontakt.
+                        </p>
+
+                        <div class="mt-4 grid grid-cols-3 gap-2 text-xs text-[color:var(--muted2)]">
+                            <div class="panel rounded-xl px-3 py-2 text-center">Premium UI</div>
+                            <div class="panel rounded-xl px-3 py-2 text-center">SEO-Basis</div>
+                            <div class="panel rounded-xl px-3 py-2 text-center">System-Setup</div>
+                        </div>
+
+                        <div class="mt-5 flex items-center gap-3">
+                            <button type="button" class="btn-ghost px-4 py-2 text-sm proj-open"
+                                data-project="visualstruktur">
+                                Details
+                            </button>
+                            <a href="https://visual-struktur.de" target="_blank" rel="noopener"
+                                class="text-sm font-semibold underline underline-offset-4 hover:opacity-90">
+                                Website
+                            </a>
+                        </div>
                     </div>
+                </article>
 
-                    <p class="mt-2 text-sm text-[color:var(--muted)] leading-relaxed">
-                        Branchen-Demo für Kfz/Autohaus: klare Struktur, schnelle Performance, CTA &amp; lokale SEO-Basis.
-                    </p>
+                <!-- 3) Auto Atelier -->
+                <article class="proj-card panel card-premium hover-lift overflow-hidden reveal"
+                    data-cats="website seo branding">
+                    <img src="images/skrin-auutowerkstat.webp" alt="Auto Atelier – Demo Website"
+                        class="block w-full h-48 object-cover" loading="lazy" decoding="async" />
 
-                    <div class="mt-4 grid grid-cols-3 gap-2 text-xs text-[color:var(--muted2)]">
-                        <div class="panel rounded-xl px-3 py-2 text-center">Landing</div>
-                        <div class="panel rounded-xl px-3 py-2 text-center">SEO</div>
-                        <div class="panel rounded-xl px-3 py-2 text-center">UI System</div>
+                    <div class="p-5">
+                        <div class="flex items-start justify-between gap-3">
+                            <div>
+                                <div class="text-sm font-semibold text-[color:var(--text)]">Auto Atelier – Demo</div>
+                                <div class="mt-0.5 text-xs text-[color:var(--muted2)]">Branchen-Demo · SEO · Landing
+                                </div>
+                            </div>
+                            <span class="badge-live">Live</span>
+                        </div>
+
+                        <p class="mt-2 text-sm text-[color:var(--muted)] leading-relaxed">
+                            Branchen-Demo für Kfz/Autohaus: klare Struktur, schnelle Performance, CTA &amp; lokale
+                            SEO-Basis.
+                        </p>
+
+                        <div class="mt-4 grid grid-cols-3 gap-2 text-xs text-[color:var(--muted2)]">
+                            <div class="panel rounded-xl px-3 py-2 text-center">Landing</div>
+                            <div class="panel rounded-xl px-3 py-2 text-center">SEO</div>
+                            <div class="panel rounded-xl px-3 py-2 text-center">UI System</div>
+                        </div>
+
+                        <div class="mt-5 flex items-center gap-3">
+                            <button type="button" class="btn-ghost px-4 py-2 text-sm proj-open"
+                                data-project="autoatelier">
+                                Details
+                            </button>
+                            <a href="https://visual-struktur.github.io/vs-demo-auto-atelier/" target="_blank"
+                                rel="noopener"
+                                class="text-sm font-semibold underline underline-offset-4 hover:opacity-90">
+                                Website
+                            </a>
+                        </div>
                     </div>
-
-                    <div class="mt-5 flex items-center gap-3">
-                        <button type="button" class="btn-ghost px-4 py-2 text-sm proj-open" data-project="autoatelier">
-                            Details
-                        </button>
-
-                        <a href="https://visual-struktur.github.io/vs-demo-auto-atelier/" target="_blank" rel="noopener"
-                            class="text-sm font-semibold underline underline-offset-4 hover:opacity-90">
-                            Website
-                        </a>
-                    </div>
-                </div>
-            </article>
-
+                </article>
 
             </div><!-- /grid -->
         </div><!-- /container -->
@@ -391,7 +386,8 @@
         <button id="caseBackdrop" class="absolute inset-0 w-full h-full bg-black/50" aria-label="Schließen"></button>
 
         <!-- Panel -->
-        <aside id="casePanel" role="dialog" aria-modal="true" aria-labelledby="caseTitle" class="absolute right-0 top-0 h-full w-full sm:w-[520px] bg-[color:var(--bg)] panel border-l border-white/10 translate-x-full transition-transform duration-300 ease-out">
+        <aside id="casePanel" role="dialog" aria-modal="true" aria-labelledby="caseTitle"
+            class="absolute right-0 top-0 h-full w-full sm:w-[520px] bg-[color:var(--bg)] panel border-l border-white/10 translate-x-full transition-transform duration-300 ease-out">
             <div class="h-full flex flex-col">
 
                 <div class="p-5 sm:p-6 border-b border-white/10 flex items-start justify-between gap-4">
@@ -428,6 +424,19 @@
                         <div class="panel card-premium p-5">
                             <div class="text-sm font-semibold text-[color:var(--text)]">Stack / Setup</div>
                             <div id="caseStack" class="mt-2 flex flex-wrap gap-2 text-xs text-[color:var(--muted2)]">
+                            </div>
+                        </div>
+
+                        <!-- ✅ НОВЫЙ БЛОК: Branding Assets -->
+                        <div id="caseBranding" class="panel card-premium p-5 hidden">
+                            <div class="text-sm font-semibold text-[color:var(--text)]">Branding Assets</div>
+                            <p class="mt-2 text-xs text-[color:var(--muted2)]">
+                                Logo, Visitenkarte, Werbemittel – konsistenter Markenauftritt
+                            </p>
+
+                            <!-- Мини-галерея (2-3 изображения в ряд) -->
+                            <div id="caseBrandingGrid" class="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                <!-- JS заполнит это -->
                             </div>
                         </div>
 
@@ -505,18 +514,14 @@
     </footer>
 
     <!-- =========================
-            JS: Year + Reveal + Filter + Drawer
+            INLINE JS: Year + Nav + Reveal
     ========================= -->
     <script>
-        // ---------------------------------------------------------
         // Year
-        // ---------------------------------------------------------
         const y = document.getElementById("year");
         if (y) y.textContent = new Date().getFullYear();
 
-        // ---------------------------------------------------------
         // Nav shrink
-        // ---------------------------------------------------------
         const nav = document.getElementById("siteNav");
         const onScroll = () => {
             const yy = window.scrollY || 0;
@@ -526,9 +531,7 @@
         onScroll();
         window.addEventListener("scroll", onScroll, { passive: true });
 
-        // ---------------------------------------------------------
         // Reveal (safe)
-        // ---------------------------------------------------------
         const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         const items = document.querySelectorAll(".reveal");
         const showAll = () => items.forEach(el => el.classList.add("is-visible"));
@@ -546,211 +549,6 @@
             }, { threshold: 0.12 });
             items.forEach(el => io.observe(el));
         }
-
-        // ---------------------------------------------------------
-        // Projekte Filter
-        // ---------------------------------------------------------
-        const filterBtns = document.querySelectorAll(".proj-filter");
-        const cards = document.querySelectorAll(".proj-card");
-
-        function setActive(el) {
-            filterBtns.forEach(b => b.classList.remove("is-active"));
-            el.classList.add("is-active");
-        }
-
-        function matches(card, filter) {
-            if (filter === "all") return true;
-            const cats = (card.dataset.cats || "").split(" ").filter(Boolean);
-            return cats.includes(filter);
-        }
-
-        filterBtns.forEach(b => {
-            b.addEventListener("click", () => {
-                const f = b.dataset.filter;
-                setActive(b);
-                cards.forEach(card => {
-                    card.style.display = matches(card, f) ? "" : "none";
-                });
-            });
-        });
-
-        // ---------------------------------------------------------
-        // Case Drawer (Slide-over)
-        // ---------------------------------------------------------
-        const overlay = document.getElementById("caseOverlay");
-        const panel = document.getElementById("casePanel");
-        const backdrop = document.getElementById("caseBackdrop");
-        const closeBtn = document.getElementById("caseClose");
-
-        const caseKicker = document.getElementById("caseKicker");
-        const caseTitle = document.getElementById("caseTitle");
-        const caseSub = document.getElementById("caseSub");
-        const caseImg = document.getElementById("caseImg");
-        const caseGoal = document.getElementById("caseGoal");
-        const caseBullets = document.getElementById("caseBullets");
-        const caseStack = document.getElementById("caseStack");
-        const caseLinksWrap = document.getElementById("caseLinksWrap");
-        const caseLink = document.getElementById("caseLink");
-
-        let lastFocused = null;
-
-    const PROJECTS = {
-        vilana: {
-            kicker: "Case Study · Live",
-            title: "Vilana Event & Catering",
-            // короткий “агентский” сабтайтл без воды + PSI строка в конце
-            sub: "Launch-Paket: Branding + zweisprachige Website (DE/RU) mit klarer Angebotslogik und Kontakt-Flow. Fokus: Wiedererkennung, Vertrauen und lokale Sichtbarkeit. PSI: Mobile 94 / Desktop 100.",
-            img: "images/projekt-vilana-detail.webp",
-            imgAlt: "Vilana Case Visual",
-            // цель — как ты хотел: “проект готов”, но профессионально
-            goal: "Von null auf professionellen Auftritt: Marke aufbauen, Leistungen sofort verständlich machen und Anfragen vereinfachen.",
-            // буллеты — отражают реальный объём: branding + DE/RU + form + local seo/json-ld
-            bullets: [
-                "Branding: Logo, Visitenkarte & Werbemittel (konsistenter Markenauftritt)",
-                "Website: zweisprachig (DE/RU) mit klarer Seitenstruktur & Angebotslogik",
-                "Kontakt-Flow: Formular mit Validation, Success-Message (ohne Reload) & Anti-Spam",
-                "Local SEO: Onpage-Basis + strukturierte Daten (JSON-LD / LocalBusiness)"
-            ],
-            // стек — лучше тоже сделать честным и конкретным
-            stack: ["HTML", "Tailwind", "DE/RU", "Local SEO", "Form + Anti-Spam"],
-            link: "https://www.vilana-event.de",
-            linkLabel: "Website ansehen"
-            },
-
-            med1: {
-                kicker: "Case Study · Anonym",
-                title: "Praxis-Website (anonymisiert)",
-                sub: "Moderne Struktur, saubere Semantik, lokales SEO-Fundament und schnelle Ladezeit.",
-                img: "images/projekt-med-1-detail.webp",
-                imgAlt: "Praxis Case Visual",
-                goal: "Seriöser Praxis-Auftritt mit klarer Leistungsstruktur und lokaler Auffindbarkeit.",
-                bullets: [
-                    "One-Pager-Logik: Hero → Leistungen → FAQ → Kontakt",
-                    "Semantik & Lesbarkeit: saubere Überschriften-Hierarchie",
-                    "Local SEO Basis: strukturierte Inhalte & klare Themenblöcke",
-                    "Performance: optimierte Darstellung & Layout-Stabilität"
-                ],
-                stack: ["HTML", "Tailwind", "Semantik", "Local SEO"],
-                link: "",
-                linkLabel: ""
-            },
-            med2: {
-                kicker: "System · Anonym",
-                title: "Praxis + Anfrageformular",
-                sub: "Kontaktstrecke mit Validierung, Success-State ohne Reload und Spam-Schutz.",
-                img: "images/projekt-med-2-detail.webp",
-                imgAlt: "Formular Case Visual",
-                goal: "Kontakt ohne Reibung – saubere UX, Spam-Schutz und Basis für spätere CRM-Anbindung.",
-                bullets: [
-                    "Form UX: klare Felder, Fehlermeldungen, Success-State",
-                    "Spam-Schutz: Honeypot / simple Challenge",
-                    "DSGVO-Basis: Checkbox-Logik für Datenschutz / Einwilligung",
-                    "Automation-ready: saubere Struktur für spätere Workflows"
-                ],
-                stack: ["Form UX", "Spam-Schutz", "DSGVO-Basis", "Automation-ready"],
-                link: "",
-                linkLabel: ""
-            },
-            autoatelier: {
-                kicker: "Case Study · Live",
-                title: "Auto Atelier – Demo",
-                sub: "Branchen-Demo für Kfz/Autohaus: klare Struktur, schnelle Performance, CTA & lokale SEO-Basis.",
-                img: "images/skrin-auto-detal.webp",
-                imgAlt: "Auto Atelier Case Visual",
-                goal: "Eine klare Landing, die Leistungen schnell erklärt und Anfragen sauber einsammelt – ideal für lokale Kfz-Betriebe.",
-                bullets: [
-                    "Hero + USP: sofort verständlich, klare Service-Blöcke",
-                    "Conversion: CTA-Flow, Kontaktstrecke, trust Elemente",
-                    "Local SEO Basis: thematische Sections, saubere Semantik",
-                    "Performance: optimierte Bilder, stabile Layouts"
-                ],
-                stack: ["HTML", "Tailwind", "SEO-Basics", "Performance-Setup"],
-                link: "https://visual-struktur.github.io/vs-demo-auto-atelier/",
-                linkLabel: "Website ansehen"
-            }
-            };
-
-        function openDrawer(key) {
-            const data = PROJECTS[key];
-            if (!data) return;
-
-            lastFocused = document.activeElement;
-
-            caseKicker.textContent = data.kicker || "Case Study";
-            caseTitle.textContent = data.title || "—";
-            caseSub.textContent = data.sub || "—";
-            caseGoal.textContent = data.goal || "—";
-
-            if (data.img) {
-                caseImg.src = data.img;
-                caseImg.alt = data.imgAlt || data.title || "Case Visual";
-                caseImg.classList.remove("hidden");
-            } else {
-                caseImg.classList.add("hidden");
-                caseImg.removeAttribute("src");
-                caseImg.alt = "";
-            }
-
-            caseBullets.innerHTML = "";
-            (data.bullets || []).forEach(txt => {
-                const li = document.createElement("li");
-                li.textContent = "• " + txt;
-                caseBullets.appendChild(li);
-            });
-
-            caseStack.innerHTML = "";
-            (data.stack || []).forEach(tag => {
-                const span = document.createElement("span");
-                span.className = "panel rounded-full px-3 py-1";
-                span.textContent = tag;
-                caseStack.appendChild(span);
-            });
-
-            if (data.link) {
-                caseLink.href = data.link;
-                caseLink.textContent = data.linkLabel || "Website ansehen";
-                caseLinksWrap.classList.remove("hidden");
-            } else {
-                caseLinksWrap.classList.add("hidden");
-                caseLink.href = "#";
-                caseLink.textContent = "";
-            }
-
-            overlay.classList.remove("hidden");
-            overlay.setAttribute("aria-hidden", "false");
-            document.body.classList.add("overflow-hidden");
-
-            requestAnimationFrame(() => {
-                panel.classList.remove("translate-x-full");
-                closeBtn.focus();
-            });
-        }
-
-        function closeDrawer() {
-            panel.classList.add("translate-x-full");
-            overlay.setAttribute("aria-hidden", "true");
-            document.body.classList.remove("overflow-hidden");
-
-            const done = () => {
-                overlay.classList.add("hidden");
-                panel.removeEventListener("transitionend", done);
-                if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
-            };
-            panel.addEventListener("transitionend", done);
-        }
-
-        document.querySelectorAll(".proj-open").forEach(btn => {
-            btn.addEventListener("click", () => openDrawer(btn.dataset.project));
-        });
-
-        backdrop.addEventListener("click", closeDrawer);
-        closeBtn.addEventListener("click", closeDrawer);
-
-        window.addEventListener("keydown", (e) => {
-            const isOpen = !overlay.classList.contains("hidden");
-            if (!isOpen) return;
-            if (e.key === "Escape") closeDrawer();
-        });
     </script>
 
 </body>
