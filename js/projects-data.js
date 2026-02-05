@@ -11,7 +11,7 @@ const PROJECTS = {
     kicker: "Case Study · Live",
     title: "Vilana Event & Catering",
     sub: "Launch-Paket: Branding + zweisprachige Website (DE/RU) mit klarer Angebotslogik und Kontakt-Flow. Fokus: Wiedererkennung, Vertrauen und lokale Sichtbarkeit. PSI: Mobile 94 / Desktop 100.",
-    img: "images/projekt-vilana-detail.webp",
+    img: "images/sscrin-metrics.webp",
     imgAlt: "Vilana Case Visual",
     goal: "Von null auf professionellen Auftritt: Marke aufbauen, Leistungen sofort verständlich machen und Anfragen vereinfachen.",
     bullets: [
