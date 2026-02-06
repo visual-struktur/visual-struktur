@@ -38,7 +38,7 @@ const PROJECTS = {
     kicker: "Case Study · Live",
     title: "Visual Struktur – eigene Website",
     sub: "Agentur-Auftritt mit klarer Positionierung, strukturierten Leistungen und durchdachter User Journey. Fokus: Vertrauen, Klarheit und Conversion.",
-    img: "images/projekt-visual-detail.webp",
+    img: "images/visual-scrin2.webp",
     imgAlt: "Visual Struktur Case Visual",
     goal: "Eigenen Standard zeigen: Was wir verkaufen, setzen wir selbst um – Premium UI, SEO-Basis, System-Setup.",
     bullets: [
@@ -60,7 +60,7 @@ const PROJECTS = {
     kicker: "Case Study · Live",
     title: "Auto Atelier – Demo",
     sub: "Branchen-Demo für Kfz/Autohaus: klare Struktur, schnelle Performance, CTA & lokale SEO-Basis.",
-    img: "images/skrin-auto-detal.webp",
+    img: "images/auto-atel2.webp",
     imgAlt: "Auto Atelier Case Visual",
     goal: "Eine klare Landing, die Leistungen schnell erklärt und Anfragen sauber einsammelt – ideal für lokale Kfz-Betriebe.",
     bullets: [
@@ -70,7 +70,7 @@ const PROJECTS = {
       "Performance: optimierte Bilder, stabile Layouts"
     ],
     stack: ["HTML", "Tailwind", "SEO-Basics", "Performance-Setup"],
-    link: "https://visual-struktur.github.io/vs-demo-auto-atelier/",
+    link: "https://visual-struktur.github.io/demo-auto-atelier/",
     linkLabel: "Website ansehen"
   }
 };
