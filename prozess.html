@@ -11,9 +11,9 @@
     <!-- =========================================================
     SEO Basis
     ========================================================== -->
-    <title>Vertrauen & Prozess — Visual Struktur | SEO + GEO (AI-SEO)</title>
+    <title>Prozess & Arbeitsweise — Visual Struktur | Webdesign, SEO + GEO</title>
     <meta name="description"
-        content="Transparenter Prozess für Webdesign, Digitalisierung sowie SEO + GEO (AI-SEO): Analyse → Konzept → Build → Launch. Sauber, nachvollziehbar, ohne Überraschungen." />
+        content="Transparenter Prozess für professionelles Webdesign, Digitalisierung sowie SEO + GEO (AI-SEO): Analyse → Strategie → Umsetzung → Launch. Strukturiert, nachvollziehbar, messbar." />
     <meta name="robots" content="index, follow" />
 
     <!-- Fonts: Brand (logo-like) -->
@@ -30,7 +30,6 @@
 
     <!-- =========================================================
     GEO / AI-SEO: FAQ Schema (JSON-LD)
-    WICHTIG: FAQ-Texte müssen zum sichtbaren FAQ passen
     ========================================================== -->
     <script type="application/ld+json">
     {
@@ -42,7 +41,7 @@
     "name":"Wie läuft ein Projekt bei Visual Struktur ab?",
     "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Typischer Ablauf: Analyse → Konzept → Build → Launch. Ziel ist ein wartbares System mit Performance-Basis, SEO + GEO (AI-SEO) und klaren Kontaktstrecken."
+        "text":"Strukturierter Ablauf: Analyse → Strategie → Umsetzung → Launch. Ergebnis ist ein wartbares System mit technischer Exzellenz, SEO + GEO (AI-SEO) und optimierten Conversion-Strecken."
     }
     },
     {
@@ -50,23 +49,23 @@
     "name":"Was ist GEO (AI-SEO) und warum gehört es in den Prozess?",
     "acceptedAnswer":{
         "@type":"Answer",
-        "text":"GEO (Generative Engine Optimization) ergänzt klassisches SEO. Inhalte werden so strukturiert, dass KI-Systeme das Angebot korrekt verstehen und konsistent wiedergeben (klare Entitäten, FAQ, Struktur, Schema/JSON-LD)."
+        "text":"GEO (Generative Engine Optimization) ergänzt klassisches SEO. Inhalte werden so strukturiert, dass KI-Systeme das Angebot korrekt verstehen und präzise wiedergeben: klare Entitäten, FAQ-Architektur, semantische Struktur und Schema-Markup (JSON-LD)."
     }
     },
     {
     "@type":"Question",
-    "name":"Welche Ergebnisse bekomme ich am Ende?",
+    "name":"Welche Ergebnisse erhalte ich am Ende?",
     "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Du erhältst eine klare Seitenstruktur, Premium-UI, schnelle technische Basis, SEO-Start (Meta/Struktur) plus GEO-Elemente (FAQ, strukturierte Inhalte, Schema/JSON-LD) sowie eine saubere Übergabe mit Dokumentation."
+        "text":"Professionelle Informationsarchitektur, Premium-UI, performante technische Basis, SEO-Fundament sowie GEO-Optimierung (FAQ, strukturierte Inhalte, Schema-Markup) plus vollständige Dokumentation und Übergabe."
     }
     },
     {
     "@type":"Question",
-    "name":"Gibt es Wartung und Weiterentwicklung?",
+    "name":"Bieten Sie Wartung und Weiterentwicklung an?",
     "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Ja, optional. Sinnvoll sind Updates, Backups, Monitoring sowie laufende Optimierung von SEO + GEO und Inhalten, wenn du kontinuierlich wachsen willst."
+        "text":"Ja, optional. Empfehlenswert sind regelmäßige Updates, Backups, Performance-Monitoring sowie kontinuierliche Optimierung von SEO + GEO und Content für nachhaltiges Wachstum."
     }
     }
     ]
@@ -74,7 +73,7 @@
     </script>
 
     <!-- =========================================================
-    PAGE-LOCAL CSS
+    PAGE-LOCAL CSS + ANIMATIONS
     ========================================================== -->
     <style>
         /* ===== Premium Icon System ===== */
@@ -89,6 +88,7 @@
             box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08), 0 1px 0 rgba(255, 255, 255, 0.7) inset;
             position: relative;
             overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
         }
 
         .icon-premium::after {
@@ -98,6 +98,7 @@
             background: radial-gradient(closest-side, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0) 70%);
             transform: translate(18%, -18%);
             pointer-events: none;
+            transition: opacity 0.3s ease;
         }
 
         .icon-premium svg {
@@ -105,14 +106,39 @@
             height: 22px;
             color: rgb(37, 99, 235);
             position: relative;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Cards – ruhig & premium */
+        /* Hover effects */
+        .vs-card:hover .icon-premium {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12), 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+        }
+
+        .vs-card:hover .icon-premium svg {
+            transform: scale(1.05);
+        }
+
+        .vs-card:hover .icon-premium::after {
+            opacity: 1.5;
+        }
+
+        /* Cards – premium with hover */
         .vs-card {
             border-radius: 22px;
             border: 1px solid rgba(15, 23, 42, 0.08);
             background: rgba(255, 255, 255, 0.92);
             box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08);
+            transition: 
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .vs-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+            border-color: rgba(15, 23, 42, 0.12);
         }
 
         .vs-muted {
@@ -129,6 +155,18 @@
             border-radius: 999px;
             background: rgba(37, 99, 235, 0.9);
             box-shadow: 0 10px 20px rgba(37, 99, 235, 0.22);
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
         }
 
         .skip-link {
@@ -148,16 +186,105 @@
             left: 12px;
         }
 
-        /* Reveal */
+        /* Reveal animations */
         .js .reveal {
             opacity: 0;
-            transform: translateY(10px);
-            transition: opacity .6s ease, transform .6s ease;
+            transform: translateY(20px);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), 
+                        transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .js .reveal.is-visible {
             opacity: 1;
-            transform: none;
+            transform: translateY(0);
+        }
+
+        /* Stagger effect for grid items */
+        .vs-card:nth-child(1) { transition-delay: 0.05s; }
+        .vs-card:nth-child(2) { transition-delay: 0.1s; }
+        .vs-card:nth-child(3) { transition-delay: 0.15s; }
+        .vs-card:nth-child(4) { transition-delay: 0.2s; }
+        .vs-card:nth-child(5) { transition-delay: 0.25s; }
+        .vs-card:nth-child(6) { transition-delay: 0.3s; }
+
+        /* CTA Panel hover */
+        .cta-panel {
+            border-radius: 24px;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 18px 50px rgba(15, 23, 42, 0.10);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-panel:hover {
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+            transform: translateY(-2px);
+        }
+
+        /* Button secondary */
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(15, 23, 42, 0.14);
+            box-shadow:
+                0 10px 26px rgba(15, 23, 42, 0.08),
+                0 1px 0 rgba(255, 255, 255, 0.70) inset;
+            transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.90);
+            border-color: rgba(15, 23, 42, 0.18);
+            transform: translateY(-1px);
+            box-shadow:
+                0 14px 34px rgba(15, 23, 42, 0.10),
+                0 1px 0 rgba(255, 255, 255, 0.70) inset;
+        }
+
+        /* Number badges animation */
+        .vs-card .text-\[color\:var\(--muted2\)\] {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .vs-card:hover .text-\[color\:var\(--muted2\)\] {
+            color: rgba(37, 99, 235, 0.85) !important;
+            transform: scale(1.05);
+        }
+
+        /* List items fade in */
+        .vs-card ul li {
+            opacity: 0;
+            transform: translateX(-5px);
+            animation: fadeInLeft 0.4s ease forwards;
+        }
+
+        .vs-card ul li:nth-child(1) { animation-delay: 0.1s; }
+        .vs-card ul li:nth-child(2) { animation-delay: 0.15s; }
+        .vs-card ul li:nth-child(3) { animation-delay: 0.2s; }
+
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
@@ -188,7 +315,7 @@
                     </div>
                 </a>
 
-                <!-- Desktop Menu (FIX: mehr Abstand) -->
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-3 lg:gap-5">
                     <a href="leistungen.html" class="nav-link px-3 py-2">Leistungen</a>
                     <a href="branchen.html" class="nav-link px-3 py-2">Branchen</a>
@@ -234,42 +361,33 @@
 
 <!-- =========================================================
 HERO – Prozess
-Mobile: Bild oben + Content unten (anthrazit)
-Desktop: Full-Card Background + Bio bottom-right
 ========================================================== -->
 <header class="py-10 sm:py-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <section class="panel rounded-3xl overflow-hidden reveal relative vs-prozess-hero">
 
-            <!-- ======================
-           MOBILE TOP IMAGE
-      ====================== -->
+            <!-- MOBILE TOP IMAGE -->
             <div class="relative lg:hidden">
                 <img src="images/prozess.webp" alt="Prozess und Struktur"
                     class="w-full h-[260px] sm:h-[320px] object-cover" loading="eager" decoding="async" />
 
-                <!-- overlays only for image (dezent) -->
                 <div class="absolute inset-0 bg-gradient-to-r from-black/5 via-black/5 to-black/0 pointer-events-none">
                 </div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/5 via-black/0 to-black/0 pointer-events-none">
                 </div>
                 <div class="absolute inset-0 ring-1 ring-white/10 pointer-events-none"></div>
 
-                <!-- smooth transition into anthracite content -->
                 <div class="absolute inset-x-0 bottom-0 h-14 vs-prozess-fade pointer-events-none"></div>
             </div>
 
-            <!-- ======================
-           DESKTOP FULL BG
-      ====================== -->
+            <!-- DESKTOP FULL BG -->
             <div class="hidden lg:block absolute inset-0 overflow-hidden">
                 <img src="images/prozess.webp" alt="Prozess und Struktur"
                     class="absolute inset-0 w-full h-full object-cover object-[78%_46%]"
                     style="transform: scale(1.06); transform-origin: center;" loading="eager" decoding="async" />
             </div>
 
-            <!-- overlays for DESKTOP only -->
             <div
                 class="hidden lg:block absolute inset-0 bg-gradient-to-r from-black/5 via-black/0 to-black/0 pointer-events-none">
             </div>
@@ -278,25 +396,22 @@ Desktop: Full-Card Background + Bio bottom-right
             </div>
             <div class="hidden lg:block absolute inset-0 ring-1 ring-white/10 pointer-events-none"></div>
 
-            <!-- ======================
-           CONTENT
-      ====================== -->
+            <!-- CONTENT -->
             <div
                 class="relative z-10 p-7 sm:p-9 lg:p-12 lg:min-h-[620px] xl:min-h-[700px] flex items-start lg:items-center vs-prozess-content">
                 <div class="max-w-[520px] lg:max-w-[560px] lg:pr-10">
 
                     <div class="text-sm text-white/70">
-                        Vertrauen <span class="opacity-40">·</span> Prozess <span class="opacity-40">·</span> Local SEO
-                        <span class="opacity-40">·</span> AI-SEO (GEO)
+                        Prozess <span class="opacity-40">·</span> Transparenz <span class="opacity-40">·</span> SEO + GEO
                     </div>
 
                     <h1 class="mt-5 h-display text-4xl sm:text-5xl font-semibold leading-[1.05] text-white">
-                        Vertrauen entsteht nicht durch Worte — sondern durch Struktur.
+                        Vertrauen entsteht durch Struktur — nicht durch Versprechen.
                     </h1>
 
                     <p class="mt-5 text-white/80 leading-relaxed max-w-xl">
-                        Klare Kommunikation, saubere Umsetzung und ein System, das langfristig funktioniert.
-                        Hier siehst du, wie wir arbeiten — nachvollziehbar, ruhig, professionell.
+                        Klare Kommunikation, professionelle Umsetzung und ein System, das langfristig funktioniert.
+                        Hier sehen Sie, wie wir arbeiten — nachvollziehbar, strukturiert, messbar.
                     </p>
 
                     <div class="mt-7 flex flex-col sm:flex-row gap-3">
@@ -304,14 +419,13 @@ Desktop: Full-Card Background + Bio bottom-right
                         <a href="#faq" class="btn-ghost">FAQ</a>
                     </div>
 
-                    <!-- ===== MOBILE BIO ===== -->
+                    <!-- MOBILE BIO -->
                     <div class="mt-6 lg:hidden">
                         <div
                             class="rounded-2xl bg-black/35 ring-1 ring-white/10 px-4 py-3 shadow-[0_18px_60px_rgba(0,0,0,.35)]">
                             <p class="text-[13px] sm:text-sm text-white/70 leading-relaxed">
-                                Visual Struktur liefert Webdesign, Digitalisierung sowie SEO + GEO (AI-SEO) als System:
-                                klare Inhalte, saubere Technik und strukturierte Antworten — damit aus Besuchern
-                                Anfragen werden.
+                                Visual Struktur entwickelt performante Websites, digitale Prozesse sowie SEO + GEO (AI-SEO) als ganzheitliches System:
+                                klare Inhalte, technische Exzellenz und strukturierte Antworten — für messbare Anfragen.
                             </p>
                         </div>
                     </div>
@@ -319,14 +433,13 @@ Desktop: Full-Card Background + Bio bottom-right
                 </div>
             </div>
 
-            <!-- ===== DESKTOP BIO ===== -->
+            <!-- DESKTOP BIO -->
             <div class="hidden lg:block absolute right-8 bottom-8 z-20 max-w-[420px]">
                 <div
                     class="rounded-2xl bg-black/35 backdrop-blur-md ring-1 ring-white/10 px-4 py-3 shadow-[0_18px_60px_rgba(0,0,0,.35)]">
                     <p class="text-sm text-white/75 leading-relaxed">
-                        Visual Struktur liefert Webdesign, Digitalisierung sowie SEO + GEO (AI-SEO) als System:
-                        klare Inhalte, saubere Technik und strukturierte Antworten — damit aus Besuchern Anfragen
-                        werden.
+                        Visual Struktur entwickelt performante Websites, digitale Prozesse sowie SEO + GEO (AI-SEO) als ganzheitliches System:
+                        klare Inhalte, technische Exzellenz und strukturierte Antworten — für messbare Anfragen.
                     </p>
                 </div>
             </div>
@@ -338,8 +451,6 @@ Desktop: Full-Card Background + Bio bottom-right
 
 <main id="content">
 
-
-
         <!-- =========================================================
     01) Prinzipien
     ========================================================== -->
@@ -348,7 +459,7 @@ Desktop: Full-Card Background + Bio bottom-right
                 <div>
                     <h2 class="font-display text-2xl md:text-4xl text-[color:var(--text)]">Warum Vertrauen entsteht</h2>
                     <p class="mt-2 text-[color:var(--muted)]">
-                        Nicht laut. Nicht hektisch. Sondern klar, sauber, nachvollziehbar.
+                        Nicht durch Marketing-Versprechen. Sondern durch Struktur, Transparenz und Qualität.
                     </p>
                 </div>
             </div>
@@ -365,14 +476,14 @@ Desktop: Full-Card Background + Bio bottom-right
                         </div>
                         <span class="text-sm font-semibold text-[color:var(--muted2)]">01</span>
                     </div>
-                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Klare Struktur</h3>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Klare Informationsarchitektur</h3>
                     <p class="mt-2 vs-muted">
-                        Kein Chaos, keine „Sammelseite“. Wir bauen eine klare Hierarchie: Inhalte, Fokus, CTA.
+                        Keine chaotischen Sammelseiten. Wir entwickeln eine durchdachte Hierarchie: Inhalte, Prioritäten, Call-to-Actions.
                     </p>
                     <ul class="mt-3 grid gap-2 text-sm vs-muted">
-                        <li>• Sitemap + Seitenlogik</li>
-                        <li>• Prioritäten nach Wirkung</li>
-                        <li>• Verständliche Nutzerführung</li>
+                        <li>• Strukturierte Sitemap + Seitenlogik</li>
+                        <li>• Prioritäten nach Conversion-Wirkung</li>
+                        <li>• Intuitive Nutzerführung</li>
                     </ul>
                 </article>
 
@@ -388,14 +499,14 @@ Desktop: Full-Card Background + Bio bottom-right
                         </div>
                         <span class="text-sm font-semibold text-[color:var(--muted2)]">02</span>
                     </div>
-                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Saubere Umsetzung</h3>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Technische Exzellenz</h3>
                     <p class="mt-2 vs-muted">
-                        Performance, Semantik, Basics sauber. Damit es nicht nur „schön“, sondern stabil ist.
+                        Performance, Semantik, Basics professionell umgesetzt. Damit es nicht nur ästhetisch, sondern technisch stabil ist.
                     </p>
                     <ul class="mt-3 grid gap-2 text-sm vs-muted">
-                        <li>• schnelle Ladezeiten</li>
-                        <li>• SEO + GEO Basis & Semantik</li>
-                        <li>• DSGVO-Logik (so weit möglich)</li>
+                        <li>• Optimierte Ladezeiten</li>
+                        <li>• SEO + GEO Fundament & Semantik</li>
+                        <li>• DSGVO-konforme Umsetzung</li>
                     </ul>
                 </article>
 
@@ -411,14 +522,14 @@ Desktop: Full-Card Background + Bio bottom-right
                         </div>
                         <span class="text-sm font-semibold text-[color:var(--muted2)]">03</span>
                     </div>
-                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Transparente Schritte</h3>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Transparente Kommunikation</h3>
                     <p class="mt-2 vs-muted">
-                        Du weißt immer, was als Nächstes passiert. Keine Überraschungen, keine Nebel-Taktik.
+                        Sie wissen immer, was als Nächstes passiert. Keine Überraschungen, keine intransparenten Prozesse.
                     </p>
                     <ul class="mt-3 grid gap-2 text-sm vs-muted">
-                        <li>• klare Milestones</li>
-                        <li>• kurze Feedback-Schleifen</li>
-                        <li>• ehrliche Einschätzung</li>
+                        <li>• Definierte Milestones</li>
+                        <li>• Kurze Feedback-Zyklen</li>
+                        <li>• Realistische Einschätzungen</li>
                     </ul>
                 </article>
 
@@ -436,14 +547,14 @@ Desktop: Full-Card Background + Bio bottom-right
                         </div>
                         <span class="text-sm font-semibold text-[color:var(--muted2)]">04</span>
                     </div>
-                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Wartbar & erweiterbar</h3>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Wartbar & Skalierbar</h3>
                     <p class="mt-2 vs-muted">
-                        Keine Einbahnstraße. Das System soll wachsen können: neue Seiten, neue Angebote, neue Ziele.
+                        Kein technischer Lock-in. Das System ist auf Wachstum ausgelegt: neue Seiten, Funktionen, Geschäftsziele.
                     </p>
                     <ul class="mt-3 grid gap-2 text-sm vs-muted">
-                        <li>• sauberer Aufbau</li>
-                        <li>• wiederverwendbare Blöcke</li>
-                        <li>• dokumentierbar</li>
+                        <li>• Modulare Architektur</li>
+                        <li>• Wiederverwendbare Komponenten</li>
+                        <li>• Vollständige Dokumentation</li>
                     </ul>
                 </article>
 
@@ -459,14 +570,14 @@ Desktop: Full-Card Background + Bio bottom-right
                         </div>
                         <span class="text-sm font-semibold text-[color:var(--muted2)]">05</span>
                     </div>
-                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Lokal gedacht</h3>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Regional Optimiert</h3>
                     <p class="mt-2 vs-muted">
-                        Ton, Inhalte, Google-Signale. Besonders wichtig für Dienstleister in Hameln & Region.
+                        Tonalität, Inhalte, lokale Signale. Besonders wichtig für Dienstleister in Hameln & Region.
                     </p>
                     <ul class="mt-3 grid gap-2 text-sm vs-muted">
-                        <li>• lokale Keywords & Seitenlogik</li>
-                        <li>• Google Business Profile</li>
-                        <li>• Vertrauen durch Klarheit</li>
+                        <li>• Lokale Keywords & Seitenstruktur</li>
+                        <li>• Google Business Profile Integration</li>
+                        <li>• Vertrauen durch Regionalität</li>
                     </ul>
                 </article>
 
@@ -482,14 +593,14 @@ Desktop: Full-Card Background + Bio bottom-right
                         </div>
                         <span class="text-sm font-semibold text-[color:var(--muted2)]">06</span>
                     </div>
-                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Qualitätsfokus</h3>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Premium-Qualitätsfokus</h3>
                     <p class="mt-2 vs-muted">
-                        Lieber weniger, dafür richtig. Premium wirkt nur, wenn Details stimmen: Typo, Abstand, Rhythmus.
+                        Lieber weniger Elemente, dafür exzellent umgesetzt. Premium entsteht durch Details: Typografie, Spacing, Rhythmus.
                     </p>
                     <ul class="mt-3 grid gap-2 text-sm vs-muted">
-                        <li>• ruhiges Premium-Design</li>
-                        <li>• saubere Micro-Details</li>
-                        <li>• konsistente UX</li>
+                        <li>• Durchdachtes Premium-Design</li>
+                        <li>• Perfektionierte Micro-Interactions</li>
+                        <li>• Konsistente User Experience</li>
                     </ul>
                 </article>
 
@@ -506,52 +617,50 @@ Desktop: Full-Card Background + Bio bottom-right
                         AI-SEO / GEO
                     </div>
                     <h2 class="mt-2 font-display text-2xl md:text-4xl text-[color:var(--text)]">
-                        GEO gehört in den Prozess — nicht ans Ende.
+                        GEO ist integraler Prozessbestandteil — keine nachträgliche Ergänzung.
                     </h2>
                     <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
-                        Klassisches SEO sorgt für Rankings. GEO (Generative Engine Optimization) sorgt dafür, dass
-                        KI-Systeme
-                        dein Angebot korrekt verstehen, konsistent wiedergeben und die richtigen Schwerpunkte nennen.
+                        Klassisches SEO optimiert für Suchmaschinen-Rankings. GEO (Generative Engine Optimization) sorgt dafür, dass
+                        KI-Systeme Ihr Angebot korrekt verstehen, präzise zusammenfassen und die richtigen Schwerpunkte kommunizieren.
                     </p>
                 </div>
 
                 <div class="mt-8 grid gap-4 lg:grid-cols-3">
                     <div class="vs-card p-6">
-                        <div class="text-sm font-semibold text-[color:var(--text)]">1) Klarheit für KI</div>
+                        <div class="text-sm font-semibold text-[color:var(--text)]">1) KI-Verständlichkeit</div>
                         <p class="mt-2 text-sm vs-muted">
-                            Wir definieren Entitäten (Leistungen, Regionen, Zielgruppen) und bauen Inhalte so,
-                            dass Zusammenfassungen sauber werden — ohne Missverständnisse.
+                            Wir definieren Entitäten (Leistungen, Regionen, Zielgruppen) und strukturieren Inhalte so,
+                            dass KI-Zusammenfassungen präzise und widerspruchsfrei sind.
                         </p>
                         <ul class="mt-3 grid gap-2 text-sm vs-muted">
-                            <li>• eindeutige Begriffe</li>
-                            <li>• kurze, zitierfähige Absätze</li>
-                            <li>• klare Seitenzuordnung</li>
+                            <li>• Eindeutige Begriffsdefinitionen</li>
+                            <li>• Kompakte, zitierfähige Absätze</li>
+                            <li>• Logische Seitenzuordnung</li>
                         </ul>
                     </div>
 
                     <div class="vs-card p-6">
-                        <div class="text-sm font-semibold text-[color:var(--text)]">2) Struktur & FAQ</div>
+                        <div class="text-sm font-semibold text-[color:var(--text)]">2) Struktur & FAQ-Architektur</div>
                         <p class="mt-2 text-sm vs-muted">
-                            FAQ-Blöcke + strukturierte Texte erzeugen stabile Antworten in KI-Systemen und bessere
-                            Snippets.
+                            FAQ-Blöcke + strukturierte Texte generieren konsistente Antworten in KI-Systemen und optimierte
+                            Suchergebnis-Snippets.
                         </p>
                         <ul class="mt-3 grid gap-2 text-sm vs-muted">
-                            <li>• sichtbares FAQ</li>
-                            <li>• FAQ Schema (JSON-LD)</li>
-                            <li>• klare H-Struktur</li>
+                            <li>• Nutzerzentrierte FAQ-Sektion</li>
+                            <li>• FAQ Schema Markup (JSON-LD)</li>
+                            <li>• Semantische H-Struktur</li>
                         </ul>
                     </div>
 
                     <div class="vs-card p-6">
-                        <div class="text-sm font-semibold text-[color:var(--text)]">3) Messbare Kontaktlogik</div>
+                        <div class="text-sm font-semibold text-[color:var(--text)]">3) Conversion-Integration</div>
                         <p class="mt-2 text-sm vs-muted">
-                            GEO ohne Conversion bringt wenig. Wir koppeln Inhalte an Kontaktstrecken (CTA, Form, Termin,
-                            Rückruf).
+                            GEO ohne Conversion-Optimierung ist unvollständig. Wir verbinden Inhalte mit strategischen Kontaktstrecken (CTA, Formulare, Terminbuchung).
                         </p>
                         <ul class="mt-3 grid gap-2 text-sm vs-muted">
-                            <li>• CTA-Positionen</li>
-                            <li>• kurze Form-Flows</li>
-                            <li>• „nächster Schritt“ klar</li>
+                            <li>• Strategische CTA-Platzierung</li>
+                            <li>• Optimierte Formular-Flows</li>
+                            <li>• Klare nächste Schritte</li>
                         </ul>
                     </div>
                 </div>
@@ -567,11 +676,11 @@ Desktop: Full-Card Background + Bio bottom-right
                     Prozess
                 </div>
                 <h2 class="mt-2 font-display text-2xl md:text-4xl text-[color:var(--text)]">
-                    Analyse → Konzept → Build → Launch
+                    Analyse → Strategie → Umsetzung → Launch
                 </h2>
                 <p class="mt-3 text-[color:var(--muted)] leading-relaxed max-w-3xl">
-                    Ein klarer Ablauf mit sichtbaren Milestones. SEO + GEO werden nicht „später draufgeklebt“, sondern
-                    von Anfang an in Struktur, Inhalte und Kontaktlogik integriert.
+                    Ein strukturierter Ablauf mit definierten Milestones. SEO + GEO werden von Anfang an integriert — nicht nachträglich ergänzt — 
+                    in Struktur, Inhalte und Conversion-Logik.
                 </p>
             </div>
 
@@ -588,13 +697,12 @@ Desktop: Full-Card Background + Bio bottom-right
                     </div>
                     <h3 class="mt-4 font-semibold text-[color:var(--text)]">Analyse</h3>
                     <p class="mt-2 text-sm vs-muted">
-                        Ziele, Zielgruppe, Angebot, Regionen, Prioritäten. Wir definieren auch, welche Aussagen
-                        KI-Systeme
-                        später korrekt verstehen sollen (GEO-Basis).
+                        Geschäftsziele, Zielgruppe, Leistungsportfolio, regionale Märkte, Prioritäten. Wir definieren auch, welche Kernaussagen
+                        KI-Systeme korrekt verstehen sollen (GEO-Fundament).
                     </p>
                     <ul class="mt-3 grid gap-2 text-sm vs-muted">
-                        <li>• Inhalte & Wettbewerb</li>
-                        <li>• Seitenlogik & CTA</li>
+                        <li>• Content-Audit & Wettbewerbsanalyse</li>
+                        <li>• Seitenlogik & CTA-Strategie</li>
                         <li>• Entitäten (Services/Regionen)</li>
                     </ul>
                 </article>
@@ -609,15 +717,15 @@ Desktop: Full-Card Background + Bio bottom-right
                         </div>
                         <span class="text-sm font-semibold text-[color:var(--muted2)]">02</span>
                     </div>
-                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Konzept</h3>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Strategie</h3>
                     <p class="mt-2 text-sm vs-muted">
-                        Struktur, Wireframe, Text-Logik, Designrichtung. SEO + GEO werden in die Seitenlogik integriert
-                        (FAQ, Entitäten, klare Überschriften).
+                        Informationsarchitektur, Wireframes, Content-Strategie, Design-Richtung. SEO + GEO werden in die Seitenlogik integriert
+                        (FAQ-Architektur, Entitäten, semantische Überschriften).
                     </p>
                     <ul class="mt-3 grid gap-2 text-sm vs-muted">
-                        <li>• Sitemap & Hierarchie</li>
-                        <li>• Content-Plan</li>
-                        <li>• FAQ & AI-ready Absätze</li>
+                        <li>• Sitemap & Content-Hierarchie</li>
+                        <li>• Redaktionsplan</li>
+                        <li>• FAQ & KI-optimierte Absätze</li>
                     </ul>
                 </article>
 
@@ -633,16 +741,15 @@ Desktop: Full-Card Background + Bio bottom-right
                         </div>
                         <span class="text-sm font-semibold text-[color:var(--muted2)]">03</span>
                     </div>
-                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Build</h3>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Umsetzung</h3>
                     <p class="mt-2 text-sm vs-muted">
-                        Umsetzung, Performance, Semantik, Formulare/Automationen. Dazu: strukturierte Daten
-                        (Schema/JSON-LD)
-                        und Content-Blöcke für AI-Sichtbarkeit.
+                        Entwicklung, Performance-Optimierung, Semantik, Formulare/Automatisierung. Dazu: Schema-Markup
+                        (JSON-LD) und Content-Strukturierung für KI-Sichtbarkeit.
                     </p>
                     <ul class="mt-3 grid gap-2 text-sm vs-muted">
                         <li>• Performance & Accessibility</li>
-                        <li>• SEO-Basis & Local</li>
-                        <li>• Schema/JSON-LD</li>
+                        <li>• SEO-Fundament & Local Signals</li>
+                        <li>• Schema-Markup (JSON-LD)</li>
                     </ul>
                 </article>
 
@@ -658,16 +765,15 @@ Desktop: Full-Card Background + Bio bottom-right
                         </div>
                         <span class="text-sm font-semibold text-[color:var(--muted2)]">04</span>
                     </div>
-                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Launch & Pflege</h3>
+                    <h3 class="mt-4 font-semibold text-[color:var(--text)]">Launch & Optimierung</h3>
                     <p class="mt-2 text-sm vs-muted">
-                        Go-live, Indexierung, Checks. Optional: laufende Optimierung von SEO + GEO, Inhalte und
-                        Conversion
-                        basierend auf echten Daten.
+                        Go-live, Indexierung, Quality Assurance. Optional: kontinuierliche Optimierung von SEO + GEO, Content-Entwicklung und
+                        Conversion basierend auf Performance-Daten.
                     </p>
                     <ul class="mt-3 grid gap-2 text-sm vs-muted">
-                        <li>• Index/Checks</li>
-                        <li>• Updates/Monitoring</li>
-                        <li>• Iterative Optimierung</li>
+                        <li>• Indexierung & Technical Checks</li>
+                        <li>• Updates & Monitoring</li>
+                        <li>• Datenbasierte Optimierung</li>
                     </ul>
                 </article>
             </div>
@@ -685,16 +791,16 @@ Desktop: Full-Card Background + Bio bottom-right
                                     stroke-linecap="round" />
                             </svg>
                         </div>
-                        <h3 class="font-semibold text-[color:var(--text)]">Was du am Ende bekommst</h3>
+                        <h3 class="font-semibold text-[color:var(--text)]">Projekt-Deliverables</h3>
                     </div>
 
                     <ul class="mt-5 grid gap-3 text-sm vs-muted">
-                        <li>• klare Seitenstruktur + CTA-Logik (Anfragen, Termine, Leads)</li>
-                        <li>• Premium UI: Typografie, Abstände, visuelle Hierarchie</li>
-                        <li>• Technik: schnelle Ladezeit, saubere Semantik, stabile Basis</li>
-                        <li>• SEO-Start: Titles/Descriptions, interne Struktur, Local-Signals</li>
-                        <li>• GEO-Start (AI-SEO): FAQ-Block, zitierfähige Absätze, Schema/JSON-LD</li>
-                        <li>• Hand-over: Zugriff, kurze Doku, optional Wartung/Weiterentwicklung</li>
+                        <li>• Strukturierte Informationsarchitektur + Conversion-optimierte CTA-Logik</li>
+                        <li>• Premium UI: Typografie, Spacing, visuelle Hierarchie</li>
+                        <li>• Technische Basis: Performance, Semantik, Stabilität</li>
+                        <li>• SEO-Fundament: Meta-Daten, interne Struktur, Local Signals</li>
+                        <li>• GEO-Optimierung (AI-SEO): FAQ-Architektur, zitierfähige Texte, Schema-Markup</li>
+                        <li>• Vollständige Übergabe: Zugriffe, Dokumentation, optionale Wartung</li>
                     </ul>
 
                     <div class="mt-6 pt-5 border-t vs-line flex flex-col sm:flex-row gap-3">
@@ -705,19 +811,19 @@ Desktop: Full-Card Background + Bio bottom-right
 
                 <div class="panel rounded-3xl p-7 md:p-8 reveal">
                     <div class="text-xs font-semibold tracking-wide text-[color:var(--muted2)] uppercase">
-                        Hinweis
+                        Wichtig
                     </div>
                     <h3 class="mt-2 font-semibold text-[color:var(--text)]">
-                        GEO ist Teil der Seitenlogik
+                        GEO ist Bestandteil der Informationsarchitektur
                     </h3>
                     <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
-                        GEO funktioniert stabil, wenn Begriffe eindeutig sind, Inhalte sauber strukturiert sind
-                        und FAQs/Schema nicht widersprüchlich sind. Deshalb planen wir das früh — nicht am Ende.
+                        GEO funktioniert nachhaltig, wenn Begriffe eindeutig definiert sind, Inhalte strukturiert aufgebaut sind
+                        und FAQ/Schema konsistent sind. Deshalb planen wir dies frühzeitig — nicht nachträglich.
                     </p>
                     <ul class="mt-4 grid gap-2 text-sm text-[color:var(--muted2)]">
-                        <li>• gleiche Aussagen sichtbar + im JSON-LD</li>
-                        <li>• klare Zuordnung: Leistung → Seite → CTA</li>
-                        <li>• kurze, zitierfähige Abschnitte</li>
+                        <li>• Konsistente Aussagen sichtbar + in JSON-LD</li>
+                        <li>• Klare Zuordnung: Leistung → Seite → CTA</li>
+                        <li>• Kompakte, zitierfähige Content-Blöcke</li>
                     </ul>
                 </div>
             </div>
@@ -733,51 +839,43 @@ Desktop: Full-Card Background + Bio bottom-right
                         FAQ
                     </div>
                     <h2 class="mt-2 font-display text-2xl md:text-4xl text-[color:var(--text)]">
-                        Häufige Fragen (Prozess & GEO)
+                        Häufige Fragen zu Prozess & GEO
                     </h2>
                     <p class="mt-3 text-[color:var(--muted)] leading-relaxed">
-                        Kurz, konkret, zitierfähig — damit Menschen, Google und KI-Systeme es korrekt verstehen.
+                        Präzise Antworten — strukturiert für Menschen, Suchmaschinen und KI-Systeme.
                     </p>
                 </div>
 
                 <div class="mt-6 grid gap-4 max-w-3xl">
                     <details class="panel rounded-3xl p-6">
-                        <summary class="cursor-pointer text-sm font-semibold">Wie läuft ein Projekt bei Visual Struktur
-                            ab?</summary>
+                        <summary class="cursor-pointer text-sm font-semibold">Wie läuft ein Projekt bei Visual Struktur ab?</summary>
                         <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
-                            Typischer Ablauf: Analyse → Konzept → Build → Launch. Ziel ist ein wartbares System mit
-                            Performance-Basis,
-                            SEO + GEO (AI-SEO) und klaren Kontaktstrecken.
+                            Strukturierter Ablauf: Analyse → Strategie → Umsetzung → Launch. Ergebnis ist ein wartbares System mit
+                            technischer Exzellenz, SEO + GEO (AI-SEO) und optimierten Conversion-Strecken.
                         </div>
                     </details>
 
                     <details class="panel rounded-3xl p-6">
-                        <summary class="cursor-pointer text-sm font-semibold">Was ist GEO (AI-SEO) und warum gehört es
-                            in den Prozess?</summary>
+                        <summary class="cursor-pointer text-sm font-semibold">Was ist GEO (AI-SEO) und warum gehört es in den Prozess?</summary>
                         <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
-                            GEO ergänzt klassisches SEO. Inhalte werden so strukturiert, dass KI-Systeme das Angebot
-                            korrekt verstehen
-                            und konsistent wiedergeben: klare Entitäten, FAQ, saubere Struktur und Schema (JSON-LD).
+                            GEO (Generative Engine Optimization) ergänzt klassisches SEO. Inhalte werden so strukturiert, dass KI-Systeme das Angebot
+                            korrekt verstehen und präzise wiedergeben: klare Entitäten, FAQ-Architektur, semantische Struktur und Schema-Markup (JSON-LD).
                         </div>
                     </details>
 
                     <details class="panel rounded-3xl p-6">
-                        <summary class="cursor-pointer text-sm font-semibold">Welche Ergebnisse bekomme ich am Ende?
-                        </summary>
+                        <summary class="cursor-pointer text-sm font-semibold">Welche Ergebnisse erhalte ich am Ende?</summary>
                         <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
-                            Du bekommst Struktur, Premium-UI, saubere Technik, SEO-Start sowie GEO-Start (FAQ +
-                            Schema/JSON-LD),
-                            plus dokumentierte Übergabe.
+                            Professionelle Informationsarchitektur, Premium-UI, performante technische Basis, SEO-Fundament sowie GEO-Optimierung 
+                            (FAQ, strukturierte Inhalte, Schema-Markup) plus vollständige Dokumentation und Übergabe.
                         </div>
                     </details>
 
                     <details class="panel rounded-3xl p-6">
-                        <summary class="cursor-pointer text-sm font-semibold">Gibt es Wartung und Weiterentwicklung?
-                        </summary>
+                        <summary class="cursor-pointer text-sm font-semibold">Bieten Sie Wartung und Weiterentwicklung an?</summary>
                         <div class="mt-3 text-sm text-[color:var(--muted)] leading-relaxed">
-                            Optional ja: Updates, Backups, Monitoring sowie laufende Optimierung von SEO + GEO und
-                            Inhalten,
-                            wenn du konstant wachsen willst.
+                            Ja, optional. Empfehlenswert sind regelmäßige Updates, Backups, Performance-Monitoring sowie kontinuierliche Optimierung 
+                            von SEO + GEO und Content für nachhaltiges Wachstum.
                         </div>
                     </details>
                 </div>
@@ -797,16 +895,14 @@ Desktop: Full-Card Background + Bio bottom-right
                 <div class="grid md:grid-cols-12 gap-6 items-center">
                     <div class="md:col-span-8">
                         <h2 class="font-display text-2xl md:text-4xl text-[color:var(--text)]">
-                            Wenn du Klarheit willst — lass uns starten.
+                            Bereit für strukturiertes Wachstum? Lassen Sie uns starten.
                         </h2>
                         <p class="mt-2 text-[color:var(--muted)]">
-                            15–30 Minuten. Danach weißt du: was sinnvoll ist, was nicht — und wie der nächste Schritt
-                            aussieht.
+                            15–30 Minuten Gespräch. Danach wissen Sie: was sinnvoll ist, was nicht — und wie der konkrete nächste Schritt aussieht.
                         </p>
                     </div>
                     <div class="md:col-span-4 flex md:justify-end">
-                        <a href="kontakt.html" class="btn-primary w-full md:w-auto text-center">Unverbindlich
-                            anfragen</a>
+                        <a href="kontakt.html" class="btn-primary w-full md:w-auto text-center">Projekt anfragen</a>
                     </div>
                 </div>
             </div>
@@ -828,7 +924,7 @@ Desktop: Full-Card Background + Bio bottom-right
                     </div>
                     <p class="mt-2 text-sm text-white/70">Webdesign · Digitalisierung · SEO + GEO — Hameln</p>
                     <p class="mt-4 text-sm text-white/65 max-w-md">
-                        Premium Websites & digitale Systeme, die Anfragen erzeugen und Prozesse vereinfachen.
+                        Professionelle Websites & digitale Systeme für messbare Anfragen und optimierte Prozesse.
                     </p>
                 </div>
 
@@ -847,7 +943,7 @@ Desktop: Full-Card Background + Bio bottom-right
                     <h3 class="text-sm font-semibold text-white/90">Kontakt</h3>
                     <p class="mt-3 text-sm text-white/70">
                         Hameln, Niedersachsen<br />
-                        <span class="text-white/60">Antwort i. d. R. innerhalb von 24–48h</span>
+                        <span class="text-white/60">Antwort innerhalb von 24–48 Stunden</span>
                     </p>
                 </div>
 
