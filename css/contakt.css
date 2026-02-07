@@ -1,45 +1,114 @@
 /* =========================================================
-  CONTACT — Premium App Rows + Sheets (Clean)
+  CONTACT — Premium App Rows + Sheets + Animations
   Scope: kontakt.html only (loaded after styles.css)
 ========================================================= */
 
 /* ---------- layout (safe even if tailwind missing) */
-.contact-layout { display: grid; gap: 1rem; align-items: start; }
-@media (min-width: 1024px) {
-  .contact-layout { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.contact-layout { 
+  display: grid; 
+  gap: 1.5rem; 
+  align-items: start; 
 }
-.contact-layout > * { min-width: 0; }
+
+@media (min-width: 1024px) {
+  .contact-layout { 
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); 
+    gap: 2rem;
+  }
+}
+
+.contact-layout > * { 
+  min-width: 0; 
+}
 
 /* ---------- utilities */
-.u-hidden { display: none !important; }
+.u-hidden { 
+  display: none !important; 
+}
+
+/* =========================================================
+   FORM INPUTS — Unified Premium Style
+========================================================= */
+
+.form-input {
+  border: 1px solid rgba(15, 23, 42, 0.16) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  box-shadow:
+    0 12px 32px rgba(15, 23, 42, 0.10),
+    0 1px 0 rgba(255, 255, 255, 0.85) inset !important;
+  color: rgba(15, 23, 42, 0.95) !important;
+  
+  transition: 
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: rgba(15, 23, 42, 0.45) !important;
+}
+
+.form-input:hover {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(15, 23, 42, 0.20) !important;
+}
+
+.form-input:focus {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: rgba(37, 99, 235, 0.35) !important;
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12),
+    0 14px 34px rgba(15, 23, 42, 0.10) !important;
+  outline: none !important;
+}
+
+/* Textarea specific */
+textarea.form-input {
+  min-height: 140px;
+  resize: vertical;
+}
 
 /* ---------- row buttons (services/timeline/budget) */
 #servicesRow,
 #timelineRow,
-#budgetRow{
+#budgetRow {
   cursor: pointer;
-  border: 1px solid rgba(15,23,42,.16) !important;
-  background: rgba(255,255,255,.92) !important;
+  border: 1px solid rgba(15, 23, 42, 0.16) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
   box-shadow:
-    0 12px 32px rgba(15,23,42,.10),
-    0 1px 0 rgba(255,255,255,.85) inset !important;
-  color: rgba(15,23,42,.95) !important;
+    0 12px 32px rgba(15, 23, 42, 0.10),
+    0 1px 0 rgba(255, 255, 255, 0.85) inset !important;
+  color: rgba(15, 23, 42, 0.95) !important;
+  
+  transition: 
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
 #servicesRow:hover,
 #timelineRow:hover,
-#budgetRow:hover{
-  background: rgba(255,255,255,.98) !important;
-  border-color: rgba(15,23,42,.22) !important;
+#budgetRow:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: rgba(15, 23, 42, 0.22) !important;
   box-shadow:
-    0 16px 40px rgba(15,23,42,.12),
-    0 1px 0 rgba(255,255,255,.88) inset !important;
+    0 16px 40px rgba(15, 23, 42, 0.12),
+    0 1px 0 rgba(255, 255, 255, 0.88) inset !important;
+}
+
+#servicesRow:active,
+#timelineRow:active,
+#budgetRow:active {
+  transform: translateY(0);
 }
 
 #servicesRow:focus-visible,
 #timelineRow:focus-visible,
-#budgetRow:focus-visible{
-  outline: 2px solid rgba(37,99,235,.35) !important;
+#budgetRow:focus-visible {
+  outline: 2px solid rgba(37, 99, 235, 0.35) !important;
   outline-offset: 3px !important;
   border-radius: 18px;
 }
@@ -47,153 +116,418 @@
 /* labels */
 #servicesLabel,
 #timelineLabel,
-#budgetLabel{
-  color: rgba(15,23,42,.92) !important;
+#budgetLabel {
+  color: rgba(15, 23, 42, 0.92) !important;
+  transition: color 0.2s ease, opacity 0.25s ease, transform 0.25s ease;
 }
 
 #servicesLabel[data-empty="true"],
-#timelineLabel[data-empty="true"]{
-  color: rgba(15,23,42,.55) !important;
+#timelineLabel[data-empty="true"] {
+  color: rgba(15, 23, 42, 0.55) !important;
 }
 
-.vs-row__chev{
-  color: rgba(15,23,42,.55) !important;
+.vs-row__chev {
+  color: rgba(15, 23, 42, 0.55) !important;
   font-size: 1.35rem;
+  transition: transform 0.2s ease;
 }
 
-/* error state */
-.vs-error{
-  border-color: rgba(220,38,38,.35) !important;
-  box-shadow: 0 0 0 3px rgba(220,38,38,.12) !important;
+#servicesRow:hover .vs-row__chev,
+#timelineRow:hover .vs-row__chev,
+#budgetRow:hover .vs-row__chev {
+  transform: translateX(2px);
+}
+
+/* error state with animation */
+.vs-error {
+  border-color: rgba(220, 38, 38, 0.35) !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12) !important;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
 }
 
 /* ---------- service chips (inside sheet) */
-:root{ --accent-blue: rgba(37,99,235,.95); }
+:root { 
+  --accent-blue: rgba(37, 99, 235, 0.95); 
+}
 
-.svc-chip{
+.svc-chip {
   display: flex;
   align-items: center;
-  gap: .55rem;
-  padding: .75rem .9rem;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
   border-radius: 1rem;
-  border: 1px solid rgba(15,23,42,.14) !important;
-  background: rgba(255,255,255,.78) !important;
+  border: 1px solid rgba(15, 23, 42, 0.14) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  color: rgba(15, 23, 42, 0.92) !important;
   user-select: none;
+  cursor: pointer;
+  
+  transition: 
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.svc-chip:hover{
-  background: rgba(255,255,255,.92) !important;
-  border-color: rgba(15,23,42,.18) !important;
+.svc-chip:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: rgba(15, 23, 42, 0.22) !important;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
 
-.svc-chip input{
-  width: 1rem;
-  height: 1rem;
+.svc-chip:active {
+  transform: translateY(0);
+}
+
+.svc-chip input {
+  width: 1.1rem;
+  height: 1.1rem;
   accent-color: var(--accent-blue) !important;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-/* selected look (needs :has support, ok on modern mobile) */
-.svc-chip:has(input:checked){
-  border-color: rgba(37,99,235,.28) !important;
-  background: rgba(37,99,235,.08) !important;
+.svc-chip:hover input {
+  transform: scale(1.05);
+}
+
+/* selected state */
+.svc-chip:has(input:checked) {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: rgba(37, 99, 235, 0.35) !important;
+  box-shadow:
+    0 14px 34px rgba(15, 23, 42, 0.10),
+    0 0 0 3px rgba(37, 99, 235, 0.10) !important;
+}
+
+.svc-chip * {
+  color: inherit !important;
 }
 
 /* ---------- dialog sheets */
-dialog.vs-sheet{
+dialog.vs-sheet {
   padding: 0;
   border: none;
   background: transparent;
   width: min(560px, 92vw);
   border-radius: 1.5rem;
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+  transition: 
+    opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-dialog.vs-sheet::backdrop{ background: rgba(0,0,0,.60); }
+dialog.vs-sheet[open] {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
 
-.sheet-box{
-  border: 1px solid rgba(255,255,255,.10);
+dialog.vs-sheet::backdrop { 
+  background: rgba(0, 0, 0, 0.60); 
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.sheet-box {
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 1.5rem;
   overflow: hidden;
-  background: #0e0e0e;
-  box-shadow: 0 18px 60px rgba(0,0,0,.55);
+  background: linear-gradient(180deg, #0e0e0e 0%, #0a0a0a 100%);
+  box-shadow: 
+    0 24px 70px rgba(0, 0, 0, 0.55),
+    0 1px 0 rgba(255, 255, 255, 0.05) inset;
 }
 
-.sheet-head{
-  padding: 1rem 1.25rem;
+.sheet-head {
+  padding: 1.25rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255,255,255,.10);
-  color: rgba(255,255,255,.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.sheet-title{ font-weight: 600; }
+.sheet-title { 
+  font-weight: 700; 
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+}
 
-.sheet-close{
-  color: rgba(255,255,255,.70);
+.sheet-close {
+  color: rgba(255, 255, 255, 0.70);
   background: transparent;
   border: none;
   cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  transition: 
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
-.sheet-close:hover{ opacity: .9; }
 
-.sheet-body{
-  padding: .75rem;
+.sheet-close:hover { 
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.sheet-body {
+  padding: 1rem;
   max-height: 65vh;
   overflow: auto;
 }
 
+/* custom scrollbar for sheet */
+.sheet-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sheet-body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.sheet-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.sheet-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
 /* buttons inside sheets (timeline/budget) */
-.sheet-opt{
+.sheet-opt {
   width: 100%;
   text-align: left;
-  padding: 1rem 1rem;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 0.5rem;
   border-radius: 1rem;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.10);
-  color: rgba(255,255,255,.92);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.92);
   cursor: pointer;
+  font-weight: 600;
+  
+  transition: 
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.sheet-opt:hover{ background: rgba(255,255,255,.10); }
-
-.sheet-foot{
-  padding: 1rem;
-  border-top: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.02);
+.sheet-opt:hover { 
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* mobile bottom-sheet vibe */
-@media (max-width: 640px){
-  dialog.vs-sheet[open]{
+.sheet-opt:active {
+  transform: translateY(0);
+}
+
+.sheet-opt:last-child {
+  margin-bottom: 0;
+}
+
+.sheet-foot {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ---------- button enhancements */
+.btn-primary,
+.btn-ghost {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ripple effect container */
+.btn-primary::after,
+.btn-ghost::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  pointer-events: none;
+}
+
+.btn-primary:active::after,
+.btn-ghost:active::after {
+  width: 200px;
+  height: 200px;
+}
+
+/* ---------- mobile bottom-sheet vibe */
+@media (max-width: 640px) {
+  dialog.vs-sheet[open] {
     position: fixed;
     left: 50%;
-    bottom: 12px;
-    transform: translateX(-50%);
+    bottom: 0;
+    transform: translateX(-50%) translateY(0);
     margin: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateX(-50%) translateY(100%);
+    }
+    to {
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  
+  .sheet-box {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
 
-/* motion safety */
-@media (prefers-reduced-motion: reduce){
-  #servicesRow, #timelineRow, #budgetRow,
-  .svc-chip, .sheet-opt { transition: none !important; }
+/* ---------- form status animation */
+#formStatus {
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: 
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
-/* FIX: selected service row must stay light (no dark stripe) */
+
+#formStatus:not(:empty) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- success state (for future) */
+.form-success {
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  background: rgba(16, 185, 129, 0.10);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: rgba(16, 185, 129, 0.95);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- loading state */
+.btn-loading {
+  pointer-events: none;
+  opacity: 0.6;
+  position: relative;
+}
+
+.btn-loading::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  left: 50%;
+  top: 50%;
+  margin: -8px 0 0 -8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- stagger animation for chips */
 .svc-chip {
-  background: rgba(255,255,255,.92) !important;
-  border: 1px solid rgba(15,23,42,.14) !important;
-  color: rgba(15,23,42,.92) !important;
+  animation: chipFadeIn 0.3s ease backwards;
 }
 
-.svc-chip:has(input:checked) {
-  background: rgba(255,255,255,.98) !important;
-  border-color: rgba(37,99,235,.30) !important;
-  box-shadow:
-    0 14px 34px rgba(15,23,42,.10),
-    0 0 0 3px rgba(37,99,235,.10) !important;
+.svc-chip:nth-child(1) { animation-delay: 0.05s; }
+.svc-chip:nth-child(2) { animation-delay: 0.1s; }
+.svc-chip:nth-child(3) { animation-delay: 0.15s; }
+.svc-chip:nth-child(4) { animation-delay: 0.2s; }
+.svc-chip:nth-child(5) { animation-delay: 0.25s; }
+.svc-chip:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes chipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* если внутри есть текстовый span/label — фикс цвета */
-.svc-chip * {
-  color: inherit !important;
+/* ---------- checkbox styling */
+input[type="checkbox"] {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- motion safety */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .vs-error {
+    animation: none !important;
+  }
+}
+
+/* ---------- focus visible enhancement */
+*:focus-visible {
+  outline: 2px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* ---------- print styles */
+@media print {
+  dialog.vs-sheet,
+  .sheet-box,
+  nav,
+  footer {
+    display: none !important;
+  }
 }
