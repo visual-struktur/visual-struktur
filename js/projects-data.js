@@ -49,7 +49,7 @@ const PROJECTS = {
       "Kontakt-Flow: Formular mit Validation, Spam-Schutz, DSGVO-Checkbox"
     ],
     stack: ["HTML", "Tailwind", "Semantic Structure", "SEO-Setup", "Premium UI"],
-    link: "https://visual-struktur.de",
+    link: "https://visual-struktur.github.io/visual-struktur/index.html",
     linkLabel: "Website ansehen"
   },
 
