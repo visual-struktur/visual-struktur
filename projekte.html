@@ -200,7 +200,7 @@
             <div class="mt-7 panel rounded-2xl p-3 reveal">
                 <div class="flex flex-wrap gap-2">
                     <button class="proj-filter btn-ghost px-4 py-2 text-sm is-active" data-filter="all"
-                        type="button">Alle</button>
+                        type="button" aria-pressed="true">Alle</button>
                     <button class="proj-filter btn-ghost px-4 py-2 text-sm" data-filter="website"
                         type="button">Website</button>
                     <button class="proj-filter btn-ghost px-4 py-2 text-sm" data-filter="seo" type="button">SEO</button>
@@ -535,45 +535,7 @@
         </div>
     </footer>
 
-    <!-- =========================
-            INLINE JS: Year + Nav + Reveal
-    ========================= -->
-    <script>
-        // Year
-        const y = document.getElementById("year");
-        if (y) y.textContent = new Date().getFullYear();
-
-        // Nav shrink
-        const nav = document.getElementById("siteNav");
-        const onScroll = () => {
-            const yy = window.scrollY || 0;
-            if (yy > 12) nav.classList.add("nav-shrink", "nav-shadow");
-            else nav.classList.remove("nav-shrink", "nav-shadow");
-        };
-        onScroll();
-        window.addEventListener("scroll", onScroll, { passive: true });
-
-        // Reveal (safe)
-        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const items = document.querySelectorAll(".reveal");
-        const showAll = () => items.forEach(el => el.classList.add("is-visible"));
-
-        if (prefersReduced || !("IntersectionObserver" in window)) {
-            showAll();
-        } else {
-            const io = new IntersectionObserver((entries) => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) {
-                        e.target.classList.add("is-visible");
-                        io.unobserve(e.target);
-                    }
-                });
-            }, { threshold: 0.12 });
-            items.forEach(el => io.observe(el));
-        }
-    </script>
-
-    <!-- Projects JS - загружаем после inline скриптов -->
+    <!-- Projects JS -->
     <script src="js/projects-data.js"></script>
     <script src="js/projects-ui.js"></script>
     <!-- Global JS -->

@@ -362,25 +362,6 @@
   }
 
   // ---------------------------------------------------------------------------
-  // CARD HOVER EFFECTS — Premium Lift & Shadow
-  // ---------------------------------------------------------------------------
-  function initCardHoverEffects() {
-    const cards = $$(".proj-card");
-    
-    cards.forEach(card => {
-      card.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
-      
-      card.addEventListener("mouseenter", () => {
-        card.style.transform = "translateY(-4px)";
-      });
-      
-      card.addEventListener("mouseleave", () => {
-        card.style.transform = "translateY(0)";
-      });
-    });
-  }
-
-  // ---------------------------------------------------------------------------
   // INIT — Alle Features
   // ---------------------------------------------------------------------------
   function init() {
@@ -388,13 +369,10 @@
       console.error("PROJECTS not loaded! Include projects-data.js first");
       return;
     }
-    
+
     initProjectFilter();
     initProjectDrawer();
     initImageHoverZoom();
-    initCardHoverEffects();
-    
-    console.log("✅ Projects UI loaded — Premium animations active");
   }
 
   if (document.readyState === "loading") {
